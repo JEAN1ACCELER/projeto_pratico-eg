@@ -1,27 +1,31 @@
-# Plano de Trabalho
+# Plano de Trabalho - E-Project
 
-Este documento descreve o planejamento inicial para o desenvolvimento do projeto da disciplina de Engenharia de Software I.
+Este documento descreve o planejamento inicial para o desenvolvimento do **E-Project**, um sistema de gestão de projetos acadêmicos para a UFAM.
 
 ## 1. Introdução
-[Breve descrição do projeto e seu propósito geral.]
+O **E-Project** é uma plataforma web (PWA) projetada para centralizar a gestão de projetos acadêmicos (PIBIC, PIBITI, PIBEX, etc.) na Universidade Federal do Amazonas. O foco é resolver a fragmentação de informações e a falta de ferramentas específicas para o acompanhamento da evolução dos projetos após a submissão oficial.
 
 ## 2. Equipe
 | Nome | Papel | Responsabilidades |
 | :--- | :--- | :--- |
-| [Nome 1] | [Ex: Líder/Desenvolvedor] | [Descrição] |
-| [Nome 2] | [Ex: Desenvolvedor] | [Descrição] |
-| [Nome 3] | [Ex: Desenvolvedor] | [Descrição] |
+| [Nome 1] | Scrum Master / Líder | Gestão da equipe e processos ágeis. |
+| [Nome 2] | Back-end / DB | Modelagem de dados e APIs. |
+| [Nome 3] | Front-end / Integração | Desenvolvimento da interface e consumo de APIs. |
+| [Nome 4] | Design / UX | Prototipagem e experiência do usuário. |
+| [Nome 5] | Backlog / PO | Escrita de histórias e critérios de aceitação. |
+| [Nome 6] | QA / Documentação | Testes e manutenção da documentação técnica. |
 
 ## 3. Ferramentas Utilizadas
-*   **Comunicação:** [Ex: WhatsApp, Discord]
-*   **Gestão de Tarefas:** GitHub Projects e Notion
-*   **Documentação:** GitHub (Markdown)
-*   **Design/Prototipagem:** [Ex: Figma, Canva]
+*   **Comunicação:** WhatsApp e Discord.
+*   **Gestão de Tarefas:** GitHub Projects e Notion.
+*   **Documentação:** GitHub (Markdown).
+*   **Design/Prototipagem:** Figma.
+*   **Desenvolvimento:** React, Node.js e Firebase (Sugestão).
 
 ## 4. Cronograma Macro
 | Fase | Atividade | Prazo Estimado |
 | :--- | :--- | :--- |
-| Inspiração | Design Thinking e Pesquisa | [Data] |
-| Ideação | Brainstorming e Definição | [Data] |
-| Planejamento | Backlog e Sprints | [Data] |
-| Entrega | Finalização e Apresentação | [Data] |
+| Inspiração | Design Thinking e Pesquisa | Semana 1-2 |
+| Ideação | Brainstorming e Definição | Semana 2 |
+| Planejamento | Backlog e Sprints | Semana 3 |
+| Entrega | Finalização e Apresentação | Semana 4 |
