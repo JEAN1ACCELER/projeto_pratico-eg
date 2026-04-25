@@ -41,9 +41,6 @@ Este documento detalha o planejamento e acompanhamento das atividades do **Sprin
 ## 🔗 Links de Gestão
 *   **Quadro do Sprint (GitHub Projects):** [Inserir Link Aqui]
 *   **Documentação de Personas:** [Ver Personas](./personas/17_personas_detalhadas.md)
-*   **Protótipo Figma:** [Inserir Link Aqui]
+*   **Protótipo Figma:** [[Inserir Link Aqui](https://www.figma.com/proto/lLDopNGZcEgvP0ihCUu2W0/E-Project?node-id=0-1&t=FFoP3knuMqYur20V-1)]
 
 ---
-
-## 📈 Burndown do Sprint
-*(O gráfico de Burndown será atualizado ao final do sprint com base na conclusão das Issues no GitHub Projects)*
