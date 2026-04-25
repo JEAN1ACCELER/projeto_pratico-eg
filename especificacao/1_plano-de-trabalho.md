@@ -2,10 +2,13 @@
 
 ## HISTÓRICO DE VERSÕES
 
-| Versão | Data | Descrição | Autor |
-| :--- | :--- | :--- | :--- |
-| 1.0 | 24/04/2026 | Criação da estrutura inicial do plano de trabalho. | Manus AI |
-| 1.1 | 24/04/2026 | Detalhamento de escopo, metodologia e despesas. | Manus AI |
+| Versão | Descrição |
+| :--- | :--- |
+|Nome do Projeto:| E-Project | 
+|Versão | 1.0 | 
+|Status: |Em desenvolvimento| 
+|Executor Principal: | Jean Carlos dos Santos Baraúna | 
+|Coordenador do Projeto:|Prof. Andrey Antonio de Oliveira Rodrigues| 
 
 ---
 
