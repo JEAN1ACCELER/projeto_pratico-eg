@@ -2,7 +2,7 @@
 
 ## HISTÓRICO DE VERSÕES
 
-| Versão | Descrição |
+| Campo | Descrição |
 | :--- | :--- |
 |Nome do Projeto:| E-Project | 
 |Versão | 1.0 | 
