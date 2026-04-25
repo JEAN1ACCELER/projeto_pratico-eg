@@ -71,7 +71,7 @@ O projeto será conduzido utilizando a metodologia ágil **Scrum**, organizada e
 | Integrante | Papel | Responsabilidades |
 | :--- | :--- | :--- |
 | [Jean Carlos] | Scrum Master | Garantir a aplicação do método ágil e remover impedimentos. |
-| [Ricky Brendon] | Product Owner | Definir prioridades do backlog e validar entregas. |
+| [Ricky Brendon] | Product Owner | Definir prioridades do backlog. |
 | [Nome 3] | Desenvolvedor Front-end | Implementar a interface PWA e acessibilidade. |
 | [Nome 4] | Desenvolvedor Back-end | Gerenciar banco de dados e integrações de API. |
 | [Jean Carlos] | Designer UX/UI | Criar protótipos e garantir a usabilidade. |
