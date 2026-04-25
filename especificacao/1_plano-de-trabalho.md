@@ -70,11 +70,11 @@ O projeto será conduzido utilizando a metodologia ágil **Scrum**, organizada e
 ### 3.2 Equipe de Projeto: Papéis e Responsabilidades
 | Integrante | Papel | Responsabilidades |
 | :--- | :--- | :--- |
-| [Nome 1] | Scrum Master | Garantir a aplicação do método ágil e remover impedimentos. |
+| [Jean Carlos] | Scrum Master | Garantir a aplicação do método ágil e remover impedimentos. |
 | [Nome 2] | Product Owner | Definir prioridades do backlog e validar entregas. |
 | [Nome 3] | Desenvolvedor Front-end | Implementar a interface PWA e acessibilidade. |
 | [Nome 4] | Desenvolvedor Back-end | Gerenciar banco de dados e integrações de API. |
-| [Nome 5] | Designer UX/UI | Criar protótipos e garantir a usabilidade. |
+| [Jean Carlos] | Designer UX/UI | Criar protótipos e garantir a usabilidade. |
 | [Nome 6] | Analista de QA | Realizar testes e garantir a qualidade da documentação. |
 
 ---
@@ -88,14 +88,18 @@ O projeto será conduzido utilizando a metodologia ágil **Scrum**, organizada e
 *   Softwares de código aberto e camadas gratuitas (Free Tier) de serviços cloud.
 *   **Custo Estimado:** R$ 0,00.
 
-#### 4.1.2 Materiais de Consumo
-*   Papelaria básica para sessões de brainstorming presenciais (opcional).
-*   **Custo Estimado:** R$ 50,00.
+#### 4.1.2 Plano do Figema Interprise
+* Acesso Full 
+* Áreas de trabalho de equipe personalizadas
+* Temas de design system e APIs
+* Gestão de acessos SCIM
+* US$ 90/mês cerca de R$ 447,561
+
 
 #### 4.1.3 Treinamento
 *   Auto-treinamento via documentação oficial das tecnologias e cursos gratuitos.
 *   **Custo Estimado:** R$ 0,00.
 
 ### 4.2 Resumo Financeiro e Valor Total
-O projeto será desenvolvido com custo financeiro direto mínimo, aproveitando recursos já disponíveis e ferramentas gratuitas para estudantes.
-*   **Valor Total Estimado:** R$ 50,00 (Custo simbólico de materiais).
+* O projeto será desenvolvido com custo financeiro direto mínimo, aproveitando recursos já disponíveis e ferramentas gratuitas para estudantes.
+*   **Valor Total Estimado:**  R$ 447,561 (Custo simbólico de materiais).
