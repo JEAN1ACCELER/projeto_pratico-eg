@@ -44,27 +44,3 @@ Este documento detalha o planejamento e acompanhamento das atividades do **Sprin
 *   **Protótipo Figma:** [[Inserir Link Aqui](https://www.figma.com/proto/lLDopNGZcEgvP0ihCUu2W0/E-Project?node-id=0-1&t=FFoP3knuMqYur20V-1)]
 
 ---
-
-iusabidubaudibsjdnaj
-ssadsdsadasdas
-asdasdsadasdsaf
-sadasdasfasf
-sadsfafsafasfas
-safasfasfsafs
-fsafasfsa
-safasfasfasf
-fsafasfsfas
-fsasffas
-as
-fsfasafs
-fasfas
-afs
-afsasf
-asd
-asdadsa
-dsad
-safdsfsfafassasf
-asfsaf
-safsa
-saassafasf
-
