@@ -59,23 +59,23 @@ O **E-Project**: um sistema PWA de gestão de projetos acadêmicos que centraliz
 
 ## 3. Conhecendo o usuário – Persona
 
-### 3.1 Persona de Profissional (Acessibilidade)
-**Nome:** Marcos, 45 anos.
-**Perfil:** Técnico administrativo com baixa visão.
-**Necessidade:** Precisa extrair relatórios de projetos para auditoria interna, mas tem dificuldade com interfaces que possuem baixo contraste ou fontes pequenas. Busca uma ferramenta que respeite as normas de acessibilidade (WCAG).
+### 3.1 Persona de Professor (Acessibilidade)
+**Nome:** Victor Antunes, 45 anos.
+**Perfil:** Professor com baixa visão.
+**Necessidade:** Como ele orienta projetos (como PIBIC e PACE) e avalia entregas constantes, precisa que a tela de análise de relatórios seja totalmente responsiva ao zoom de tela.
 
 ### 3.2 Persona de Voluntário
-**Nome:** Juliana, 19 anos.
+**Nome:** Ana Beatriz, 19 anos.
 **Perfil:** Aluna voluntária de iniciação científica.
-**Necessidade:** Diferente dos bolsistas, Juliana concilia a pesquisa com um estágio externo. Ela precisa de notificações claras e um cronograma simples para não se perder nas entregas, já que não possui a mesma carga horária dedicada dos bolsistas.
+**Necessidade:** Diferente dos bolsistas, Ana Beatriz concilia a pesquisa com um estágio externo. Ela precisa de notificações claras e um cronograma simples para não se perder nas entregas, já que não possui a mesma carga horária dedicada dos bolsistas.
 
-### 3.3 Persona de Suporte
-**Nome:** Felipe, 28 anos.
+### 3.3 Persona de Suporte 
+**Nome:** Eduardo, 28 anos.
 **Perfil:** Monitor de laboratório ou suporte técnico.
 **Necessidade:** Responsável por auxiliar professores e alunos no uso de novas ferramentas. Precisa de um sistema estável, com documentação clara e que minimize chamados de erro por complexidade de interface.
 
-### 3.4 Professor
-**Nome:** Dr. Augusto, 52 anos.
+### 3.4 Professor Orirntador
+**Nome:** Dr. Carlos Mendonça, 52 anos.
 **Perfil:** Pesquisador Produtividade com 12 orientandos.
 **Necessidade:** Visão macro de todos os projetos. Ele não quer saber os detalhes de cada clique, mas sim quem está atrasado, quais editais abriram e se os relatórios parciais já foram revisados para assinatura.
 
