@@ -25,6 +25,8 @@ O **E-Project**: um sistema PWA de gestão de projetos acadêmicos que centraliz
 
 ### 2.1 Análise SWOT
 
+<img width="1920" height="1080" alt="Azul Turquesa (1)" src="https://github.com/user-attachments/assets/6c04e2c7-e067-4375-becc-1e0198204c43" />
+
 | **Forças (Strengths)** | **Fraquezas (Weaknesses)** |
 | :--- | :--- |
 | - Especialização no fluxo da UFAM.<br>- Acessibilidade nativa.<br>- Templates pré-configurados. | - Dependência de alimentação manual de dados externos.<br>- Equipe de desenvolvimento reduzida. |
