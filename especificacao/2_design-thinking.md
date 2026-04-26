@@ -59,25 +59,35 @@ O **E-Project**: um sistema PWA de gestão de projetos acadêmicos que centraliz
 
 ## 3. Conhecendo o usuário – Persona
 
+## 3. Conhecendo o usuário – Persona
+
 ### 3.1 Persona de Professor (Acessibilidade)
 **Nome:** Victor Antunes, 45 anos.
 **Perfil:** Professor com baixa visão.
 **Necessidade:** Como ele orienta projetos (como PIBIC e PACE) e avalia entregas constantes, precisa que a tela de análise de relatórios seja totalmente responsiva ao zoom de tela.
+<img width="514" height="720" alt="image" src="https://github.com/user-attachments/assets/5c5aa091-52c4-45ef-b5a7-71811d2ca11f" />
+
 
 ### 3.2 Persona de Voluntário
 **Nome:** Ana Beatriz, 19 anos.
 **Perfil:** Aluna voluntária de iniciação científica.
 **Necessidade:** Diferente dos bolsistas, Ana Beatriz concilia a pesquisa com um estágio externo. Ela precisa de notificações claras e um cronograma simples para não se perder nas entregas, já que não possui a mesma carga horária dedicada dos bolsistas.
+<img width="785" height="878" alt="image" src="https://github.com/user-attachments/assets/044a297e-83bc-4afb-934a-450da4546ce6" />
+
 
 ### 3.3 Persona de Suporte 
 **Nome:** Eduardo, 28 anos.
 **Perfil:** Monitor de laboratório ou suporte técnico.
 **Necessidade:** Responsável por auxiliar professores e alunos no uso de novas ferramentas. Precisa de um sistema estável, com documentação clara e que minimize chamados de erro por complexidade de interface.
+<img width="749" height="886" alt="image" src="https://github.com/user-attachments/assets/1789ab53-97ed-4855-b9b3-642d9f44a035" />
+
 
 ### 3.4 Professor Orientador
 **Nome:** Dr. Carlos Mendonça, 52 anos.
 **Perfil:** Pesquisador Produtividade com 12 orientandos.
 **Necessidade:** Visão macro de todos os projetos. Ele não quer saber os detalhes de cada clique, mas sim quem está atrasado, quais editais abriram e se os relatórios parciais já foram revisados para assinatura.
+<img width="752" height="868" alt="image" src="https://github.com/user-attachments/assets/1e979ae5-c7f8-4ff0-8fa9-e600a211119a" />
+
 
 ---
 
