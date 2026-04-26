@@ -35,8 +35,10 @@ O **E-Project**: um sistema PWA de gestão de projetos acadêmicos que centraliz
 
 ### 2.2 Identificações Visuais de Soluções Existentes
 1.  **Trello:** Interface de cartões genérica, exige configuração manual pesada para o contexto acadêmico.
-2.  **Notion:** Extremamente flexível, mas com curva de aprendizado alta para usuários menos técnicos.
-3.  **E-campus (UFAM):** Sistema oficial focado em protocolo, com interface datada e sem ferramentas de gestão de tarefas diárias.
+2.  <img width="1905" height="944" alt="image" src="https://github.com/user-attachments/assets/5a8186a7-6111-4d3d-b84d-1e090af86f61" />
+
+3.  **Notion:** Extremamente flexível, mas com curva de aprendizado alta para usuários menos técnicos.
+4.  **E-campus (UFAM):** Sistema oficial focado em protocolo, com interface datada e sem ferramentas de gestão de tarefas diárias.
 
 ### 2.3 Quadro Comparativo de Soluções Existentes
 | Critério | Trello | Notion | E-campus | E-Project |
