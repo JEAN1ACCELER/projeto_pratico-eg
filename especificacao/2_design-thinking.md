@@ -74,7 +74,7 @@ O **E-Project**: um sistema PWA de gestão de projetos acadêmicos que centraliz
 **Perfil:** Monitor de laboratório ou suporte técnico.
 **Necessidade:** Responsável por auxiliar professores e alunos no uso de novas ferramentas. Precisa de um sistema estável, com documentação clara e que minimize chamados de erro por complexidade de interface.
 
-### 3.4 Professor Orirntador
+### 3.4 Professor Orientador
 **Nome:** Dr. Carlos Mendonça, 52 anos.
 **Perfil:** Pesquisador Produtividade com 12 orientandos.
 **Necessidade:** Visão macro de todos os projetos. Ele não quer saber os detalhes de cada clique, mas sim quem está atrasado, quais editais abriram e se os relatórios parciais já foram revisados para assinatura.
