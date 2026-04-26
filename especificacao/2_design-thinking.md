@@ -5,6 +5,7 @@ Este documento detalha os artefatos gerados durante a fase de inspiração e ide
 ---
 
 ## 1. Enquadramento do Problema – Golden Circle
+<img width="553" height="532" alt="image" src="https://github.com/user-attachments/assets/9c1c6b7b-184a-49f6-b626-367c903a0264" />
 
 O Golden Circle ajuda a alinhar o propósito da equipe com a entrega final, garantindo que a solução resolva uma dor real.
 
