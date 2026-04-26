@@ -42,23 +42,25 @@ A documentação técnica do projeto é organizada na pasta `especificacao/`, se
 ## 👥 Equipe do Projeto
 | Nome | Papel |
 | :--- | :--- |
-| **Integrante 1** | Scrum Master / Líder |
-| **Integrante 2** | Back-end / Banco de Dados |
-| **Integrante 3** | Front-end / Integração |
-| **Integrante 4** | Design / UX |
-| **Integrante 5** | Backlog / Histórias de Usuário |
-| **Integrante 6** | QA / Documentação |
+| **Jean Carlos** | Scrum Master / Líder |
+| **Luzineia** | Front-end / Integração |
+| **Pedro** | Design / UX |
+| **Ricky Brendon** | Backlog / Histórias de Usuário |
+| **Gustavo Souza** | QA / Documentação |
 
 > ⚠️ *Substituir pelos nomes e papéis reais dos integrantes.*
 
 ## 🔗 Links de Gestão
 * [Sessão de Brainstorming (Notion)](#)
-* [Tabela de Daily Scrum (Notion)](#)
+* [Tabela de Daily Scrum (Notion)](https://www.notion.so/Daily-34d37ff22f25803fa453ee67ec46a3a6)
 * [Quadro Backlog do Produto (GitHub Projects)](#)
 * [Quadro Backlog do Sprint (GitHub Projects)](#)
 
 ## 🛠️ Tecnologias Utilizadas
-*(Lista de tecnologias a serem preenchidas, ex: React, Firebase, Node.js)*
-
+* Make my persona
+* Figma
+* Gemini
+* Notion
+* Canva
 ---
-**Universidade Federal do Amazonas — ICET | Engenharia de Software I | 2025/02**
+**Universidade Federal do Amazonas — ICET | Engenharia de Software A | 2026/04**
