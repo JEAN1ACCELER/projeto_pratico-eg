@@ -72,10 +72,9 @@ O projeto será conduzido utilizando a metodologia ágil **Scrum**, organizada e
 | :--- | :--- | :--- |
 | [Jean Carlos] | Scrum Master | Garantir a aplicação do método ágil e remover impedimentos. |
 | [Ricky Brendon] | Product Owner | Definir prioridades do backlog. |
-| [Nome 3] | Desenvolvedor Front-end | Implementar a interface PWA e acessibilidade. |
-| [Nome 4] | Desenvolvedor Back-end | Gerenciar banco de dados e integrações de API. |
-| [Jean Carlos] | Designer UX/UI | Criar protótipos e garantir a usabilidade. |
-| [Nome 6] | Analista de QA | Realizar testes e garantir a qualidade da documentação. |
+| [Luzineia] | Desenvolvedor Front-end | Implementar a interface PWA e acessibilidade. |
+| [Pedro] | Designer UX/UI | Criar protótipos e garantir a usabilidade. |
+| [Gustavo Souza] | Analista de QA | Realizar testes e garantir a qualidade da documentação. |
 
 ---
 
