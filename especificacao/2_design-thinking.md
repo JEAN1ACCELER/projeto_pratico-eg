@@ -1,4 +1,4 @@
-# Fase I – Inspiração (Design Thinking) - E-Project
+<img width="1910" height="911" alt="image" src="https://github.com/user-attachments/assets/2794d3e9-cee9-470d-b98f-7d5fd0a5cfd8" /># Fase I – Inspiração (Design Thinking) - E-Project
 
 Este documento detalha os artefatos gerados durante a fase de inspiração e ideação do projeto E-Project, utilizando metodologias de Design Thinking para alinhar o propósito da solução às necessidades dos usuários.
 
@@ -36,13 +36,20 @@ O **E-Project**: um sistema PWA de gestão de projetos acadêmicos que centraliz
 ### 2.2 Identificações Visuais de Soluções Existentes
 
 2.2.1  **Trello:** Interface de cartões genérica, exige configuração manual pesada para o contexto acadêmico.
+
  <img width="1905" height="944" alt="image" src="https://github.com/user-attachments/assets/5a8186a7-6111-4d3d-b84d-1e090af86f61" />
+
 
 2.2.2  **Notion:** Extremamente flexível, mas com curva de aprendizado alta para usuários menos técnicos.
 
  <img width="1911" height="916" alt="image" src="https://github.com/user-attachments/assets/3096e69e-bc58-4e2d-b52b-cc87254675f5" />
 
+
 2.2.3  **E-campus (UFAM):** Sistema oficial focado em protocolo, com interface datada e sem ferramentas de gestão de tarefas diárias.
+
+<img width="1907" height="937" alt="image" src="https://github.com/user-attachments/assets/0785e50b-59ee-4458-a0e1-aacb09e58080" />
+
+
 
 ### 2.3 Quadro Comparativo de Soluções Existentes
 | Critério | Trello | Notion | E-campus | E-Project |
