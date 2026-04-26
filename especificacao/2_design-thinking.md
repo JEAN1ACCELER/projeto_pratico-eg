@@ -1,7 +1,3 @@
-<img width="1910" height="911" alt="image" src="https://github.com/user-attachments/assets/2794d3e9-cee9-470d-b98f-7d5fd0a5cfd8" /># Fase I – Inspiração (Design Thinking) - E-Project
-
-Este documento detalha os artefatos gerados durante a fase de inspiração e ideação do projeto E-Project, utilizando metodologias de Design Thinking para alinhar o propósito da solução às necessidades dos usuários.
-
 ---
 
 ## 1. Enquadramento do Problema – Golden Circle
