@@ -48,7 +48,6 @@ A documentação técnica do projeto é organizada na pasta `especificacao/`, se
 | **Ricky Brendon** | Backlog / Histórias de Usuário |
 | **Gustavo Souza** | QA / Documentação |
 
-> ⚠️ *Substituir pelos nomes e papéis reais dos integrantes.*
 
 ## 🔗 Links de Gestão
 * [Sessão de Brainstorming (Notion)](#)
