@@ -53,7 +53,7 @@ A documentação técnica do projeto é organizada na pasta `especificacao/`, se
 ## 🔗 Links de Gestão
 * [Sessão de Brainstorming (Notion)](#)
 * [Tabela de Daily Scrum (Notion)](https://www.notion.so/Daily-34d37ff22f25803fa453ee67ec46a3a6)
-* [Quadro Backlog do Produto (GitHub Projects)](#)
+* [Quadro Backlog do Produto (GitHub Projects)](https://github.com/users/JEAN1ACCELER/projects/2/views/2)
 * [Quadro Backlog do Sprint (GitHub Projects)](#)
 
 ## 🛠️ Tecnologias Utilizadas
