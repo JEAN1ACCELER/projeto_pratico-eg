@@ -2,7 +2,7 @@
 
 ## 1. HISTÓRIAS DE USUÁRIO (USER STORIES)
 
-O detalhamento completo (Critérios de Aceitação e Regras de Negócio) das 17 histórias principais encontra-se no [Quadro do GitHub Projects](https://github.com/users/JEAN1ACCELER/projects/1)
+O detalhamento completo (Critérios de Aceitação e Regras de Negócio) das 17 histórias principais encontra-se no [Quadro do GitHub Projects](https://github.com/users/JEAN1ACCELER/projects/2)
 
 | ID | História de Usuário | Persona(s) | Prioridade | Assignee |
 |:---|:---|:---|:---|:---|
