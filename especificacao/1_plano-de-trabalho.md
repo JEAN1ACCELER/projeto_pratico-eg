@@ -83,9 +83,9 @@ O projeto será conduzido utilizando a metodologia ágil **Scrum**, organizada e
 ### 4.1 Dispêndios
 
 #### 4.1.1 Equipamentos e Programa de Computador
-*   Uso de equipamentos próprios dos integrantes (Notebooks).
+*   Uso de equipamentos dedicados (Notebooks).
 *   Softwares de código aberto e camadas gratuitas (Free Tier) de serviços cloud.
-*   **Custo Estimado:** R$ 0,00.
+*   **Custo Estimado:** R$9,000.
 
 #### 4.1.2 Plano do Figema Interprise
 * Acesso Full 
@@ -96,9 +96,9 @@ O projeto será conduzido utilizando a metodologia ágil **Scrum**, organizada e
 
 
 #### 4.1.3 Treinamento
-*   Auto-treinamento via documentação oficial das tecnologias e cursos gratuitos.
-*   **Custo Estimado:** R$ 0,00.
+*   Treinamento via documentação oficial das tecnologias e cursos gratuitos.
+*   **Custo Estimado:** R$ 500,0.
 
 ### 4.2 Resumo Financeiro e Valor Total
 * O projeto será desenvolvido com custo financeiro direto mínimo, aproveitando recursos já disponíveis e ferramentas gratuitas para estudantes.
-*   **Valor Total Estimado:**  R$ 447,561 (Custo simbólico de materiais).
+*   **Valor Total Estimado:**  R$ 9947,561 (Custo simbólico de materiais).
