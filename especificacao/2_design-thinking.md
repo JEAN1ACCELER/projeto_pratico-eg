@@ -61,7 +61,7 @@ O **E-Project**: um sistema PWA de gestão de projetos acadêmicos que centraliz
 
 Para garantir que o **E-Project** atenda às diversas necessidades de seus usuários, foram desenvolvidas três personas detalhadas, abrangendo aspectos de acessibilidade, o perfil do professor e o do aluno. Essas personas guiarão o desenvolvimento para criar uma plataforma inclusiva, eficiente e relevante.
 
-### 3.1 Persona de Acessibilidade: Professor Victor Antunes
+### 3.1 Persona de Acessibilidade:Victor Antunes
 
 **Nome:** Victor Antunes
 **Idade:** 45 anos
