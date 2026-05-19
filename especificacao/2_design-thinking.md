@@ -38,7 +38,7 @@ O **E-Project**: um sistema PWA de gestão de projetos acadêmicos que centraliz
 
 2.2.2  **Notion:** Extremamente flexível, mas com curva de aprendizado alta para usuários menos técnicos.
 
- <img width="1911" height="916" alt="image" src="https://github.com/user-attachments/assets/3096e69e-bc58-4e2d-b52b-cc87254675f5" />
+ <img width="1911" height="916" alt="image" src="https://github.com/user-attachments/assets/3096e69e-bc52-4e2d-b52b-cc87254675f5" />
 
 
 2.2.3  **E-campus (UFAM):** Sistema oficial focado em protocolo, com interface datada e sem ferramentas de gestão de tarefas diárias.
@@ -57,37 +57,101 @@ O **E-Project**: um sistema PWA de gestão de projetos acadêmicos que centraliz
 
 ---
 
-## 3. Conhecendo o usuário – Persona
+## 3. Conhecendo o usuário – Personas Aprimoradas
 
-## 3. Conhecendo o usuário – Persona
+Para garantir que o **E-Project** atenda às diversas necessidades de seus usuários, foram desenvolvidas três personas detalhadas, abrangendo aspectos de acessibilidade, o perfil do professor e o do aluno. Essas personas guiarão o desenvolvimento para criar uma plataforma inclusiva, eficiente e relevante.
 
-### 3.1 Persona de Professor (Acessibilidade)
-**Nome:** Victor Antunes, 45 anos.
-**Perfil:** Professor com baixa visão.
-**Necessidade:** Como ele orienta projetos (como PIBIC e PACE) e avalia entregas constantes, precisa que a tela de análise de relatórios seja totalmente responsiva ao zoom de tela.
+### 3.1 Persona de Acessibilidade: Professor Victor Antunes
+
+**Nome:** Victor Antunes
+**Idade:** 45 anos
+**Ocupação:** Professor Universitário e Orientador de Projetos (PIBIC, PACE)
+**Perfil:** Victor é um professor dedicado com baixa visão. Ele utiliza ferramentas de acessibilidade, como zoom de tela e leitores de tela, para interagir com sistemas digitais. Sua principal preocupação é a clareza e a adaptabilidade das interfaces para que sua condição visual não comprometa sua produtividade acadêmica.
+
+**Objetivos:**
+*   Gerenciar e acompanhar múltiplos projetos de pesquisa e extensão de forma eficiente.
+*   Avaliar relatórios e documentos com precisão, sem esforço visual excessivo.
+*   Manter-se atualizado sobre editais, prazos e comunicações institucionais.
+*   Colaborar com orientandos e colegas de forma acessível.
+
+**Desafios:**
+*   Interfaces de usuário com baixo contraste, fontes pequenas ou ilegíveis.
+*   Navegação complexa ou que exige precisão visual (ex: menus suspensos pequenos).
+*   Falta de compatibilidade com tecnologias assistivas (leitores de tela, lupas digitais).
+*   Documentos e formulários não acessíveis que dificultam o preenchimento e a revisão.
+
+**Necessidades:**
+*   Interface com opções de alto contraste e tamanhos de fonte ajustáveis.
+*   Suporte robusto para zoom de tela e navegação por teclado.
+*   Compatibilidade total com leitores de tela, com elementos bem rotulados.
+*   Feedback claro (visual e, se possível, auditivo) para ações e erros.
+*   Relatórios e dashboards com informações estruturadas e legíveis, adaptáveis a diferentes níveis de zoom.
+
+**Citação:** _"Minha paixão pela pesquisa é imensa, mas a burocracia e as ferramentas inacessíveis me exaurem. Preciso de uma plataforma que se adapte à minha visão, não o contrário, para que eu possa focar no que realmente importa: a ciência."_
+
 <img width="514" height="720" alt="image" src="https://github.com/user-attachments/assets/5c5aa091-52c4-45ef-b5a7-71811d2ca11f" />
 
+### 3.2 Persona de Professor: Dr. Carlos Mendonça
 
-### 3.2 Persona de Voluntário
-**Nome:** Ana Beatriz, 19 anos.
-**Perfil:** Aluna voluntária de iniciação científica.
-**Necessidade:** Diferente dos bolsistas, Ana Beatriz concilia a pesquisa com um estágio externo. Ela precisa de notificações claras e um cronograma simples para não se perder nas entregas, já que não possui a mesma carga horária dedicada dos bolsistas.
-<img width="785" height="878" alt="image" src="https://github.com/user-attachments/assets/044a297e-83bc-4afb-934a-450da4546ce6" />
+**Nome:** Dr. Carlos Mendonça
+**Idade:** 52 anos
+**Ocupação:** Pesquisador Produtividade e Orientador (12 orientandos)
+**Perfil:** Dr. Carlos é um professor experiente e altamente produtivo, com uma grande carga de orientações em diversas modalidades (PIBIC, PIBITI, PIBEX, Pós-Graduação). Ele valoriza a eficiência e a capacidade de ter uma visão estratégica de todos os seus projetos, sem se perder em detalhes operacionais.
 
+**Objetivos:**
+*   Ter uma visão macro e atualizada do progresso de todos os seus orientandos e projetos.
+*   Identificar rapidamente quais alunos estão atrasados ou precisam de atenção.
+*   Gerenciar prazos de editais e entregas de forma centralizada.
+*   Reduzir o tempo gasto com tarefas administrativas e burocráticas.
+*   Garantir a qualidade e a conformidade dos relatórios e documentos.
 
-### 3.3 Persona de Suporte 
-**Nome:** Eduardo, 28 anos.
-**Perfil:** Monitor de laboratório ou suporte técnico.
-**Necessidade:** Responsável por auxiliar professores e alunos no uso de novas ferramentas. Precisa de um sistema estável, com documentação clara e que minimize chamados de erro por complexidade de interface.
-<img width="749" height="886" alt="image" src="https://github.com/user-attachments/assets/1789ab53-97ed-4855-b9b3-642d9f44a035" />
+**Desafios:**
+*   Dificuldade em consolidar informações de múltiplos projetos e alunos, que muitas vezes utilizam ferramentas diferentes.
+*   Perda de prazos importantes devido à falta de um sistema de alerta eficaz.
+*   Excesso de e-mails e comunicações fragmentadas sobre o status dos projetos.
+*   A necessidade de revisar manualmente muitos documentos antes da assinatura.
 
+**Necessidades:**
+*   Um dashboard intuitivo que apresente o status de todos os projetos e orientandos de forma clara.
+*   Alertas e notificações personalizáveis para prazos e entregas pendentes.
+*   Ferramentas de automação para a geração e revisão de documentos.
+*   Um sistema que permita a visualização rápida de quem está atrasado e o que precisa ser feito.
+*   Integração com sistemas institucionais para evitar a redigitação de dados.
 
-### 3.4 Professor Orientador
-**Nome:** Dr. Carlos Mendonça, 52 anos.
-**Perfil:** Pesquisador Produtividade com 12 orientandos.
-**Necessidade:** Visão macro de todos os projetos. Ele não quer saber os detalhes de cada clique, mas sim quem está atrasado, quais editais abriram e se os relatórios parciais já foram revisados para assinatura.
+**Citação:** _"Com tantos projetos e alunos, preciso de um copiloto digital que me dê a visão geral e me avise o que é crítico. Não quero saber de cada clique, mas sim se meus alunos estão no caminho certo e se os prazos serão cumpridos."_
+
 <img width="752" height="868" alt="image" src="https://github.com/user-attachments/assets/1e979ae5-c7f8-4ff0-8fa9-e600a211119a" />
 
+### 3.3 Persona de Aluno: Ana Beatriz
+
+**Nome:** Ana Beatriz
+**Idade:** 19 anos
+**Ocupação:** Aluna de Iniciação Científica (Voluntária)
+**Perfil:** Ana Beatriz é uma aluna engajada que concilia seus estudos e a iniciação científica voluntária com um estágio externo. Ela é organizada, mas sua rotina multitarefas exige que as ferramentas que utiliza sejam claras, diretas e a ajudem a priorizar suas atividades, evitando sobrecarga e esquecimento de prazos.
+
+**Objetivos:**
+*   Gerenciar suas tarefas e prazos da iniciação científica de forma simples e visual.
+*   Receber notificações claras sobre entregas e reuniões.
+*   Acessar materiais e templates de forma rápida e intuitiva.
+*   Colaborar com seu orientador e colegas de pesquisa sem complicações.
+*   Evitar a perda de informações importantes ou o esquecimento de tarefas.
+
+**Desafios:**
+*   Dificuldade em conciliar as demandas da pesquisa com outras atividades acadêmicas e profissionais.
+*   Sistemas complexos ou com muitas funcionalidades desnecessárias que geram confusão.
+*   Falta de um cronograma claro e de lembretes eficazes.
+*   A necessidade de buscar informações em diferentes plataformas.
+
+**Necessidades:**
+*   Um cronograma visual e fácil de entender, com todas as tarefas e prazos da pesquisa.
+*   Notificações personalizáveis e claras para lembretes de entregas e eventos.
+*   Acesso rápido a templates de documentos e guias para a pesquisa.
+*   Uma interface intuitiva e sem distrações, focada na produtividade.
+*   Ferramentas de comunicação integradas para facilitar a interação com o orientador e a equipe.
+
+**Citação:** _"Minha vida é uma correria! Preciso de algo que me ajude a organizar a pesquisa sem me dar mais trabalho. Um cronograma claro e lembretes na hora certa são essenciais para eu não me perder."_
+
+<img width="785" height="878" alt="image" src="https://github.com/user-attachments/assets/044a297e-83bc-4afb-934a-450da4546ce6" />
 
 ---
 
