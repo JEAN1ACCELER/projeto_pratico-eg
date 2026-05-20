@@ -67,7 +67,7 @@ Abaixo, apresentamos um comparativo visual e tabular das principais necessidades
 
 #### Gráfico Comparativo de Necessidades
 
-<img src="/home/ubuntu/comparativo_personas.png" alt="Gráfico Comparativo de Necessidades por Persona" />
+<img src="/home/ubuntu/projeto_pratico-eg/especificacao/comparativo_personas.png" alt="Gráfico Comparativo de Necessidades por Persona" />
 
 #### Tabela Comparativa de Necessidades e Desafios
 
@@ -77,8 +77,6 @@ Abaixo, apresentamos um comparativo visual e tabular das principais necessidades
 | **Necessidades Chave** | Interface adaptável, suporte a tecnologias assistivas, feedback claro, relatórios legíveis. | Dashboard intuitivo, alertas personalizáveis, automação de documentos, integração institucional. | Cronograma visual, notificações claras, acesso rápido a templates, interface sem distrações. |
 | **Desafios Principais** | Interfaces inacessíveis, navegação complexa, falta de compatibilidade com TA, documentos não acessíveis. | Consolidação de informações, perda de prazos, comunicação fragmentada, revisão manual de documentos. | Conciliação de demandas, sistemas complexos, falta de cronograma e lembretes eficazes, busca de informações em várias plataformas. |
 | **Citação Resumo** | "Preciso de uma plataforma que se adapte à minha visão, não o contrário." | "Preciso de um copiloto digital que me dê a visão geral e me avise o que é crítico." | "Preciso de algo que me ajude a organizar a pesquisa sem me dar mais trabalho." |
-
-
 
 ### 3.1 Persona de Acessibilidade: Professor Victor Antunes
 
