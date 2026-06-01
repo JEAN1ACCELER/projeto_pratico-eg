@@ -1,0 +1,27 @@
+direction: right
+
+Frontend: "React PWA" {
+  shape: hexagon
+}
+
+Backend: "Node.js/Express" {
+  shape: hexagon
+}
+
+Database: "PostgreSQL" {
+  shape: cylinder
+}
+
+Authentication: "Firebase Auth" {
+  shape: cloud
+}
+
+CI_CD: "GitHub Actions" {
+  shape: square
+}
+
+Frontend -> Backend: "API REST (HTTP/S)"
+Backend -> Database: "SQL"
+Backend -> Authentication: "Autenticação"
+CI_CD -> Frontend: "Deploy"
+CI_CD -> Backend: "Deploy"

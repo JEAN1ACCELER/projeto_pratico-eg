@@ -1,0 +1,37 @@
+direction: right
+
+container Api "API REST (Backend)" {
+  component Controllers "Controllers" {
+    description: "Recebe requisições HTTP, valida entrada, chama serviços."
+    technology: "Express.js"
+  }
+
+  component Services "Services" {
+    description: "Lógica de negócio principal, orquestra operações."
+    technology: "Node.js"
+  }
+
+  component Repositories "Repositories" {
+    description: "Abstrai acesso a dados (CRUD)."
+    technology: "PostgreSQL Client"
+  }
+
+  component Adapters "Adapters" {
+    description: "Encapsula comunicação com serviços externos."
+    technology: "Firebase SDK, Email Client"
+  }
+
+  Controllers -> Services: "Chama"
+  Services -> Repositories: "Acessa dados"
+  Services -> Adapters: "Usa serviços externos"
+  Repositories -> Database: "Interage com DB"
+  Adapters -> ExternalServices: "Interage com serviços externos"
+}
+
+externalsystem Database "Banco de Dados" {
+  description: "PostgreSQL"
+}
+
+externalsystem ExternalServices "Serviços Externos" {
+  description: "Firebase Auth, Sistema de E-mail, Sistema da UFAM"
+}

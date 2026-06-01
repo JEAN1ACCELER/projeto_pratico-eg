@@ -45,6 +45,11 @@ Este documento detalha o planejamento e acompanhamento das atividades do **Sprin
 | T-25   | Pesquisa e análise das soluções similares (Trello, Notion, E-campus)   | Gustavo Souza   | ✅ Concluído     |
 | T-26   | Inserção do quadro comparativo no `2_design-thinking.md`               | Gustavo Souza   | ✅ Concluído     |
 | T-27   | Finalização dos slides com capturas de tela dos sistemas concorrentes  | Gustavo Souza   | ✅ Concluído     |
+| T-28   | Elaboração dos Padrões Arquiteturais e Tech Stack                      | Manus AI        | ✅ Concluído     |
+| T-29   | Criação dos Diagramas C4 (Contexto, Containers, Componentes)           | Manus AI        | ✅ Concluído     |
+| T-30   | Modelagem do Diagrama de Classes UML                                   | Manus AI        | ✅ Concluído     |
+| T-31   | Documentação de Rastreabilidade e Inventário LGPD                      | Manus AI        | ✅ Concluído     |
+| T-32   | Atualização do README e Repositório com Documentos de Arquitetura      | Manus AI        | ✅ Concluído     |
 
 ---
 
@@ -60,6 +65,7 @@ Este documento detalha o planejamento e acompanhamento das atividades do **Sprin
 | 15/04/2026 | Configuração do Backlog do Produto com as 15 histórias e atribuição de integrantes. | Apoiar o refinamento técnico das histórias e iniciar o Backlog do Sprint.  | Nenhum       |
 | 16/04/2026 | Publicação do link de Ideação e consolidação das Dailys no Notion.               | Iniciar a montagem dos slides de arquitetura e tecnologias.                  | Nenhum       |
 | 17/04/2026 | Revisão final do `3_backlog-do-produto.md` com as 17 histórias detalhadas.       | Finalizar os slides da apresentação em conjunto com a equipe.                | Nenhum       |
+| 01/06/2026 | —                                                                                | Elaborar documentação completa de arquitetura (Padrões, C4, UML, LGPD).      | Nenhum       |
 
 ---
 

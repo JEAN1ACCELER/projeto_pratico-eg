@@ -39,6 +39,19 @@ A documentação técnica do projeto é organizada na pasta `especificacao/`, se
 | `3_backlog-do-product.md` | Lista priorizada de Histórias de Usuário com critérios de aceitação. |
 | `4_backlog-do-sprint.md` | Acompanhamento das tarefas individuais e links das Diárias. |
 
+## 🏗️ Arquitetura do Sistema
+A documentação de arquitetura detalhada encontra-se na pasta `projeto-e-arquitetura/`:
+
+| Arquivo | Descrição |
+| :--- | :--- |
+| [`1-padroes-arquiteturais.md`](./projeto-e-arquitetura/1-padroes-arquiteturais.md) | Definição de padrões como Arquitetura em Camadas e MVC. |
+| [`2-tech-stack.md`](./projeto-e-arquitetura/2-tech-stack.md) | Detalhamento das tecnologias (React, Node.js, PostgreSQL, etc). |
+| [`3-c4-contexto.md`](./projeto-e-arquitetura/3-c4-contexto.md) | Diagrama de Contexto C4 e interações com sistemas externos. |
+| [`4-c4-containers.md`](./projeto-e-arquitetura/4-c4-containers.md) | Diagrama de Containers C4 detalhando as aplicações e BD. |
+| [`5-c4-componentes.md`](./projeto-e-arquitetura/5-c4-componentes.md) | Diagrama de Componentes C4 focado nos módulos da API. |
+| [`6-c4-codigo.md`](./projeto-e-arquitetura/6-c4-codigo.md) | Diagrama de Classes UML com atributos, métodos e relações. |
+| [`7-rastreabilidade.md`](./projeto-e-arquitetura/7-rastreabilidade.md) | Rastreabilidade de Histórias de Usuário e Inventário LGPD. |
+
 ## 👥 Equipe do Projeto
 | Nome | Papel |
 | :--- | :--- |
@@ -56,10 +69,12 @@ A documentação técnica do projeto é organizada na pasta `especificacao/`, se
 * [Quadro Backlog do Sprint (GitHub Projects)](https://github.com/users/JEAN1ACCELER/projects/3)
 
 ## 🛠️ Tecnologias Utilizadas
-* Make my persona
-* Figma
-* Gemini
-* Notion
-* Canva
+* **Frontend:** React (PWA)
+* **Backend:** Node.js / Express
+* **Banco de Dados:** PostgreSQL
+* **Autenticação:** Firebase Auth
+* **CI/CD:** GitHub Actions
+* **Design:** Figma, Canva
+* **Documentação:** Notion, Gemini, Manus AI
 ---
 **Universidade Federal do Amazonas — ICET | Engenharia de Software A | 2026/04**
