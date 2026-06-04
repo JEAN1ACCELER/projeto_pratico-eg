@@ -2,22 +2,22 @@
 
 ## 7.1. Rastreabilidade de Histórias de Usuário
 
-A rastreabilidade é fundamental para entender como as funcionalidades do sistema são implementadas através das diferentes camadas da arquitetura. Abaixo, detalhamos o fluxo de três histórias de usuário representativas, mapeando-as aos diagramas C4 e aos componentes internos da API.
+A rastreabilidade é fundamental para compreender como as funcionalidades do sistema são implementadas através das diferentes camadas da arquitetura. Abaixo, detalhamos o fluxo de três histórias de usuário representativas, mapeando-as aos diagramas C4 e aos componentes internos da API.
 
 ### 7.1.1. US-01: Login com matrícula e senha institucional
 
-**Descrição:** Enquanto usuário do E-Project, desejo realizar login com minha matrícula e senha institucional, para acessar meus projetos e funcionalidades de acordo com meu perfil.
+**Descrição:** Enquanto usuário do E-Project, desejo realizar *login* com minha matrícula e senha institucional para acessar meus projetos e funcionalidades de acordo com meu perfil.
 
 **Fluxo Detalhado:**
 1.  O **Usuário (Professor/Estudante)** acessa a **Aplicação Web (PWA)** e insere suas credenciais institucionais.
-2.  A **Aplicação Web (PWA)** envia uma requisição de login para a **API REST (Backend)**.
+2.  A **Aplicação Web (PWA)** envia uma requisição de *login* para a **API REST (Backend)**.
 3.  No **API REST (Backend)**, o **Controller** de autenticação recebe a requisição.
 4.  O **Controller** invoca o **Service** de autenticação.
-5.  O **Service** de autenticação utiliza o **Adapter** do Firebase Authentication para interagir com o **Firebase Authentication** (que por sua vez pode se integrar com o Sistema de Autenticação Institucional - SSO).
+5.  O **Service** de autenticação utiliza o **Adapter** do Firebase Authentication para interagir com o **Firebase Authentication** (que, por sua vez, pode se integrar com o Sistema de Autenticação Institucional - SSO).
 6.  O **Firebase Authentication** valida as credenciais e retorna um token de autenticação para o **Adapter**.
 7.  O **Adapter** retorna o resultado para o **Service**, que o repassa ao **Controller**.
 8.  O **Controller** envia a resposta (sucesso/falha e token) de volta para a **Aplicação Web (PWA)**.
-9.  A **Aplicação Web (PWA)** armazena o token e redireciona o usuário para o dashboard apropriado.
+9.  A **Aplicação Web (PWA)** armazena o *token* e redireciona o usuário para o *dashboard* apropriado.
 
 **Diagramas C4 Envolvidos:**
 *   **Contexto:** Professor/Estudante -> E-Project -> Sistema de Autenticação Institucional (SSO)
@@ -93,8 +93,8 @@ O tratamento de dados pessoais no E-Project tem como finalidade principal a gest
 
 ### 5. Fluxo de Tratamento
 1.  **Coleta:** Dados são coletados no cadastro inicial (via SSO institucional) e durante o uso do sistema (cadastro de projetos, tarefas, submissão de entregas).
-2.  **Armazenamento:** Dados são armazenados no Banco de Dados PostgreSQL e, em alguns casos, em serviços de armazenamento de arquivos (e.g., S3 para documentos e entregas).
-3.  **Uso:** Dados são utilizados para as funcionalidades do sistema (exibição de dashboards, atribuição de tarefas, geração de relatórios).
+2.  **Armazenamento:** Dados são armazenados no Banco de Dados PostgreSQL e, em alguns casos, em serviços de armazenamento de arquivos (por exemplo, S3 para documentos e entregas).
+3.  **Uso:** Dados são utilizados para as funcionalidades do sistema (exibição de *dashboards*, atribuição de tarefas, geração de relatórios).
 4.  **Compartilhamento:** Dados podem ser compartilhados com sistemas externos da UFAM (para validação ou integração) e serviços de e-mail (para notificações).
 5.  **Descarte:** Dados são descartados conforme políticas de retenção de dados da UFAM e requisitos legais.
 
@@ -102,8 +102,8 @@ O tratamento de dados pessoais no E-Project tem como finalidade principal a gest
 *   **Dados de Identificação:** Nome completo, matrícula institucional, e-mail institucional.
 *   **Dados de Contato:** E-mail (institucional).
 *   **Dados Acadêmicos:** Curso, período, departamento, titulação.
-*   **Dados de Projeto:** Título, descrição, modalidade, status, datas.
-*   **Dados de Atividade:** Tarefas atribuídas, entregas submetidas, feedback, presença em reuniões.
+*   **Dados de Projeto:** Título, descrição, modalidade, *status*, datas.
+*   **Dados de Atividade:** Tarefas atribuídas, entregas submetidas, *feedback*, presença em reuniões.
 *   **Dados de Acessibilidade:** Preferências de interface (tamanho da fonte, alto contraste) para usuários com necessidades especiais.
 
 ### 7. Titulares dos Dados
@@ -123,7 +123,7 @@ O tratamento de dados pessoais no E-Project tem como finalidade principal a gest
 *   **Medidas de Segurança:** Contratos com cláusulas de proteção de dados, uso de APIs seguras, criptografia em trânsito.
 
 ### 10. Segurança dos Dados
-*   **Medidas Técnicas:** Criptografia de dados em repouso e em trânsito, controle de acesso baseado em função (RBAC), firewalls, backups regulares, monitoramento de segurança.
+*   **Medidas Técnicas:** Criptografia de dados em repouso e em trânsito, controle de acesso baseado em função (RBAC), *firewalls*, *backups* regulares, monitoramento de segurança.
 *   **Medidas Organizacionais:** Políticas internas de segurança da informação, treinamento de funcionários, acordos de confidencialidade.
 
 ### 11. Direitos dos Titulares
@@ -144,7 +144,7 @@ Os titulares dos dados podem exercer os seguintes direitos, conforme a LGPD:
 *   **Risco:** Vazamento de dados.
     *   **Mitigação:** Criptografia de dados, detecção de intrusão, plano de resposta a incidentes.
 *   **Risco:** Uso indevido de dados por operadores.
-    *   **Mitigação:** Contratos com cláusulas de proteção de dados, monitoramento de logs de acesso.
+    *   **Mitigação:** Contratos com cláusulas de proteção de dados, monitoramento de *logs* de acesso.
 
 ### 13. Consentimento
 O consentimento será coletado de forma clara e explícita quando necessário, informando ao titular sobre a finalidade específica do tratamento. Para dados essenciais à execução do serviço, a base legal será a execução de contrato ou obrigação legal.

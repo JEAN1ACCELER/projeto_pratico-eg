@@ -2,11 +2,11 @@
 
 ## 6.1. Definição Geral do Diagrama de Classes UML
 
-O Diagrama de Classes UML (Unified Modeling Language) é uma representação estática da estrutura de um sistema, mostrando as classes, seus atributos, métodos e os relacionamentos entre elas [1]. É uma ferramenta fundamental para a modelagem orientada a objetos, permitindo que desenvolvedores e arquitetos visualizem a organização do código, identifiquem as principais entidades e compreendam como elas interagem. Este diagrama serve como um blueprint para a implementação do código, garantindo consistência e clareza na estrutura do software.
+O **Diagrama de Classes UML** (*Unified Modeling Language*) é uma representação estática da estrutura de um sistema, exibindo as classes, seus atributos, métodos e os relacionamentos entre elas [1]. É uma ferramenta fundamental para a modelagem orientada a objetos, permitindo que desenvolvedores e arquitetos visualizem a organização do código, identifiquem as principais entidades e compreendam suas interações. Este diagrama serve como um *blueprint* para a implementação do código, garantindo consistência e clareza na estrutura do software.
 
 ## 6.2. Mapeamento das Classes Principais do E-Project
 
-Com base nas funcionalidades do E-Project e nas entidades identificadas no backlog, as classes principais e seus elementos são:
+Com base nas funcionalidades do E-Project e nas entidades identificadas no *backlog*, as classes principais e seus elementos são:
 
 ### Classes
 
@@ -62,18 +62,12 @@ Com base nas funcionalidades do E-Project e nas entidades identificadas no backl
     *   Um `Usuario` pode receber múltiplas `Notificacao`s.
     *   Um `Projeto` pode gerar múltiplos `Documento`s.
 
-## 6.4. Diagrama de Classes Completo
-
-[Será inserido o diagrama D2 aqui]
-
 ## 6.5. Explicação do Diagrama
 
-O Diagrama de Classes UML do E-Project apresenta as principais entidades do sistema e como elas se relacionam. A classe `Usuario` é a base para `Professor` e `Estudante`, demonstrando o conceito de herança. As associações mostram como projetos, orientações, tarefas, entregas, documentos e notificações estão interligados, formando a estrutura de dados e lógica de negócio do sistema. Cada classe possui atributos que representam suas características e métodos que definem seu comportamento, refletindo as funcionalidades descritas no backlog.
+O Diagrama de Classes UML do E-Project apresenta as principais entidades do sistema e seus relacionamentos. A classe `Usuario` serve como base para `Professor` e `Estudante`, demonstrando o conceito de herança. As associações ilustram como projetos, orientações, tarefas, entregas, documentos e notificações estão interligados, formando a estrutura de dados e a lógica de negócio do sistema. Cada classe possui atributos que representam suas características e métodos que definem seu comportamento, refletindo as funcionalidades descritas no *backlog*.
 
 ## Referências
 [1] UML Class Diagram Tutorial - Visual Paradigm. Disponível em: [https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/)
-
-## 6.4. Diagrama de Classes Completo
 
 ![Diagrama de Classes UML do E-Project](./e-project-uml-class.png)
 
