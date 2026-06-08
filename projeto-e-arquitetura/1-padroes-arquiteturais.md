@@ -199,7 +199,7 @@ Na camada de Aplicação, o controlador recebe a solicitação, valida a autenti
 Após a validação, a camada de Infraestrutura grava os dados no banco PostgreSQL por meio do repositório. Por fim, a API retorna uma resposta de sucesso para a interface, que atualiza a experiência do usuário exibindo uma notificação de confirmação e redirecionando-o para a área de acompanhamento dos projetos cadastrados.
 
 # 4. Figura da Arquitetura:
-
+[deepseek_text_20260608_833373.txt](https://github.com/user-attachments/files/28713226/deepseek_text_20260608_833373.txt)
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                         CAMADA DE APRESENTAÇÃO (Frontend)                    │
 │  ┌─────────────────────────────────────────────────────────────────────┐    │
