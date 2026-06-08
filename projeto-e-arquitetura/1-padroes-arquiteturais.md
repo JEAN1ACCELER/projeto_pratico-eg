@@ -262,3 +262,55 @@ Após a validação, a camada de Infraestrutura grava os dados no banco PostgreS
 **Figura 1 – Arquitetura Geral do E-Project baseada em Arquitetura em Camadas e MVC.**
 
 *Fonte: Elaborado pelo autor (2026).*
+
+## 4.1 Detalhamento dos Componentes da Arquitetura
+
+| Componente | Tecnologia | Responsabilidade Específica no E-Project |
+|------------|------------|------------------------------------------|
+| **View (React)** | React + Tailwind CSS | Renderiza dashboards, quadro Kanban, formulários de cadastro de projetos e tarefas, feed de editais e relatórios acadêmicos. |
+| **Controller (Frontend)** | Redux Thunk / Context API | Gerencia o estado da aplicação, dispara ações assíncronas para a API e trata eventos de interação do usuário, como cliques, submissões de formulários e filtros. |
+| **Controller (Backend)** | Express.js | Recebe requisições REST (`POST`, `GET`, `PUT`, `DELETE`), valida autenticação e permissões dos usuários e encaminha as operações para os serviços correspondentes. |
+| **Service** | Node.js | Implementa os casos de uso do sistema e orquestra operações complexas, como cadastro de projetos, gerenciamento de tarefas, geração de relatórios e envio de notificações. |
+| **Model (Domínio)** | Classes TypeScript | Contém as entidades e regras de negócio da aplicação, incluindo validações de projetos, tarefas, usuários e editais, além do cálculo automático de indicadores e status. |
+| **Repository** | Prisma ORM / TypeORM | Abstrai o acesso ao banco de dados por meio de repositórios, disponibilizando operações de persistência e consulta das entidades do sistema. |
+| **Banco de Dados** | PostgreSQL | Armazena informações de usuários, projetos, tarefas, orientações, editais, relatórios, registros de presença e logs do sistema. |
+| **Autenticação** | Firebase Authentication | Realiza autenticação de usuários por e-mail e senha ou provedores externos, gera e valida tokens JWT e controla perfis de acesso. |
+| **Hospedagem** | Vercel / Netlify | Hospeda o frontend em formato PWA e permite integração contínua com repositórios GitHub para implantação automatizada. |
+
+### Descrição dos Componentes
+
+#### View (React)
+
+A camada de visualização é composta por componentes React responsáveis pela apresentação das informações aos usuários. Essa camada inclui dashboards, quadros Kanban, formulários e telas de acompanhamento de projetos acadêmicos.
+
+#### Controller (Frontend)
+
+Os controladores do frontend coordenam as interações do usuário com a interface, atualizam o estado global da aplicação e realizam chamadas à API backend por meio de requisições HTTP.
+
+#### Controller (Backend)
+
+Os controladores implementados em Express.js recebem as requisições do frontend, realizam validações iniciais e encaminham os dados para os serviços responsáveis pelas regras de negócio.
+
+#### Service
+
+A camada de serviços concentra a lógica de aplicação e os casos de uso do sistema, atuando como intermediária entre os controladores e o domínio.
+
+#### Model (Domínio)
+
+Representa o núcleo do sistema e contém as entidades acadêmicas e suas respectivas regras de negócio, garantindo consistência e integridade dos dados.
+
+#### Repository
+
+Os repositórios encapsulam o acesso ao banco de dados, permitindo que a camada de domínio permaneça desacoplada da tecnologia de persistência utilizada.
+
+#### Banco de Dados
+
+O PostgreSQL é responsável pelo armazenamento persistente de todas as informações gerenciadas pelo sistema.
+
+#### Autenticação
+
+O Firebase Authentication fornece mecanismos de autenticação, autorização e gerenciamento de sessões dos usuários.
+
+#### Hospedagem
+
+A camada de hospedagem disponibiliza a aplicação para acesso externo, utilizando serviços de deploy contínuo integrados ao GitHub.
