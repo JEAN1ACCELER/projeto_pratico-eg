@@ -109,6 +109,32 @@ Essa abordagem segue o princípio destacado por Fowler e Beck:
 
 > "O coração e a parte mais preciosa de MVC está na separação entre código de interface com o usuário e a lógica do domínio."
 
+### 2.5 Fundamentação Teórica Adicional
+
+Para reforçar a escolha dos padrões adotados, apresentam-se as seguintes citações e justificativas baseadas em referências consolidadas:
+
+#### Padrão MVC
+
+> "A utilização do padrão MVC traz como benefício isolar as regras de negócios da lógica de apresentação, a interface com o usuário. Isto possibilita a existência de várias interfaces com o usuário que podem ser modificadas sem que haja a necessidade da alteração das regras de negócios, proporcionando assim muito mais flexibilidade e oportunidades de reuso das classes." [1]
+
+**Por que usar:** O isolamento promovido pelo MVC é fundamental para que o **E-Project** possa evoluir sua interface (ex: migrar de React para outra tecnologia) sem impactar o núcleo de regras de negócio, maximizando o reaproveitamento de código.
+
+> "O padrão de arquitetura MVC determina a organização do software em 3 camadas: Model (manipulação dos dados), View (interação do usuário) e Controller (controle entre Model e View). É uma boa forma de organizar as responsabilidades através do uso de camadas." [2]
+
+**Por que usar:** A organização clara de responsabilidades facilita a colaboração entre desenvolvedores de frontend e backend, garantindo que cada componente do sistema tenha um propósito bem definido e limitado.
+
+#### Arquitetura em Camadas
+
+> "Uma arquitetura em camadas particiona a complexidade envolvida no desenvolvimento de um sistema em componentes menores (as camadas). Como uma segunda vantagem, ela disciplina as dependências entre essas camadas. Isso ajuda no entendimento, manutenção e evolução de um sistema." [3]
+
+**Por que usar:** O particionamento da complexidade é essencial para um sistema de gestão acadêmica como o **E-Project**, que lida com múltiplos perfis e modalidades. Disciplinar as dependências evita o "código espaguete" e torna a manutenção previsível e segura.
+
+---
+**Referências:**
+1. [DevMedia - Padrão MVC](https://www.devmedia.com.br/padrao-mvc-java-magazine/21995)
+2. [Guia.dev - Camadas e Padrões de Arquitetura](https://guia.dev/pt/pillars/software-architecture/layers-and-architecture-patterns.html)
+3. [Engenharia de Software Moderna - Arquitetura em Camadas](https://engsoftmoderna.info/cap7.html)
+
 ## 2.4 Atendimento aos Requisitos Não Funcionais
 
 | Requisito Não Funcional | Como a Arquitetura Atende |
