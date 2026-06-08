@@ -293,6 +293,7 @@ Após a validação, a camada de Infraestrutura grava os dados no banco PostgreS
 
 <img width="516" height="349" alt="Screenshot 2026-06-08 at 11-58-45 Cap  7 Arquitetura – Engenharia de Software Moderna" src="https://github.com/user-attachments/assets/fb78c2c6-3788-491d-a362-c1c859ef0ea9" />
 
+**Figura 2 – Arquitetura MVC.**
 *Fonte: Elaborado por Marco Tulio Valente (2020).*
 
 
@@ -357,6 +358,12 @@ A Arquitetura em Três Camadas é um padrão comum na construção de sistemas d
 
 ### As Três Camadas
 
+<img width="666" height="434" alt="Screenshot 2026-06-08 at 12-36-10 Cap  7 Arquitetura – Engenharia de Software Moderna" src="https://github.com/user-attachments/assets/f0816292-1bc6-4f88-ba02-da705e112e1f" />
+
+**Figura 3 – Arquitetura em Três Camadas.**
+*Fonte: Elaborado por Marco Tulio Valente (2020).*
+
+
 | Camada | Responsabilidade | Exemplo no E-Project |
 | :--- | :--- | :--- |
 | **1. Interface com o Usuário (Apresentação)** | Toda interação com o usuário: exibição de informação, coleta de eventos (cliques, digitação), etc. Pode ser desktop, web ou mobile. | Interface React PWA: dashboards, formulários de projetos, quadro Kanban. |
@@ -374,6 +381,11 @@ A Arquitetura em Três Camadas é um padrão comum na construção de sistemas d
 ## Diferença entre MVC e Três Camadas (Pergunta Frequente)
 
 A confusão entre estes termos é comum. A melhor forma de entendê-los é através de sua **evolução histórica**, que revela que atuam em níveis de abstração diferentes e foram criados para propósitos distintos.
+
+<img width="625" height="364" alt="Screenshot 2026-06-08 at 12-40-37 Cap  7 Arquitetura – Engenharia de Software Moderna" src="https://github.com/user-attachments/assets/5df32f81-601a-40e0-80b7-09aa559f48cd" />
+
+**Figura 4 – Arquitetura MVC Web junatamnete com a trẽs camadas.**
+*Fonte: Elaborado por Marco Tulio Valente (2020).*
 
 ### Resumo Rápido
 
@@ -397,3 +409,4 @@ timeline
         MVC Web     : Frameworks (Spring, Rails, Django) adaptam o MVC
                     : Visão = HTML, Controller = processa requisições, Model = banco de dados
                     : Resultado: Fim da distinção clara (MVC Web = 3 Camadas?)
+
