@@ -340,3 +340,53 @@ O Firebase Authentication fornece mecanismos de autenticação, autorização e 
 #### Hospedagem
 
 A camada de hospedagem disponibiliza a aplicação para acesso externo, utilizando serviços de deploy contínuo integrados ao GitHub.
+# Arquitetura de Software: Três Camadas vs MVC
+
+Este documento resume e compara dois importantes padrões arquiteturais: **Arquitetura em Três Camadas** e **Model-View-Controller (MVC)**, com base na evolução histórica e aplicação em projetos modernos (como o E-Project).
+
+## Arquitetura em Três Camadas
+
+A Arquitetura em Três Camadas é um padrão comum na construção de sistemas de informação corporativos. Ela surgiu com a migração de sistemas de mainframes para plataformas distribuídas, a partir do final da década de 80.
+
+### As Três Camadas
+
+| Camada | Responsabilidade | Exemplo no E-Project |
+| :--- | :--- | :--- |
+| **1. Interface com o Usuário (Apresentação)** | Toda interação com o usuário: exibição de informação, coleta de eventos (cliques, digitação), etc. Pode ser desktop, web ou mobile. | Interface React PWA: dashboards, formulários de projetos, quadro Kanban. |
+| **2. Lógica de Negócio (Aplicação)** | Implementa as regras de negócio do sistema. Validações, cálculos, fluxos de trabalho. | Node.js/Express: regras como "notas entre 0 e valor da avaliação", notificações por e-mail. |
+| **3. Banco de Dados** | Armazena os dados manipulados pelo sistema. | PostgreSQL: tabelas de usuários, projetos, tarefas, orientações. |
+
+### Características Importantes
+
+- **Arquitetura Distribuída:** Normalmente, a camada de interface executa na máquina do cliente, a camada de negócio em um servidor de aplicação, e o banco de dados em um servidor dedicado.
+- **Modularidade:** A camada de aplicação pode conter módulos como fachadas (para facilitar acesso) e persistência (para isolar o banco de dados).
+- **Comparação com 2 camadas:** Em sistemas de duas camadas, a interface e a lógica de negócio são unidas no cliente. A desvantagem é que todo o processamento ocorre no cliente, exigindo maior poder computacional.
+
+---
+
+## Diferença entre MVC e Três Camadas (Pergunta Frequente)
+
+A confusão entre estes termos é comum. A melhor forma de entendê-los é através de sua **evolução histórica**, que revela que atuam em níveis de abstração diferentes e foram criados para propósitos distintos.
+
+### Resumo Rápido
+
+- **Arquitetura em Três Camadas:** É uma **arquitetura de sistema** (macroarquitetura). Preocupa-se com a distribuição física e lógica de um sistema completo (frontend, backend, banco de dados).
+- **Padrão MVC:** É um **padrão de apresentação** (microarquitetura). Preocupa-se com a organização interna da camada de interface com o usuário (como separar o código da tela da lógica de domínio).
+
+### Linha do Tempo e Evolução
+
+```mermaid
+timeline
+    title Evolução Histórica de MVC e 3 Camadas
+    section 1970s
+        MVC Clássico : Criado para o Smalltalk-80
+                    : Foco: Interfaces Gráficas (janelas, botões, mouse)
+                    : Objetivo: Separar Modelo (dados) da Visão (UI) e Controlador (eventos)
+    section 1990s
+        3 Camadas   : Popularizou-se com sistemas distribuídos
+                    : Foco: Separar Apresentação, Lógica e Dados em servidores diferentes
+                    : Uso: MVC é usado *dentro* da camada de apresentação
+    section 2000s
+        MVC Web     : Frameworks (Spring, Rails, Django) adaptam o MVC
+                    : Visão = HTML, Controller = processa requisições, Model = banco de dados
+                    : Resultado: Fim da distinção clara (MVC Web = 3 Camadas?)
