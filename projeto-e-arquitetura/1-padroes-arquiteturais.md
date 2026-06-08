@@ -289,6 +289,12 @@ Após a validação, a camada de Infraestrutura grava os dados no banco PostgreS
 
 *Fonte: Elaborado pelo autor (2026).*
 
+
+<img width="516" height="349" alt="Screenshot 2026-06-08 at 11-58-45 Cap  7 Arquitetura – Engenharia de Software Moderna" src="https://github.com/user-attachments/assets/fb78c2c6-3788-491d-a362-c1c859ef0ea9" />
+
+*Fonte: Elaborado por Marco Tulio Valente (2020).*
+
+
 ## 4.1 Detalhamento dos Componentes da Arquitetura
 
 | Componente | Tecnologia | Responsabilidade Específica no E-Project |
