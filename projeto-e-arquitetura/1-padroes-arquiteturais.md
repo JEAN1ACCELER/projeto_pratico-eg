@@ -287,6 +287,7 @@ Após a validação, a camada de Infraestrutura grava os dados no banco PostgreS
 
 **Figura 1 – Arquitetura Geral do E-Project baseada em Arquitetura em Camadas e MVC.**
 
+---
 *Fonte: Elaborado pelo autor (2026).*
 
 
