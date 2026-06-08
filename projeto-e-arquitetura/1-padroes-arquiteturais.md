@@ -206,13 +206,13 @@ Após a validação, a camada de Infraestrutura grava os dados no banco PostgreS
 │                                                                             │
 │                  MVC (React/Redux)                                          │
 │                                                                             │
-│  ┌─────────────┐   ┌─────────────┐   ┌─────────────────────────────┐         │
-│  │    View     │◄──│ Controller  │──►│            Model            │         │
+│  ┌─────────────┐   ┌─────────────┐   ┌─────────────────────────────┐        │
+│  │    View     │◄──│ Controller  │──►│            Model            │        │
 │  │(Componentes │   │ (Handlers,  │   │   (Redux State / Context)  │         │
 │  │   React)    │   │  Actions)   │   │  - Projetos, Tarefas       │         │
 │  └─────────────┘   └─────────────┘   │  - Autenticação            │         │
 │                                      │  - Filtros                 │         │
-│                                      └─────────────────────────────┘         │
+│                                      └─────────────────────────────┘        │
 │                                                                             │
 │                         HTTP/JSON (REST)                                    │
 └───────────────────────────────┬─────────────────────────────────────────────┘
