@@ -118,3 +118,139 @@ Essa abordagem segue o princípio destacado por Fowler e Beck:
 | **Segurança** | A camada de Aplicação centraliza autenticação (Firebase Auth) e autorização, isolando regras de acesso. |
 | **Disponibilidade** | Camadas independentes permitem arquitetura de alta disponibilidade (ex.: múltiplas instâncias do backend). |
 | **Manutenibilidade** | Dependências disciplinadas e separação de responsabilidades facilitam a correção de bugs e a evolução do sistema. |
+
+# 3. Aplicação no Sistema
+
+## 3.1 Mapeamento do Projeto
+
+| Camada (Arquitetura em Camadas) | Componente MVC | Tecnologia |
+|----------------------------------|---------------|------------|
+| **Apresentação** | View + Controller (parcial) | React + Redux/Context API |
+| **Aplicação** | Controller + Service | Node.js/Express |
+| **Domínio** | Model | Classes TypeScript |
+| **Infraestrutura** | Repository | PostgreSQL, Firebase Auth, Prisma TypeORM |
+
+## 3.2 Aplicação na Camada de Apresentação
+
+Na camada de **Apresentação** do E-Project, o padrão **MVC** é adaptado para o ecossistema React, separando interface, gerenciamento de estado e tratamento de eventos.
+
+### View (Interface)
+
+As *Views* são implementadas por meio de componentes React funcionais responsáveis pela exibição das informações ao usuário. Entre as principais interfaces do sistema destacam-se:
+
+- Dashboard do orientador, contendo cards com projetos ativos e indicadores de acompanhamento;
+- Quadro Kanban de tarefas, organizado nas colunas:
+  - A Fazer;
+  - Em Andamento;
+  - Concluído;
+- Feed de editais com filtros e mecanismos de busca;
+- Formulários para lançamento de notas, frequência e relatórios acadêmicos.
+
+### Model (Estado da Aplicação)
+
+O papel de *Model* é representado pelo gerenciamento de estado da aplicação utilizando **Redux** ou **Context API**.
+
+Os principais dados mantidos no estado incluem:
+
+- Informações de autenticação:
+  - Usuário logado;
+  - Perfil de acesso;
+  - Permissões;
+- Lista de projetos vinculados ao usuário;
+- Lista de tarefas e atividades;
+- Filtros, ordenações e preferências de visualização.
+
+### Controller (Tratamento de Eventos)
+
+O papel de *Controller* é implementado por funções manipuladoras de eventos (*event handlers*), responsáveis por receber as ações do usuário e coordenar atualizações de estado ou comunicação com o backend.
+
+Exemplos:
+
+| Evento | Ação Executada |
+|----------|--------------|
+| Clique no botão **Adicionar Tarefa** | Dispara uma action para atualizar o estado global da aplicação |
+| Alteração do filtro de editais | Atualiza o estado e provoca a re-renderização da interface |
+| Envio do formulário de presença | Realiza uma requisição HTTP para a API backend |
+| Atualização do status de uma tarefa no Kanban | Envia a alteração para o backend e sincroniza o estado local |
+| Login do usuário | Solicita autenticação à API e atualiza o estado de sessão |
+
+Essa adaptação do MVC ao React mantém a separação de responsabilidades entre interface, lógica de interação e dados da aplicação, favorecendo manutenção, reutilização de componentes e testabilidade do sistema.
+
+## 3.3 Fluxo de Funcionalidade: US01 – Cadastrar Projeto
+
+*Adaptado do escopo: "cadastro de projetos, atribuição de tarefas, controle de prazos".*
+
+| Passo | Componente | Ação | Camada |
+|--------|------------|--------|---------|
+| **1** | **View (React)** | Professor acessa o formulário `/projects/new` e preenche os dados do projeto, incluindo título, modalidade (PIBIC, PIBITI, PIBEX, PACE ou Pós-Graduação), data de término e bolsista associado. | Apresentação |
+| **2** | **Controller (React Handler)** | Ao clicar em **Salvar**, o manipulador de eventos coleta os dados do formulário e realiza uma chamada HTTP para `api.post('/projects', data)`. | Apresentação |
+| **3** | **Controller (Express)** | A rota `POST /projects` recebe a requisição e valida o token JWT fornecido pelo serviço de autenticação. | Aplicação |
+| **4** | **Service (Express)** | O controlador aciona o método `ProjectService.createProject(data)`, responsável por aplicar as regras de negócio e validar os dados recebidos. | Aplicação |
+| **5** | **Model (Domínio)** | A entidade `Project` é instanciada e executa validações de domínio, como título obrigatório, modalidade válida e data de término posterior à data atual. | Domínio |
+| **6** | **Repository (Infraestrutura)** | O repositório `ProjectRepository.save(project)` persiste os dados do projeto no banco PostgreSQL. | Infraestrutura |
+| **7** | **Response (Controller → View)** | O backend retorna a resposta **201 Created** com o identificador do projeto. A interface exibe uma mensagem de sucesso e redireciona o usuário para o dashboard. | Apresentação |
+
+### Descrição do Fluxo
+
+O caso de uso **US01 – Cadastrar Projeto** inicia quando o professor acessa a tela de cadastro e informa os dados necessários para a criação de um novo projeto acadêmico. Após o envio do formulário, a camada de Apresentação encaminha os dados para a API por meio de uma requisição HTTP.
+
+Na camada de Aplicação, o controlador recebe a solicitação, valida a autenticação do usuário e encaminha os dados ao serviço responsável pelas regras de negócio. Em seguida, a camada de Domínio realiza as validações específicas da entidade Projeto, garantindo a consistência das informações antes da persistência.
+
+Após a validação, a camada de Infraestrutura grava os dados no banco PostgreSQL por meio do repositório. Por fim, a API retorna uma resposta de sucesso para a interface, que atualiza a experiência do usuário exibindo uma notificação de confirmação e redirecionando-o para a área de acompanhamento dos projetos cadastrados.
+
+# 4. Figura da Arquitetura:
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         CAMADA DE APRESENTAÇÃO (Frontend)                    │
+│  ┌─────────────────────────────────────────────────────────────────────┐    │
+│  │                         MVC (React/Redux)                            │    │
+│  │  ┌─────────────┐    ┌─────────────┐    ┌─────────────────────────┐  │    │
+│  │  │    View     │◄───│  Controller │───►│         Model           │  │    │
+│  │  │ (Componentes│    │  (Handlers, │    │ (Redux State / Context)  │  │    │
+│  │  │   React)    │    │   Actions)  │    │  - Projetos, Tarefas     │  │    │
+│  │  └─────────────┘    └─────────────┘    │  - Autenticação          │  │    │
+│  │         │                  │           │  - Filtros               │  │    │
+│  │         │                  │           └─────────────────────────┘  │    │
+│  │         └──────────────────┼───────────────────│                     │    │
+│  │                            │                   │                     │    │
+│  │                      HTTP/JSON (REST)          │                     │    │
+│  └────────────────────────────┼───────────────────┼─────────────────────┘    │
+└───────────────────────────────┼───────────────────┼─────────────────────────┘
+                                │                   │
+                                ▼                   ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         CAMADA DE APLICAÇÃO (Backend)                        │
+│  ┌─────────────────────────────────────────────────────────────────────┐    │
+│  │                    Express.js (Controllers + Services)               │    │
+│  │  ┌─────────────────────────────────────────────────────────────────┐│    │
+│  │  │  Controllers:  AuthController, ProjectController, TaskController││    │
+│  │  │  Services:     ProjectService, TaskService, EditalService       ││    │
+│  │  └─────────────────────────────────────────────────────────────────┘│    │
+│  └─────────────────────────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           CAMADA DE DOMÍNIO (Model)                          │
+│  ┌─────────────────────────────────────────────────────────────────────┐    │
+│  │                    Entidades e Regras de Negócio                     │    │
+│  │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐  │    │
+│  │  │ Project  │ │  User    │ │  Task    │ │Orientation│ │  Edital  │  │    │
+│  │  │ - title  │ │ - name   │ │ - status │ │ - type    │ │ - title  │  │    │
+│  │  │ - modal. │ │ - email  │ │ - dueDate│ │ - start   │ │ - date   │  │    │
+│  │  │ - endDate│ │ - role   │ │ - assignee│ │ - end     │ │ - source │  │    │
+│  │  └──────────┘ └──────────┘ └──────────┘ └──────────┘ └──────────┘  │    │
+│  └─────────────────────────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        CAMADA DE INFRAESTRUTURA                              │
+│  ┌─────────────────────┐  ┌─────────────────────┐  ┌─────────────────────┐  │
+│  │     PostgreSQL       │  │    Firebase Auth    │  │   Serviços Externos │  │
+│  │  (Banco de Dados)    │  │  (Autenticação)     │  │  (E-mail, Webhooks) │  │
+│  │  - Projetos table    │  │  - JWT tokens       │  │  - Notificações     │  │
+│  │  - Usuários table    │  │  - Social login     │  │  - Scraping editais │  │
+│  │  - Tarefas table     │  │  - Roles (prof/stud)│  │                     │  │
+│  └─────────────────────┘  └─────────────────────┘  └─────────────────────┘  │
+└─────────────────────────────────────────────────────────────────────────────┘
