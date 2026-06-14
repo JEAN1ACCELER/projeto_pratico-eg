@@ -1,74 +1,300 @@
-# 6. C4: Código (UML)
+# 6. Diagrama de Código (Classes UML) — Modelo C4
 
-## 6.1. Definição Geral do Diagrama de Classes UML
+## 6.1 Visão geral do diagrama
 
-O **Diagrama de Classes UML** (*Unified Modeling Language*) é uma representação estática da estrutura de um sistema, exibindo as classes, seus atributos, métodos e os relacionamentos entre elas [1]. É uma ferramenta fundamental para a modelagem orientada a objetos, permitindo que desenvolvedores e arquitetos visualizem a organização do código, identifiquem as principais entidades e compreendam suas interações. Este diagrama serve como um *blueprint* para a implementação do código, garantindo consistência e clareza na estrutura do software.
+O **Diagrama de Código** é o quarto e mais granular nível do modelo C4. Ele desce até o nível da implementação, apresentando a estrutura interna de classes, interfaces, atributos e métodos de um componente específico do sistema.
 
-## 6.2. Mapeamento das Classes Principais do E-Project
+Este diagrama não visa representar todo o código-fonte do E-Project. Ao invés disso, ele detalha as **classes centrais do domínio de negócio** que sustentam o funcionamento da aplicação, mostrando como os dados são modelados, como as entidades se relacionam e quais operações cada classe executa.
 
-Com base nas funcionalidades do E-Project e nas entidades identificadas no *backlog*, as classes principais e seus elementos são:
+O foco aqui é o **módulo de Gestão de Projetos** da API Backend, pois ele representa o coração do sistema, englobando projetos, tarefas, entregas, reuniões e notificações.
 
-### Classes
+---
 
-*   **`Usuario`**
-    *   **Atributos:** `id: UUID`, `nome: String`, `email: String`, `matricula: String`, `tipo: Enum<Professor, Estudante, Admin>`, `senhaHash: String`, `dataCriacao: Date`, `dataAtualizacao: Date`
-    *   **Métodos:** `autenticar(senha: String): Boolean`, `atualizarPerfil(dados: Object): Usuario`, `listarProjetos(): List<Projeto>`
+```mermaid
+classDiagram
+    class Usuario {
+        +UUID id
+        +String nomeCompleto
+        +String emailInstitucional
+        +String hashSenha
+        +Enum papel
+        +String departamento
+        +Date dataCadastro
+        +autenticar(credenciais) Boolean
+        +atualizarPerfil(dados) Usuario
+        +validarEmail() Boolean
+    }
 
-*   **`Professor`** (Herda de `Usuario`)
-    *   **Atributos:** `departamento: String`, `titulacao: String`
-    *   **Métodos:** `criarProjeto(dados: Object): Projeto`, `atribuirTarefa(tarefa: Tarefa, estudante: Estudante): Boolean`, `revisarEntrega(entrega: Entrega, feedback: String, aprovado: Boolean): Boolean`
+    class Projeto {
+        +UUID id
+        +String titulo
+        +Enum modalidade
+        +Enum status
+        +Date dataInicio
+        +Date dataTermino
+        +String resumo
+        +UUID orientadorId
+        +UUID orientandoId
+        +adicionarTarefa(tarefa) Tarefa
+        +adicionarReuniao(reuniao) Reuniao
+        +gerarRelatorioFinal() Arquivo
+        +validarPrazos() Boolean
+        +atualizarStatus(novoStatus) void
+    }
 
-*   **`Estudante`** (Herda de `Usuario`)
-    *   **Atributos:** `curso: String`, `periodo: String`
-    *   **Métodos:** `submeterEntrega(tarefa: Tarefa, arquivo: File): Entrega`, `visualizarTarefasPendentes(): List<Tarefa>`, `fazerCheckin(reuniao: Reuniao): Boolean`
+    class Tarefa {
+        +UUID id
+        +String titulo
+        +String descricao
+        +Enum tipo
+        +Date prazo
+        +Enum status
+        +Date dataConclusao
+        +UUID projetoId
+        +marcarConcluida() void
+        +validarPrazo() Boolean
+        +criarEntrega(arquivo, comentario) Entrega
+        +atualizarDescricao(texto) void
+    }
 
-*   **`Projeto`**
-    *   **Atributos:** `id: UUID`, `titulo: String`, `descricao: String`, `modalidade: String`, `status: Enum<Ativo, Concluido, Arquivado>`, `dataInicio: Date`, `dataFimPrevista: Date`, `dataFimReal: Date`
-    *   **Métodos:** `adicionarOrientacao(orientacao: Orientacao): Boolean`, `atualizarStatus(novoStatus: String): Boolean`
+    class Entrega {
+        +UUID id
+        +UUID tarefaId
+        +String arquivoUrl
+        +Date dataEnvio
+        +String comentarioAluno
+        +String feedbackOrientador
+        +Enum statusAvaliacao
+        +anexarArquivo(url) void
+        +avaliar(feedback, status) void
+        +verificarDataLimite() Boolean
+    }
 
-*   **`Orientacao`**
-    *   **Atributos:** `id: UUID`, `dataInicio: Date`, `dataFim: Date`, `status: Enum<Ativa, Concluida, Cancelada>`
-    *   **Métodos:** `encerrarOrientacao(): Boolean`
+    class Reuniao {
+        +UUID id
+        +UUID projetoId
+        +Date dataHora
+        +String local
+        +String resumo
+        +String ataUrl
+        +List~UUID~ presencas
+        +registrarPresenca(usuarioId) void
+        +gerarAta() Arquivo
+        +atualizarResumo(texto) void
+    }
 
-*   **`Tarefa`**
-    *   **Atributos:** `id: UUID`, `titulo: String`, `descricao: String`, `dataPrazo: Date`, `status: Enum<Pendente, EmAndamento, Concluida, Atrasada>`, `prioridade: Enum<Baixa, Media, Alta>`
-    *   **Métodos:** `marcarComoConcluida(): Boolean`, `atualizarPrazo(novaData: Date): Boolean`
+    class Notificacao {
+        +UUID id
+        +UUID usuarioId
+        +Enum tipo
+        +String conteudo
+        +Date dataEnvio
+        +Boolean lida
+        +enviar() void
+        +marcarComoLida() void
+        +agendarEnvio(data) void
+    }
 
-*   **`Entrega`**
-    *   **Atributos:** `id: UUID`, `dataEnvio: Date`, `arquivoUrl: String`, `feedback: String`, `aprovado: Boolean`
-    *   **Métodos:** `visualizarFeedback(): String`
+    Usuario "1" -- "0..*" Projeto : orienta (como orientador)
+    Usuario "1" -- "0..*" Projeto : participa (como orientando)
+    Usuario "1" -- "0..*" Notificacao : recebe
+    Projeto "1" *-- "0..*" Tarefa : contem
+    Projeto "1" *-- "0..*" Reuniao : registra
+    Tarefa "1" -- "0..1" Entrega : possui
+```
 
-*   **`Documento`**
-    *   **Atributos:** `id: UUID`, `tipo: String`, `conteudo: String`, `dataGeracao: Date`, `urlDownload: String`
-    *   **Métodos:** `gerarDocumento(template: String, dados: Object): Documento`
+---
 
-*   **`Notificacao`**
-    *   **Atributos:** `id: UUID`, `mensagem: String`, `dataEnvio: Date`, `lida: Boolean`, `tipo: Enum<Sistema, Email, Push>`
-    *   **Métodos:** `marcarComoLida(): Boolean`
+## 6.4 Detalhamento por Partes
+Parte 1 — Classe Usuario (Autenticação e Perfis)
+A classe Usuario é a base de todo o controle de acesso. Ela utiliza um campo papel (enum: PROFESSOR, ALUNO, ADMINISTRADOR) para diferenciar permissões sem criar subclasses desnecessárias, mantendo o modelo flexível para futuros perfis institucionais.
 
-## 6.3. Definição de Atributos, Métodos e Relações
+```mermaid
+classDiagram
+    class Usuario {
+        +UUID id
+        +String nomeCompleto
+        +String emailInstitucional
+        +String hashSenha
+        +Enum papel
+        +String departamento
+        +Date dataCadastro
+        +autenticar(credenciais) Boolean
+        +atualizarPerfil(dados) Usuario
+        +validarEmail() Boolean
+    }
 
-### Relações
+    class Projeto {
+        +UUID orientadorId
+        +UUID orientandoId
+    }
 
-*   **Herança:** `Professor` e `Estudante` herdam de `Usuario`.
-*   **Associação:**
-    *   Um `Professor` pode ter múltiplas `Orientacao`s.
-    *   Um `Estudante` pode ter múltiplas `Orientacao`s.
-    *   Uma `Orientacao` associa um `Professor` a um `Estudante` em um `Projeto`.
-    *   Um `Projeto` pode ter múltiplas `Orientacao`s.
-    *   Um `Projeto` pode ter múltiplas `Tarefa`s.
-    *   Uma `Tarefa` pertence a um `Projeto` e é atribuída a um `Estudante`.
-    *   Uma `Entrega` está associada a uma `Tarefa` e a um `Estudante`.
-    *   Um `Usuario` pode receber múltiplas `Notificacao`s.
-    *   Um `Projeto` pode gerar múltiplos `Documento`s.
+    class Notificacao {
+        +UUID usuarioId
+    }
 
-## 6.5. Explicação do Diagrama
+    Usuario "1" -- "0..*" Projeto : orienta
+    Usuario "1" -- "0..*" Projeto : e orientando em
+    Usuario "1" -- "0..*" Notificacao : recebe
+```
 
-O Diagrama de Classes UML do E-Project apresenta as principais entidades do sistema e seus relacionamentos. A classe `Usuario` serve como base para `Professor` e `Estudante`, demonstrando o conceito de herança. As associações ilustram como projetos, orientações, tarefas, entregas, documentos e notificações estão interligados, formando a estrutura de dados e a lógica de negócio do sistema. Cada classe possui atributos que representam suas características e métodos que definem seu comportamento, refletindo as funcionalidades descritas no *backlog*.
+**Figura 2 — Classe Usuario e suas associações. Representa a identidade digital dos atores do sistema e sua vinculação com projetos e alertas.**
 
-## Referências
-[1] UML Class Diagram Tutorial - Visual Paradigm. Disponível em: [https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/)
+Explicação dos métodos:
+autenticar(): valida credenciais contra o banco de dados, utilizando o hash da senha;
+atualizarPerfil(): permite ao usuário modificar dados pessoais e preferências;
+validarEmail(): garante que apenas e-mails institucionais da UFAM (@ufam.edu.br) sejam aceitos no cadastro.
 
-![Diagrama de Classes UML do E-Project](./e-project-uml-class.png)
+---
 
-**Legenda:** Diagrama de Classes UML do E-Project, detalhando as principais entidades, seus atributos, métodos e relacionamentos.
+Parte 2 — Classe Projeto (Núcleo do Domínio)
+A classe Projeto é o eixo central do E-Project. Ela agrega todas as informações relativas a uma iniciativa acadêmica e mantém o controle sobre seu ciclo de vida, desde a submissão até a conclusão.
+
+```mermaid
+classDiagram
+    class Projeto {
+        +UUID id
+        +String titulo
+        +Enum modalidade
+        +Enum status
+        +Date dataInicio
+        +Date dataTermino
+        +String resumo
+        +UUID orientadorId
+        +UUID orientandoId
+        +adicionarTarefa(tarefa) Tarefa
+        +adicionarReuniao(reuniao) Reuniao
+        +gerarRelatorioFinal() Arquivo
+        +validarPrazos() Boolean
+        +atualizarStatus(novoStatus) void
+    }
+
+    class Tarefa {
+        +UUID projetoId
+    }
+
+    class Reuniao {
+        +UUID projetoId
+    }
+
+    Projeto "1" *-- "0..*" Tarefa : contem
+    Projeto "1" *-- "0..*" Reuniao : registra
+```
+
+---
+
+**Figura 3 — Classe Projeto como agregadora de Tarefas e Reuniões. Representa o contrato acadêmico entre orientador e orientando.**
+
+Explicação dos métodos:
+adicionarTarefa(): cria uma nova tarefa vinculada ao projeto, atualizando automaticamente o cronograma;
+adicionarReuniao(): registra um encontro de orientação e o associa ao histórico do projeto;
+gerarRelatorioFinal(): consolida dados do projeto, tarefas concluídas e atas de reunião em um documento padronizado;
+validarPrazos(): verifica se o projeto está dentro do período de vigência da modalidade acadêmica;
+atualizarStatus(): altera o estado do projeto (ex: EM_ANDAMENTO, PENDENTE, CONCLUIDO, CANCELADO).
+
+---
+
+Parte 3 — Classes Tarefa, Entrega e Reuniao (Fluxo Operacional)
+Esse conjunto de classes representa o dia a dia da orientação. O aluno recebe tarefas, entrega documentos e participa de reuniões. O professor acompanha tudo por meio dessas entidades.
+
+```mermaid
+classDiagram
+    class Tarefa {
+        +UUID id
+        +String titulo
+        +String descricao
+        +Enum tipo
+        +Date prazo
+        +Enum status
+        +Date dataConclusao
+        +UUID projetoId
+        +marcarConcluida() void
+        +validarPrazo() Boolean
+        +criarEntrega(arquivo, comentario) Entrega
+        +atualizarDescricao(texto) void
+    }
+
+    class Entrega {
+        +UUID id
+        +UUID tarefaId
+        +String arquivoUrl
+        +Date dataEnvio
+        +String comentarioAluno
+        +String feedbackOrientador
+        +Enum statusAvaliacao
+        +anexarArquivo(url) void
+        +avaliar(feedback, status) void
+        +verificarDataLimite() Boolean
+    }
+
+    class Reuniao {
+        +UUID id
+        +UUID projetoId
+        +Date dataHora
+        +String local
+        +String resumo
+        +String ataUrl
+        +List~UUID~ presencas
+        +registrarPresenca(usuarioId) void
+        +gerarAta() Arquivo
+        +atualizarResumo(texto) void
+    }
+
+    Tarefa "1" -- "0..1" Entrega : possui
+```
+
+---
+
+**Figura 4 — Fluxo operacional da orientação: Tarefas geram Entregas e Reuniões registram o acompanhamento presencial/online.**
+
+Explicação das classes e métodos:
+Tarefa:
+
+marcarConcluida(): altera o status da tarefa e registra a data de conclusão;
+validarPrazo(): compara a data atual com o prazo estipulado, retornando false se houver atraso;
+criarEntrega(): instancia um objeto Entrega vinculado a esta tarefa.
+Entrega:
+
+anexarArquivo(): recebe a URL do arquivo armazenado no Storage (S3) e a persiste;
+avaliar(): permite ao professor registrar feedback e marcar a entrega como APROVADA ou NECESSITA_AJUSTE;
+verificarDataLimite(): valida se a entrega foi enviada dentro do prazo da tarefa vinculada.
+Reuniao:
+
+registrarPresenca(): adiciona o ID do usuário à lista de presenças, evitando duplicatas;
+gerarAta(): produz um documento PDF ou texto com os dados da reunião e lista de presentes;
+atualizarResumo(): permite ao orientador descrever o que foi discutido na reunião.
+
+---
+
+Parte 4 — Classe Notificacao (Serviço de Alertas)
+A classe Notificacao desacopla o envio de alertas do restante do domínio. Ela é consumida pelo serviço de jobs para enviar comunicações via e-mail ou Web Push.
+
+```mermaid
+classDiagram
+    class Usuario {
+        +UUID id
+    }
+
+    class Notificacao {
+        +UUID id
+        +UUID usuarioId
+        +Enum tipo
+        +String conteudo
+        +Date dataEnvio
+        +Boolean lida
+        +enviar() void
+        +marcarComoLida() void
+        +agendarEnvio(data) void
+    }
+
+    Usuario "1" -- "0..*" Notificacao : recebe
+```
+
+---
+
+**Figura 5 — Classe Notificacao representando o sistema de alertas e comunicação assíncrona com os usuários.**
+
+Explicação dos métodos:
+enviar(): dispara a notificação pelo canal apropriado (e-mail ou push) e registra a data de envio;
+marcarComoLida(): atualiza o flag lida para true, removendo o alerta da caixa de entrada do usuário;
+agendarEnvio(): permite programar o envio da notificação para uma data futura, útil para lembretes de prazo.
