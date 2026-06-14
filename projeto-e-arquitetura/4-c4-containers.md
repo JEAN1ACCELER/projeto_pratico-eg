@@ -45,3 +45,34 @@ flowchart TB
 
     jobs -->|consulta informações| editais
     jobs -->|envia mensagens| notificacao
+Figura 1 — Diagrama de Containers do E-Project, destacando frontend, backend, persistência, armazenamento e processamento assíncrono.
+
+4.4 Descrição dos containers
+Aplicação Web PWA
+É o ponto de entrada do usuário no sistema. Permite acesso por navegador em desktop e mobile, com foco em acessibilidade, usabilidade e produtividade.
+
+API Backend
+Concentra as regras de negócio do E-Project. Processa autenticação, projetos, tarefas, documentos, presença, notificações e o feed de editais.
+
+Banco de Dados Relacional
+Armazena os dados estruturados do domínio acadêmico, como usuários, projetos, cronogramas, tarefas, notificações e históricos.
+
+Armazenamento de Arquivos
+Responsável por guardar documentos enviados ou gerados pelo sistema, como relatórios, anexos e declarações.
+
+Serviço de Notificações e Jobs
+Executa tarefas assíncronas, como envio de lembretes, varredura periódica de editais e disparo de notificações para os usuários.
+
+4.5 Detalhamento por partes
+Fluxo principal de uso
+O professor ou aluno acessa a Aplicação Web PWA;
+A interface envia requisições à API Backend;
+A API processa a lógica de negócio e consulta o Banco de Dados;
+Se necessário, a API interage com o Armazenamento de Arquivos;
+Eventos e tarefas assíncronas são encaminhados ao Serviço de Notificações e Jobs;
+O serviço consulta fontes externas e envia alertas via e-mail ou push.
+4.6 Considerações finais
+A organização em containers torna o sistema mais claro, facilita a evolução futura e ajuda a demonstrar como o E-Project atende seus requisitos funcionais e não funcionais.
+
+
+---
