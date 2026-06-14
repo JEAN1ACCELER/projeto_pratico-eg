@@ -87,7 +87,7 @@ flowchart LR
 
 ---
 
-##5.4 Descrição dos componentes
+## 5.4 Descrição dos componentes
 Componente de Autenticação e Autorização
 Responsável por login, controle de sessão e permissões de acesso dos usuários.
 
@@ -115,7 +115,7 @@ Dispara alertas relacionados a prazos, tarefas, editais, reuniões e mudanças d
 Camada de Repositórios / Persistência
 Faz a mediação entre os componentes de negócio e o banco de dados.
 
-5.5 Detalhamento por partes
+## 5.5 Detalhamento por partes
 Fluxo interno de uma tarefa
 O usuário envia uma ação pela interface;
 O componente de Tarefas processa a requisição;
