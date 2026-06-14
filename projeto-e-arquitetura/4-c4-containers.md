@@ -19,35 +19,12 @@ Os principais containers propostos são:
 
 ## 4.3 Diagrama de Containers
 
-```mermaid
-flowchart TB
-    professor["Professor Orientador"]
-    aluno["Aluno Orientando"]
 
-    subgraph eproject["E-Project"]
-        pwa["Aplicação Web PWA<br/>Container: React + TypeScript<br/>Responsável pela interface acessível e responsiva"]
-        api["API Backend<br/>Container: Node.js + NestJS<br/>Responsável por autenticação, projetos, tarefas, editais, documentos e presença"]
-        db["Banco de Dados Relacional<br/>Container: PostgreSQL<br/>Armazena usuários, projetos, tarefas, prazos e registros"]
-        files["Armazenamento de Arquivos<br/>Container: Storage<br/>Guarda anexos, relatórios e documentos gerados"]
-        jobs["Serviço de Notificações e Jobs<br/>Container: Worker/Serviço assíncrono<br/>Processa alertas, prazos e atualização de editais"]
-    end
+<img width="4940" height="4555" alt="E-Project Management-2026-06-14-071107" src="https://github.com/user-attachments/assets/8bfdd23e-c175-4c8f-ad4d-edbefc44b307" />
 
-    editais["Portais institucionais UFAM / Pró-Reitorias"]
-    notificacao["Serviço externo de E-mail / Push"]
-
-    professor -->|usa via navegador| pwa
-    aluno -->|usa via navegador| pwa
-
-    pwa -->|HTTPS / JSON| api
-    api -->|SQL| db
-    api -->|envia e recupera arquivos| files
-    api -->|publica eventos / agenda tarefas| jobs
-
-    jobs -->|consulta informações| editais
-    jobs -->|envia mensagens| notificacao
 Figura 1 — Diagrama de Containers do E-Project, destacando frontend, backend, persistência, armazenamento e processamento assíncrono.
 
-4.4 Descrição dos containers
+## 4.4 Descrição dos containers
 Aplicação Web PWA
 É o ponto de entrada do usuário no sistema. Permite acesso por navegador em desktop e mobile, com foco em acessibilidade, usabilidade e produtividade.
 
@@ -63,7 +40,7 @@ Responsável por guardar documentos enviados ou gerados pelo sistema, como relat
 Serviço de Notificações e Jobs
 Executa tarefas assíncronas, como envio de lembretes, varredura periódica de editais e disparo de notificações para os usuários.
 
-4.5 Detalhamento por partes
+## 4.5 Detalhamento por partes
 Fluxo principal de uso
 O professor ou aluno acessa a Aplicação Web PWA;
 A interface envia requisições à API Backend;
