@@ -34,9 +34,99 @@ O Diagrama de Componentes foca na estrutura interna do *container* **API REST (B
 *   **Repositories:** Fornecem métodos para operações CRUD (*Create*, *Read*, *Update*, *Delete*) em entidades de domínio, abstraindo a complexidade do banco de dados.
 *   **Adapters:** Permitem que a API se comunique com serviços externos de forma padronizada, isolando a lógica de integração.
 
-## Referências
-[1] Component diagram - C4 model. Disponível em: [https://c4model.com/diagrams/component](https://c4model.com/diagrams/component)
+## 5.3 Diagrama de Componentes da API Backend
 
-![Diagrama de Componentes do E-Project (API REST)](./e-project-c4-components.png)
+```mermaid
+flowchart LR
+    pwa["Aplicação Web PWA"]
 
-**Legenda:** Diagrama de Componentes do E-Project, detalhando a estrutura interna do container API REST.
+    subgraph api["API Backend"]
+        auth["Componente de Autenticação e Autorização"]
+        usuario["Componente de Usuários"]
+        projeto["Componente de Projetos"]
+        tarefa["Componente de Tarefas"]
+        edital["Componente de Feed de Editais"]
+        documento["Componente de Documentos"]
+        presenca["Componente de Presença"]
+        notificacao["Componente de Notificações"]
+        repos["Camada de Repositórios / Persistência"]
+    end
+
+    db["Banco de Dados Relacional"]
+    files["Armazenamento de Arquivos"]
+    externos["Portais UFAM / Pró-Reitorias"]
+    push["Serviço de E-mail / Push"]
+
+    pwa -->|requisições HTTP| auth
+    pwa -->|requisições HTTP| usuario
+    pwa -->|requisições HTTP| projeto
+    pwa -->|requisições HTTP| tarefa
+    pwa -->|requisições HTTP| edital
+    pwa -->|requisições HTTP| documento
+    pwa -->|requisições HTTP| presenca
+
+    auth --> repos
+    usuario --> repos
+    projeto --> repos
+    tarefa --> repos
+    edital --> repos
+    documento --> repos
+    presenca --> repos
+    notificacao --> repos
+
+    repos --> db
+    documento --> files
+    edital --> externos
+    tarefa --> notificacao
+    projeto --> notificacao
+    presenca --> notificacao
+    notificacao --> push
+```
+
+**Figura 1 — Diagrama de Componentes da API Backend do E-Project, evidenciando os principais módulos de negócio e suas dependências.**
+
+---
+
+##5.4 Descrição dos componentes
+Componente de Autenticação e Autorização
+Responsável por login, controle de sessão e permissões de acesso dos usuários.
+
+Componente de Usuários
+Gerencia informações básicas de professores e alunos, perfis e preferências.
+
+Componente de Projetos
+Controla cadastro, acompanhamento, modalidade, cronograma e progresso dos projetos acadêmicos.
+
+Componente de Tarefas
+Gerencia criação, atribuição, atualização de status e acompanhamento das tarefas relacionadas aos projetos.
+
+Componente de Feed de Editais
+Consulta fontes externas e organiza editais em um feed centralizado para os usuários.
+
+Componente de Documentos
+Responsável por geração automática de documentos, uploads, anexos e organização de arquivos do projeto.
+
+Componente de Presença
+Registra check-ins e presença em reuniões de orientação ou atividades vinculadas ao projeto.
+
+Componente de Notificações
+Dispara alertas relacionados a prazos, tarefas, editais, reuniões e mudanças de status.
+
+Camada de Repositórios / Persistência
+Faz a mediação entre os componentes de negócio e o banco de dados.
+
+5.5 Detalhamento por partes
+Fluxo interno de uma tarefa
+O usuário envia uma ação pela interface;
+O componente de Tarefas processa a requisição;
+A camada de Repositórios persiste os dados;
+O componente de Notificações é acionado quando necessário;
+O usuário recebe atualização no sistema e, se aplicável, por e-mail ou push.
+Fluxo interno de um documento
+O usuário solicita geração ou envio de documento;
+O componente de Documentos processa a ação;
+Os metadados são persistidos via repositórios;
+O arquivo é salvo no Armazenamento de Arquivos;
+O projeto pode ser atualizado e gerar notificação.
+5.6 Considerações finais
+Esse nível de detalhamento mostra como a lógica de negócio do E-Project está distribuída em componentes internos claros, coerentes com as funcionalidades principais do sistema.
