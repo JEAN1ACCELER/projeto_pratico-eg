@@ -1,59 +1,57 @@
-# 4. C4: Containers
+# 4. Diagrama de Containers — Modelo C4
 
-## 4.1. Definição Geral do Diagrama de Containers
+## 4.1 Visão geral do diagrama
+O **Diagrama de Containers** detalha os blocos de execução do sistema, mostrando como o E-Project é dividido em unidades independentes de implantação (Web App, API, Banco de Dados).
 
-O **Diagrama de Containers**, o segundo nível do Modelo C4, detalha a arquitetura de um sistema de software, apresentando os principais blocos de construção (*containers*) que o compõem [1]. Um *container* é uma aplicação ou um armazenamento de dados (como um banco de dados) que pode ser executado de forma independente. Este diagrama foca em como esses *containers* se comunicam entre si e com os sistemas externos identificados no Diagrama de Contexto, auxiliando na compreensão da distribuição de responsabilidades e das tecnologias empregadas.
+## 4.2 Explicação geral do diagrama
+O sistema é composto por uma aplicação PWA em React, uma API robusta em NestJS/Node.js, um banco de dados PostgreSQL para dados estruturados e um Storage para arquivos de relatórios.
 
-## 4.2. Containers do E-Project
+## 4.3 Diagrama de Containers — Visão Completa
 
-O E-Project será composto pelos seguintes *containers*:
+```mermaid
+flowchart TB
+    subgraph eproject["E-Project - Sistema"]
+        pwa["Aplicação Web PWA\n(React + TS)\nInterface responsiva."]
+        api["API Backend\n(NestJS)\nLógica de negócio."]
+        db["Banco de Dados\n(PostgreSQL)\nPersistência."]
+        files["Storage\n(S3)\nArquivos e anexos."]
+    end
 
-*   **Aplicação Web (PWA):** O *frontend* do sistema, acessível via navegador web e instalável como PWA. Desenvolvido em React, é responsável por toda a interação com o usuário.
-    *   **Linguagem/Tecnologia:** JavaScript/TypeScript (React)
-    *   **Protocolo de Comunicação:** HTTP/S (API REST)
-    *   **Dependências:** API REST do Backend
+    professor["Professor"] -- "HTTPS" --> pwa
+    pwa -- "JSON/REST" --> api
+    api -- "SQL" --> db
+    api -- "Upload" --> files
+```
+**Figura 1 — Diagrama de Containers do E-Project.**
 
-*   **API REST (Backend):** O *backend* do sistema, que expõe uma API RESTful para a Aplicação Web e outros possíveis clientes. Desenvolvido em Node.js/Express, contém a lógica de negócio e orquestra as operações.
-    *   **Linguagem/Tecnologia:** JavaScript/TypeScript (Node.js/Express)
-    *   **Protocolo de Comunicação:** HTTP/S
-    *   **Dependências:** Banco de Dados PostgreSQL, Firebase Authentication, Sistema de E-mail, Sistema da UFAM
+---
 
-*   **Banco de Dados (PostgreSQL):** O sistema de persistência de dados do E-Project. Armazena todas as informações relacionadas a usuários, projetos, tarefas, documentos, etc.
-    *   **Linguagem/Tecnologia:** PostgreSQL
-    *   **Protocolo de Comunicação:** Protocolo de banco de dados (e.g., TCP/IP)
-    *   **Dependências:** Nenhuma (servido pela API REST)
+### Arquivo: `5-c4-componentes.md`
 
-*   **Firebase Authentication:** Serviço externo de autenticação utilizado para gerenciar o *login* e as sessões dos usuários.
-    *   **Linguagem/Tecnologia:** Serviço SaaS (Firebase)
-    *   **Protocolo de Comunicação:** HTTP/S (APIs do Firebase)
-    *   **Dependências:** Nenhuma (servido pela API REST)
+````markdown
+# 5. Diagrama de Componentes — Modelo C4
 
-*   **Sistema de E-mail:** Serviço externo para envio de notificações e comunicações por e-mail.
-    *   **Linguagem/Tecnologia:** Serviço externo (e.g., SendGrid, Mailgun)
-    *   **Protocolo de Comunicação:** SMTP/HTTP/S
-    *   **Dependências:** Nenhuma (servido pela API REST)
+## 5.1 Visão geral do diagrama
+O **Diagrama de Componentes** foca dentro de um container específico. Aqui, detalhamos a **API Backend**, mostrando como seus módulos internos estão organizados.
 
-*   **Sistema da UFAM:** Sistema externo para integração de dados acadêmicos ou de editais.
-    *   **Linguagem/Tecnologia:** Variável (depende do sistema da UFAM)
-    *   **Protocolo de Comunicação:** HTTP/S (API ou outros)
-    *   **Dependências:** Nenhuma (servido pela API REST)
+## 5.2 Explicação geral do diagrama
+A API segue a arquitetura modular do NestJS, separando as responsabilidades em controladores de rota, serviços de lógica e repositórios de acesso a dados.
 
-## 4.4. Explicação Global do Diagrama
+## 5.3 Diagrama de Componentes (API Backend)
 
-O Diagrama de Containers do E-Project detalha como o sistema é dividido em unidades implantáveis e independentes. A **Aplicação Web (PWA)**, a **API REST (Backend)** e o **Banco de Dados (PostgreSQL)** são os *containers* principais do sistema. Eles interagem com serviços externos como **Firebase Authentication**, **Sistema de E-mail** e **Sistema da UFAM** para funcionalidades específicas. Este diagrama ilustra as principais tecnologias e os protocolos de comunicação entre esses *containers*.
+```mermaid
+flowchart LR
+    subgraph api["API Backend (NestJS)"]
+        auth["Auth Controller\nValida login."]
+        proj["Project Module\nRegras de projetos."]
+        task["Task Module\nGestão de tarefas."]
+        repo["Data Access Layer\nPrisma ORM."]
+    end
 
-### Detalhamento por Partes
-
-*   **Aplicação Web (PWA):** O ponto de entrada para os usuários, executado no navegador ou como um aplicativo instalado. Comunica-se com a API REST para todas as operações de dados e lógica de negócio.
-*   **API REST (Backend):** O coração da lógica de negócio, recebendo requisições da Aplicação Web, processando-as, interagindo com o banco de dados e serviços externos, e retornando as respostas.
-*   **Banco de Dados (PostgreSQL):** O repositório central de dados, acessado exclusivamente pela API REST.
-*   **Firebase Authentication:** Fornece serviços de autenticação para a API REST, que, por sua vez, gerencia as sessões dos usuários.
-*   **Sistema de E-mail:** Utilizado pela API REST para enviar notificações transacionais e informativas aos usuários.
-*   **Sistema da UFAM:** A API REST pode se integrar a este sistema para buscar ou enviar dados relevantes, como informações de matrícula ou editais.
-
-## Referências
-[1] Container diagram - C4 model. Disponível em: [https://c4model.com/diagrams/container](https://c4model.com/diagrams/container)
-
-![Diagrama de Containers do E-Project](./e-project-c4-containers.png)
-
-**Legenda:** Diagrama de Containers do E-Project, mostrando os principais blocos de construção e suas interações.
+    pwa["PWA Frontend"] -- "Requisições" --> auth
+    pwa -- "Requisições" --> proj
+    proj --> repo
+    task --> repo
+    repo -- "Queries" --> db[("PostgreSQL")]
+```
+**Figura 1 — Componentes internos da API Backend.**
