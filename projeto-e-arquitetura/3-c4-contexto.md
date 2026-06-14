@@ -12,7 +12,6 @@ Com base no *backlog* do produto, os principais atores e sistemas externos que i
 *   **Professor Orientador:** Usuário principal que gerencia projetos, tarefas, orientandos e documentos (US-02, US-03, US-04, US-05, US-06, US-08, US-09).
 *   **Estudante Orientando:** Usuário que realiza tarefas, submete entregas, faz *check-in* em reuniões e visualiza *feedback* (US-10, US-11, US-12, US-13, US-14).
 *   **Administrador:** Usuário responsável por configurações gerais do sistema, gerenciamento de usuários e manutenção (implícito nas necessidades de gestão do sistema).
-*   **Usuário com Necessidades Especiais (Baixa Visão/Dificuldade de Foco):** Usuário que interage com o sistema utilizando recursos de acessibilidade (US-15, US-16, US-17).
 
 ### Sistemas Externos
 *   **Sistema de E-mail:** Utilizado para envio de notificações, lembretes e comunicações gerais. (Implícito em notificações)
