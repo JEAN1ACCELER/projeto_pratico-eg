@@ -1,6 +1,6 @@
 <div align="center">
 
-# Rastreabilidade de Requisitos e Fluxos
+# 7. Rastreabilidade de Requisitos e Fluxos
 
 **E-Project** · C4 Model · Documentação de Arquitetura
 
@@ -14,50 +14,55 @@
 
 ---
 
-## 7.1 Visão Geral
+## 7.1 Visão geral
 
-A **Rastreabilidade** é o mecanismo que permite ligar os requisitos do sistema às decisões arquiteturais e de implementação. Este documento demonstra de forma clara e verificável como as decisões arquiteturais detalhadas nos níveis anteriores estão diretamente relacionadas às histórias de usuário definidas no backlog do TP1.
+A **Rastreabilidade** é o mecanismo que permite ligar os requisitos do sistema às decisões arquiteturais e de implementação. Este documento mapeia os principais cenários de uso (personas e histórias) aos fluxos de dados entre os containers e componentes do E-Project, garantindo que cada necessidade do usuário tenha uma contraparte técnica identificável.
 
 ---
 
-## 7.2 Matriz de Rastreabilidade Simplificada
+## 7.2 Explicação geral
 
-A tabela abaixo mapeia os fluxos gerais da aplicação com os respectivos componentes arquiteturais mapeados no diagrama de Nível 3.
+Para cada funcionalidade principal do sistema, foi identificado um **fluxo rastreável** que percorre as camadas do E-Project: desde a interface do usuário (PWA), passando pela API Backend, alcançando o banco de dados e, quando aplicável, integrando-se a sistemas externos.
 
-| ID | Cenário / Requisito | Persona | Componentes / Módulos Acionados | Persistência / Integração |
+Os fluxos foram numerados e associados às personas definidas no escopo do projeto:
+- **Professor Victor Antunes** (orientador com múltiplos projetos);
+- **Ana Beatriz** (aluna orientanda e bolsista);
+- **Dr. Carlos Mendonça** (administrador institucional).
+
+---
+
+## 7.3 Matriz de Rastreabilidade
+
+| ID | Cenário / Requisito | Persona | Containers Envolvidos | Componentes / Módulos |
 | :--- | :--- | :--- | :--- | :--- |
-| F01 | Cadastrar projeto (US-03) | Professor | Comp. de Projetos, Comp. Autenticação | Banco de Dados |
-| F02 | Criar e atribuir tarefas (US-04) | Professor | Comp. de Tarefas, Comp. Projetos | Banco de Dados |
-| F03 | Submeter entrega com arquivo (US-11) | Aluno | Comp. de Tarefas, Comp. Documentos | Banco de Dados, Armazenamento (Railway) |
-| F04 | Check-in em reunião (US-13) | Aluno | Comp. de Presença | Banco de Dados |
-| F05 | Alerta de nova tarefa (US-12) | Sistema | Comp. de Tarefas, Comp. Notificações | Push (Firebase FCM) |
-| F06 | Consulta automática de editais (US-05) | Sistema | Comp. de Feed de Editais | Portais UFAM, Banco de Dados |
-| F07 | Geração de relatório PDF (US-07) | Professor | Comp. de Documentos | Banco de Dados, Serviço PDF (PDFKit) |
-| F08 | Gestão de status de usuários (US-18) | Admin | Comp. de Usuários, Comp. Autenticação | Banco de Dados, Firebase Auth |
+| F01 | Criar novo projeto de pesquisa/extensão | Professor | PWA → API → DB | Componente de Projetos, Componente de Autenticação |
+| F02 | Definir cronograma e tarefas | Professor | PWA → API → DB | Componente de Tarefas, Componente de Projetos |
+| F03 | Aluno visualiza tarefas e prazos | Aluno | PWA → API → DB | Componente de Tarefas |
+| F04 | Aluno anexa relatório/entrega | Aluno | PWA → API → DB + Storage | Componente de Tarefas, Armazenamento de Arquivos |
+| F05 | Professor avalia entrega e dá feedback | Professor | PWA → API → DB | Componente de Tarefas |
+| F06 | Professor agenda reunião de orientação | Professor | PWA → API → DB | Componente de Presença, Componente de Projetos |
+| F07 | Aluno confirma presença em reunião | Aluno | PWA → API → DB | Componente de Presença |
+| F08 | Sistema alerta sobre prazo próximo | Sistema | Jobs → API → Notificação | Componente de Notificações, Firebase Cloud Messaging |
+| F09 | Consulta automática de editais | Sistema | Jobs → Portais UFAM | Componente de Feed de Editais |
+| F10 | Professor gera relatório final | Professor | PWA → API → DB + Storage | Componente de Documentos, Serviço de PDF (PDFKit) |
+| F11 | Administrador cadastra modalidade | Admin | PWA → API → DB | Componente de Usuários, Componente de Feed de Editais |
 
 ---
 
-## 7.3 Rastreabilidade Detalhada com Histórias do Usuário
+## 7.4 Diagramas de Sequência por Fluxo
 
-Abaixo, detalhamos o fluxo arquitetural de três das principais histórias de usuário do sistema, com destaque visual e passo a passo, conforme especificação técnica.
-
-### 7.3.1 Gestão de Tarefas (US-04)
-
-**Extrato da História do Usuário:**
-> "US-04: Enquanto professor orientador, desejo criar tarefas e atribuí-las aos meus orientandos com prazo definido, para organizar as demandas de cada projeto de forma clara e rastreável."
-
-**Evidência no Modelo C4:**
-A história pode ser identificada nos seguintes diagramas:
-* **Diagrama de Containers:** Comunicação entre a Aplicação Web (PWA), a API RESTful e o Banco de Dados.
-* **Diagrama de Componentes:** Fluxo interno envolvendo o Componente de Tarefas e a Camada de Repositórios.
-
-**Destaque no Diagrama (Fluxo Visual):**
+### Fluxo F01 — Criação de Projeto (Professor)
 ```mermaid
-flowchart LR
-    PWA["Aplicação Web (PWA)"] -->|1. Envia Dados| AUTH["Comp. de Autenticação"]
-    AUTH -->|2. Encaminha autorizada| TAREFA["Componente de Tarefas"]
-    TAREFA -->|3. Processa regra| REPO["Camada de Repositórios"]
-    REPO -->|4. Persiste dados| DB[("Banco de Dados (PostgreSQL)")]
-    
-    style TAREFA fill:#1168BD,stroke:#fff,stroke-width:2px,color:#fff
-    style REPO fill:#1168BD,stroke:#fff,stroke-width:2px,color:#fff
+sequenceDiagram
+    actor P as Professor
+    participant W as Web App (PWA)
+    participant A as API Backend
+    participant D as Banco de Dados
+
+    P->>W: Preenche formulário do projeto
+    W->>A: POST /projetos (JSON)
+    A->>A: Valida regras de negócio
+    A->>D: INSERT INTO projetos
+    D-->>A: Confirmação
+    A-->>W: 201 Created (projeto)
+    W-->>P: Exibe confirmação e dashboard
