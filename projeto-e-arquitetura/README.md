@@ -14,7 +14,7 @@
 
 ---
 
-## 📖 Visão Geral
+##  Visão Geral
 
 Esta pasta contém o detalhamento da **Arquitetura de Software do E-Project**, desenvolvida seguindo o modelo **C4** para representar o sistema em diferentes níveis de granularidade. Esta documentação serve como base técnica para a implementação do sistema e atende aos requisitos do Trabalho Prático II da disciplina de Engenharia de Software I.
 
