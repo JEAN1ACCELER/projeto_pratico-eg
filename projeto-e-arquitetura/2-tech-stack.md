@@ -28,6 +28,9 @@ O E-Project será desenvolvido com um conjunto de tecnologias modernas e robusta
 
 ### Frontend
 - **React (PWA):** Um *framework* JavaScript para construção de interfaces de usuário reativas e eficientes. A implementação como *Progressive Web App* (PWA) permitirá que o aplicativo seja instalado em dispositivos móveis e *desktops*, oferecendo uma experiência similar a um aplicativo nativo, com funcionalidades *offline* e notificações.
+
+![RECHARTS](https://img.shields.io/badge/Recharts-Gráficos-22B573?style=flat-square&logo=react&logoColor=white)
+
 - **Recharts:** Biblioteca de gráficos baseada em componentes React. Será utilizada especificamente para construir os dashboards administrativos e do orientador, permitindo a visualização clara de métricas consolidadas (quantidade de projetos ativos, total de utilizadores, etc.).
 
 <div align="center">
