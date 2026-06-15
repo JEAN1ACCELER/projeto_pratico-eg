@@ -123,7 +123,7 @@ A arquitetura do E-Project é projetada para ser modular e com integrações bem
 ![Mapa Visual da Tech Stack do E-Project](<img width="1982" height="504" alt="image" src="https://github.com/user-attachments/assets/425fef07-b62b-4cae-b3a8-57008a06783f" />
 )
 
-**Legenda:** Diagrama representando as principais tecnologias utilizadas no E-Project e suas interações.
-![Mapa Visual da Tech Stack do E-Project](./e-project-tech-stack.png)
+**Legenda:** Diagrama representando as principais tecnologias utilizadas no E-Project e suas interações.<img width="1600" height="406" alt="fed85460-b99a-463e-8a7e-5294e012d992" src="https://github.com/user-attachments/assets/2f07baa8-8161-426d-85b4-c318354a8f84" />
+
 
 **Legenda:** Diagrama representando as principais tecnologias utilizadas no E-Project e suas interações.
