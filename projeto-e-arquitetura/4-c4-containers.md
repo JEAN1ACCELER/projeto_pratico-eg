@@ -117,7 +117,8 @@ Quando o usuário solicita um documento oficial — como um relatório parcial o
 
 A autenticação é totalmente delegada ao **Firebase Authentication**. Quando um usuário tenta acessar o sistema, o frontend coleta as credenciais e as envia à API. O backend as encaminha ao Firebase, que valida a identidade e retorna um **token JWT**. Esse token é então utilizado em todas as requisições subsequentes para garantir acesso autorizado conforme o perfil do usuário (professor, aluno ou administrador).
 
-![Parte 5 — API e Firebase Auth](./imgs/4-c4-containers-parte5.png)
+<img width="686" height="713" alt="Captura de tela 2026-06-15 105713" src="https://github.com/user-attachments/assets/0011c86c-3574-4291-9c27-66b4961674ea" />
+
 
 **Figura 6 —** Fluxo de autenticação do E-Project com o Firebase Authentication via token JWT.
 
