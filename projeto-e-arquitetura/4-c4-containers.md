@@ -128,7 +128,7 @@ A autenticação é totalmente delegada ao **Firebase Authentication**. Quando u
 
 O **Firebase Cloud Messaging (FCM)** é o mecanismo de notificações push do E-Project. Quando a API detecta um evento relevante — prazo se aproximando, nova tarefa atribuída, documento aprovado — ela aciona o FCM via HTTP, que entrega a notificação diretamente ao navegador ou dispositivo do usuário, mesmo com o aplicativo fechado, garantindo comunicação proativa sem necessidade de o usuário verificar o sistema constantemente.
 
-![Parte 6 — API e FCM](./imgs/4-c4-containers-parte6.png)
+<img width="772" height="772" alt="Captura de tela 2026-06-15 105517" src="https://github.com/user-attachments/assets/e9120057-642a-458a-af75-f17de813aaa7" />
 
 **Figura 7 —** Fluxo de envio e entrega de notificações push via Firebase Cloud Messaging.
 
