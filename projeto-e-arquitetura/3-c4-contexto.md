@@ -1,20 +1,12 @@
 <div align="center">
 
-# 🗺️ Diagrama de Contexto
+# Diagrama de Contexto
 
 **E-Project** · C4 Model · Nível 1
 
 ![UFAM](https://img.shields.io/badge/ICET--UFAM-Engenharia%20de%20Software%20I-00663C?style=flat-square)
 ![C4](https://img.shields.io/badge/C4%20Model-N%C3%ADvel%201%20%E2%80%94%20Contexto-4A90D9?style=flat-square)
 ![Sprint](https://img.shields.io/badge/Status-SPRINT%201-blue?style=flat-square)
-
-</div>
-
----
-    
-[![C4 Model](https://img.shields.io/badge/C4%20Model-N%C3%ADvel%201%20%E2%80%94%20Contexto-4A90D9?style=flat-square)](https://c4model.com)
-[![UFAM](https://img.shields.io/badge/ICET--UFAM-Engenharia%20de%20Software%20I-00663C?style=flat-square)](https://www.ufam.edu.br)
-[![Status](https://img.shields.io/badge/Status-SPRINT%201-blue?style=flat-square)]()
 
 </div>
 
