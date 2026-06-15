@@ -49,35 +49,8 @@ O diagrama evidencia uma arquitetura de **três camadas** (apresentação, lógi
 
 ## 4.3 Diagrama de Containers — Visão Completa
 
-```mermaid
-flowchart TB
-    professor["👨‍🏫 Professor Orientador\n[Person]"]
-    aluno["👨‍🎓 Aluno Orientando\n[Person]"]
-    admin["🛠️ Administrador / Coordenador\n[Person]"]
+<img width="1351" height="711" alt="3-c4-contexto drawio" src="https://github.com/user-attachments/assets/f9d76117-f93f-4dae-9ece-b1eef0db2c72" />
 
-    subgraph eproject ["🎓 E-Project [Software System]"]
-        pwa["📱 Aplicação Web PWA\n[Container: React / JavaScript]\nFornece as interfaces de dashboards,\nkanban, editais e painel de gestão."]
-
-        api["⚙️ API RESTful\n[Container: Node.js / Express]\nProcessa regras de negócio, gerencia\nPDFs, controla acessos e gera logs."]
-
-        db["🗄️ Banco de Dados\n[Container: PostgreSQL]\nArmazena usuários, projetos, tarefas,\neditais, orientações e logs."]
-    end
-
-    firebaseauth["🔐 Firebase Authentication\n[Software System]\nAutenticação e gestão de identidade"]
-    fcm["🔔 Firebase Cloud Messaging\n[Software System]\nServiço de notificações push"]
-
-    professor --> |Acessa via navegador| pwa
-    aluno --> |Acessa via navegador / mobile| pwa
-    admin --> |Acessa via navegador| pwa
-
-    pwa -- "Faz requisições\n[HTTPS / JSON]" --> api
-    api -- "Lê e escreve dados\n[SQL / TCP]" --> db
-
-    pwa -- "Autentica usuário\n[HTTPS]" --> firebaseauth
-    api -- "Valida Token JWT\n[Firebase Admin SDK]" --> firebaseauth
-    api -- "Dispara eventos\n[HTTPS]" --> fcm
-    fcm -- "Envia alerta push" --> pwa
-```
 
 **Figura 6 —** Diagrama de Containers do E-Project. Representa os três containers internos da plataforma (PWA, API RESTful e Banco de Dados), os três perfis de usuários e os dois sistemas externos integrados (Firebase Authentication e Firebase Cloud Messaging).
 
