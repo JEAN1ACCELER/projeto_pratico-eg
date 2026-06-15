@@ -36,6 +36,9 @@ O E-Project será desenvolvido com um conjunto de tecnologias modernas e robusta
 ![EXPRESS](https://img.shields.io/badge/Express.js-API%20RESTful-000000?style=flat-square&logo=express&logoColor=white)
 ![TYPESCRIPT](https://img.shields.io/badge/TypeScript-Tipagem-3178C6?style=flat-square&logo=typescript&logoColor=white)
 
+
+</div>
+
 ### Backend
 - **Node.js/Express:** Node.js será o ambiente de execução JavaScript no lado do servidor, e Express.js será o *framework* web para construir a API RESTful. Essa combinação é ideal para aplicações de alta performance e escaláveis, permitindo o uso de JavaScript em toda a *stack* (*full-stack* JavaScript).
 
