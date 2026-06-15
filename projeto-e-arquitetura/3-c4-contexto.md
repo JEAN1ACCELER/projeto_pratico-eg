@@ -1,29 +1,53 @@
-# 3. Diagrama de Contexto — Modelo C4
+# 🗺️ Diagrama de Contexto — Modelo C4
 
-## 3.1 Visão geral do diagrama
+<div align="center">
 
-O **Diagrama de Contexto** é o primeiro e mais alto nível do modelo C4. Ele representa o sistema como uma única "caixa preta" e tem como objetivo mostrar **quem interage com o sistema** (atores/usuários) e **quais sistemas externos** se relacionam com ele.
+```
+╔══════════════════════════════════════════════════════════╗
+║                                                          ║
+║   📐  E-PROJECT  ·  C4 Model  ·  Nível 1 — Contexto    ║
+║                                                          ║
+╚══════════════════════════════════════════════════════════╝
+```
 
-Neste nível, não há preocupação com a estrutura interna do E-Project. O foco está em delimitar as fronteiras do sistema, identificar seus usuários diretos e mapear as dependências externas que são necessárias para seu funcionamento.
+[![C4 Model](https://img.shields.io/badge/C4%20Model-N%C3%ADvel%201%20%E2%80%94%20Contexto-4A90D9?style=flat-square)](https://c4model.com)
+[![UFAM](https://img.shields.io/badge/ICET--UFAM-Engenharia%20de%20Software%20I-00663C?style=flat-square)](https://www.ufam.edu.br)
+[![Status](https://img.shields.io/badge/Status-SPRINT%201-blue?style=flat-square)]()
+
+</div>
 
 ---
 
-## 3.2 Explicação geral do diagrama modelado para o sistema
+## 3.1 Visão Geral do Diagrama
 
-O **E-Project** é uma plataforma web PWA voltada à gestão de projetos acadêmicos da UFAM. No diagrama de contexto, ele aparece como o sistema central, conectado a três grupos de atores e dois sistemas externos.
+O **Diagrama de Contexto** é o primeiro e mais alto nível do modelo C4. Ele representa o sistema como uma única "caixa preta" e tem como objetivo mostrar **quem interage com o sistema** (atores/usuários) e **quais sistemas externos** se relacionam com ele.
 
-**Atores que interagem diretamente com o sistema:**
+Neste nível, não há preocupação com a estrutura interna do E-Project. O foco está em delimitar as fronteiras do sistema, identificar seus usuários diretos e mapear as dependências externas necessárias para seu funcionamento.
 
-- **Professor Orientador:** utiliza o sistema para acompanhar projetos, revisar tarefas, monitorar prazos, gerar documentos e consultar editais;
-- **Aluno Orientando:** utiliza o sistema para visualizar tarefas, enviar entregas, registrar presença em reuniões e acompanhar o andamento do projeto;
-- **Administrador Institucional (perfil de suporte):** responsável por configurações gerais, cadastro de modalidades e manutenção de dados institucionais.
+---
 
-**Sistemas externos com os quais o E-Project se integra:**
+## 3.2 Explicação Geral do Diagrama Modelado para o Sistema
 
-- **Portais institucionais da UFAM / Pró-Reitorias (PROPESP, PROEXT):** fonte de consulta para editais, chamadas e informações acadêmicas relevantes. O E-Project consome essas informações para alimentar o feed unificado de editais;
-- **Serviço de Notificação (E-mail / Web Push):** canal externo utilizado para envio de alertas, lembretes de prazo, avisos de novas tarefas e confirmações de ações importantes.
+O **E-Project** é uma plataforma web PWA voltada à gestão de projetos acadêmicos da UFAM. No diagrama de contexto, ele aparece como o sistema central, conectado a três grupos de atores e dois sistemas externos do ecossistema Firebase.
+
+### 👥 Atores que interagem diretamente com o sistema
+
+| Ator | Descrição |
+|------|-----------|
+| **Professor Orientador** | Acompanha projetos, revisa tarefas, monitora prazos, gera documentos e visualiza o progresso dos orientandos |
+| **Aluno Orientando** | Executa tarefas, envia entregas, registra presença em reuniões e acompanha o andamento do projeto |
+| **Administrador Geral do Sistema** | Gerencia configurações gerais, cadastra modalidades e mantém dados institucionais no sistema |
+
+### 🔌 Sistemas externos integrados
+
+| Sistema | Tipo | Papel |
+|---------|------|-------|
+| **Firebase Authentication** | Software System | Autenticação segura via e-mail/senha com suporte a JWT |
+| **Firebase Cloud Messaging (FCM)** | Software System | Envio de notificações push em tempo real aos usuários |
 
 O diagrama evidencia que o E-Project atua como um **hub centralizador** no ecossistema acadêmico da UFAM, eliminando a necessidade de os usuários acessarem múltiplos sistemas e ferramentas genéricas.
+
+> ⚠️ **Nota sobre MVP:** A integração com os Portais Institucionais da UFAM (PROPESP/PROEXT) está prevista para uma fase posterior ao MVP e, por isso, não consta neste diagrama.
 
 ---
 
@@ -31,27 +55,27 @@ O diagrama evidencia que o E-Project atua como um **hub centralizador** no ecoss
 
 ```mermaid
 flowchart TB
-    professor["Professor Orientador\nAcompanha projetos, tarefas,\nprazos, documentos e orientandos.\nGera relatórios e consulta editais."]
+    professor["👨‍🏫 Professor Orientador\n[Person]\nAcompanha projetos, tarefas,\nprazos e documentos dos orientandos.\nGera relatórios."]
 
-    aluno["Aluno Orientando\nExecuta tarefas, envia documentos,\nregistra presença em reuniões\ne acompanha prazos do projeto."]
+    aluno["👨‍🎓 Aluno Orientando\n[Person]\nExecuta tarefas, envia documentos,\nregistra presença em reuniões\ne acompanha prazos do projeto."]
 
-    admin["Administrador Institucional\nGerencia configurações gerais,\ncadastra modalidades e mantém\ndados institucionais do sistema."]
+    admin["🛠️ Administrador Geral do Sistema\n[Person]\nGerencia configurações gerais,\ncadastra modalidades e mantém\ndados institucionais do sistema."]
 
-    eproject["E-Project\nPlataforma web PWA para\ncentralização e gestão de\nprojetos acadêmicos da UFAM.\nModalidades: PIBIC, PIBITI, PIBEX, PASSE, Pos-Graduacao"]
+    eproject["🎓 E-Project\n[Software System]\nPlataforma web PWA para\ncentralização e gestão de projetos\nacadêmicos da UFAM.\nModalidades: PIBIC, PIBITI, PIBEX, PASSE, Pós-Graduação."]
 
-    editais["Portais Institucionais UFAM\nPROPESP / PROEXT\nFonte externa de editais,\nchamadas e informações\nacadêmicas relevantes."]
+    firebaseauth["🔐 Firebase Authentication\n[Software System]\nServiço do Google para autenticação\nsegura dos usuários via e-mail/senha\ncom suporte a JWT."]
 
-    notificacao["Servico de Notificacao\nE-mail / Web Push\nCanal externo para envio\nde alertas, lembretes\ne avisos aos usuários."]
+    fcm["🔔 Firebase Cloud Messaging\n[Software System]\nServiço do Google para envio de\nnotificações push em tempo real\naos usuários do sistema."]
 
     professor -- "Gerencia projetos, tarefas,\ndocumentos e orientandos" --> eproject
     aluno -- "Executa tarefas, envia\narquivos e registra presença" --> eproject
     admin -- "Configura modalidades\ne dados institucionais" --> eproject
 
-    eproject -- "Consulta editais e\nchamadas abertas" --> editais
-    eproject -- "Envia alertas de prazo,\nlembretes e notificações" --> notificacao
+    eproject -- "Autentica usuários\nvia e-mail/senha (JWT)" --> firebaseauth
+    eproject -- "Envia notificações push\nde prazos e atualizações" --> fcm
 ```
 
-**Figura 1 — Diagrama de Contexto do E-Project. Representa os três perfis de usuários que interagem com o sistema e os dois sistemas externos integrados.**
+**Figura 1 —** Diagrama de Contexto do E-Project. Representa os três perfis de usuários que interagem com o sistema e os dois sistemas externos integrados (Firebase Authentication e Firebase Cloud Messaging).
 
 ---
 
@@ -63,18 +87,17 @@ O professor é o principal usuário do sistema. Ele interage com o E-Project par
 
 ```mermaid
 flowchart LR
-    professor["Professor Orientador\nPerfil: orientador com multiplos\nprojetos simultaneos (PIBIC, PIBEX,\nPos-Graduacao). Precisa de visao\nmacro e alertas de atraso."]
+    professor["👨‍🏫 Professor Orientador\n[Person]\nOrientador com múltiplos projetos\nsimultâneos (PIBIC, PIBEX,\nPós-Graduação). Precisa de visão\nmacro e alertas de atraso."]
 
-    eproject["E-Project\nPlataforma web PWA para\ngestao de projetos academicos."]
+    eproject["🎓 E-Project\n[Software System]\nPlataforma web PWA para\ngestão de projetos acadêmicos."]
 
     professor -- "1. Acessa dashboard de projetos" --> eproject
     professor -- "2. Revisa e aprova tarefas" --> eproject
     professor -- "3. Gera documentos institucionais" --> eproject
-    professor -- "4. Consulta feed de editais" --> eproject
-    professor -- "5. Acompanha presença em reuniões" --> eproject
+    professor -- "4. Acompanha presença em reuniões" --> eproject
 ```
 
-**Figura 2 — Interações do Professor Orientador com o E-Project.**
+**Figura 2 —** Interações do Professor Orientador com o E-Project.
 
 ---
 
@@ -84,9 +107,9 @@ O aluno utiliza o sistema para acompanhar suas responsabilidades dentro do proje
 
 ```mermaid
 flowchart LR
-    aluno["Aluno Orientando\nPerfil: aluno de IC voluntaria\nou bolsista, com rotina multitarefa.\nPrecisa de cronograma claro\ne lembretes eficazes."]
+    aluno["👨‍🎓 Aluno Orientando\n[Person]\nAluno de IC voluntária ou bolsista,\ncom rotina multitarefa. Precisa de\ncronograma claro e lembretes eficazes."]
 
-    eproject["E-Project\nPlataforma web PWA para\ngestao de projetos academicos."]
+    eproject["🎓 E-Project\n[Software System]\nPlataforma web PWA para\ngestão de projetos acadêmicos."]
 
     aluno -- "1. Visualiza tarefas e prazos" --> eproject
     aluno -- "2. Envia documentos e anexos" --> eproject
@@ -95,55 +118,62 @@ flowchart LR
     aluno -- "5. Recebe notificações e lembretes" --> eproject
 ```
 
-**Figura 3 — Interações do Aluno Orientando com o E-Project.**
+**Figura 3 —** Interações do Aluno Orientando com o E-Project.
 
 ---
 
-### Parte 3 — E-Project e Portais Institucionais da UFAM
+### Parte 3 — E-Project e Firebase Authentication
 
-O E-Project consulta periodicamente os portais das pró-reitorias da UFAM para centralizar editais e chamadas abertas, eliminando a necessidade de os usuários acessarem múltiplos sites diariamente.
+O E-Project delega toda a gestão de identidade e autenticação ao Firebase Authentication. Ao realizar login, o usuário é verificado pelo serviço do Google, que retorna um token JWT utilizado pelo backend para controlar o acesso às funcionalidades conforme o perfil (professor, aluno ou administrador).
 
 ```mermaid
 flowchart LR
-    eproject["E-Project"]
+    eproject["🎓 E-Project\n[Software System]"]
 
-    propesp["PROPESP\nPro-Reitoria de Pesquisa\ne Pos-Graduacao.\nFonte de editais PIBIC e PIBITI."]
+    firebaseauth["🔐 Firebase Authentication\n[Software System]\nServiço do Google para\nautenticação segura via\ne-mail/senha com JWT."]
 
-    proext["PROEXT\nPro-Reitoria de Extensao.\nFonte de editais PIBEX e PASSE."]
-
-    eproject -- "Consulta editais de pesquisa\ne pos-graduacao" --> propesp
-    eproject -- "Consulta editais de\nextensao e bolsas" --> proext
+    eproject -- "Envia credenciais\npara autenticação" --> firebaseauth
+    firebaseauth -- "Retorna token JWT\npara controle de acesso" --> eproject
 ```
 
-**Figura 4 — Integração do E-Project com os portais institucionais da UFAM para alimentação do feed de editais.**
+**Figura 4 —** Integração do E-Project com o Firebase Authentication para autenticação de usuários.
 
 ---
 
-### Parte 4 — E-Project e Serviço de Notificação
+### Parte 4 — E-Project e Firebase Cloud Messaging
 
-O sistema utiliza um serviço externo de notificação para enviar alertas e lembretes aos usuários, garantindo que prazos e pendências não sejam esquecidos.
+O sistema utiliza o Firebase Cloud Messaging para enviar notificações push em tempo real aos usuários, garantindo que prazos iminentes, novas tarefas e atualizações de projeto sejam comunicados mesmo quando o aplicativo não está aberto no navegador.
 
 ```mermaid
 flowchart LR
-    eproject["E-Project"]
+    eproject["🎓 E-Project\n[Software System]"]
 
-    email["Servico de E-mail\nEnvio de lembretes formais,\nconfirmacoes e avisos\ninstitucionais."]
+    fcm["🔔 Firebase Cloud Messaging\n[Software System]\nServiço do Google para\nenvio de notificações push\nem tempo real."]
 
-    push["Web Push / FCM\nEnvio de notificacoes\nem tempo real no\nnavegador ou dispositivo."]
-
-    eproject -- "Envia lembretes de prazo\ne confirmações formais" --> email
-    eproject -- "Envia alertas imediatos\nde tarefas e pendências" --> push
+    eproject -- "Envia alertas de prazo,\nnovas tarefas e atualizações" --> fcm
+    fcm -- "Entrega notificações push\nao navegador/dispositivo" --> eproject
 ```
 
-**Figura 5 — Integração do E-Project com os canais de notificação externos.**
+**Figura 5 —** Integração do E-Project com o Firebase Cloud Messaging para notificações em tempo real.
 
 ---
 
 ## 3.5 Considerações Finais
 
-O diagrama de contexto evidencia que o E-Project atua como um sistema centralizador no ambiente acadêmico da UFAM. Ele conecta professores, alunos e administradores a funcionalidades que antes estavam dispersas em ferramentas genéricas como Trello, Notion e Excel, além de eliminar a necessidade de consulta diária a múltiplos portais institucionais.
-[1] System context diagram | C4 model. Disponível em: [https://c4model.com/diagrams/system-context](https://c4model.com/diagrams/system-context)
+O diagrama de contexto evidencia que o E-Project atua como um sistema centralizador no ambiente acadêmico da UFAM. Ele conecta professores, alunos e administradores a funcionalidades antes dispersas em ferramentas genéricas como Trello, Notion e Excel.
 
-![Diagrama de Contexto do E-Project](./e-project-c4-context.png)
+As integrações externas do MVP limitam-se ao ecossistema Firebase — **Authentication** para controle de acesso e **FCM** para comunicação proativa com os usuários — mantendo a arquitetura simples, segura e coerente com o tech stack definido.
 
-**Legenda:** Diagrama de Contexto do E-Project, mostrando as interações com atores e sistemas externos.
+---
+
+## 📚 Referências
+
+- [1] BROWN, Simon. *System context diagram | C4 model*. Disponível em: <https://c4model.com/diagrams/system-context>
+
+---
+
+<div align="center">
+
+**Universidade Federal do Amazonas — ICET | Engenharia de Software I | 2026**
+
+</div>
