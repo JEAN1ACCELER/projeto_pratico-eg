@@ -1,8 +1,16 @@
 # 3. BACKLOG DO PRODUTO
 
-## 1. HISTÓRIAS DE USUÁRIO (USER STORIES)
+## 1. INTRODUÇÃO E IMPORTÂNCIA DO BACKLOG
 
-O detalhamento completo (Critérios de Aceitação e Regras de Negócio) das 17 histórias principais encontra-se no [Quadro do GitHub Projects](https://github.com/users/JEAN1ACCELER/projects/2)
+Esta seção apresenta o Backlog do Produto, estruturado em formato de Histórias de Usuário (User Stories). O backlog atua como a única fonte de verdade sobre as funcionalidades e requisitos que o E-Project deve entregar para agregar valor aos seus diferentes perfis de usuários (Alunos, Professores Orientadores e Administradores).
+
+A estruturação correta deste documento é vital para o desenvolvimento do projeto, pois o backlog é o alicerce fundamental para a definição da Arquitetura do Software. A solução arquitetural proposta para o sistema, detalhada por meio do Modelo C4, deve ser justificada com base no backlog[cite: 1]. 
+
+Isso afeta diretamente a validação do sistema através da **rastreabilidade**: a equipe deve ser capaz de demonstrar de forma clara e verificável como as decisões arquiteturais estão diretamente relacionadas às histórias do usuário[cite: 1]. Cada componente desenhado na arquitetura (como um dashboard administrativo no *Frontend*, regras de permissão na camada de *Segurança*, ou rotas específicas na *API*) precisa existir para satisfazer uma necessidade explícita descrita nesta tabela.
+
+## 2. HISTÓRIAS DE USUÁRIO (USER STORIES)
+
+O detalhamento completo (Critérios de Aceitação e Regras de Negócio) das histórias principais encontra-se no [Quadro do GitHub Projects](https://github.com/users/JEAN1ACCELER/projects/2)
 
 | ID | História de Usuário | Persona(s) | Prioridade | Assignee |
 |:---|:---|:---|:---|:---|
@@ -23,3 +31,7 @@ O detalhamento completo (Critérios de Aceitação e Regras de Negócio) das 17 
 | **US-15** | **Enquanto** usuário com baixa visão, **desejo** ajustar o tamanho da fonte e ativar o modo de alto contraste, **para** conseguir usar o sistema sem dificuldades visuais. | Carlos Mendonça | Alta | Ricky Brendon |
 | **US-16** | **Enquanto** usuário com dificuldade visual, **desejo** que todos os botões e menus tenham rótulos textuais visíveis (além de ícones), **para** navegar no sistema sem precisar adivinhar o significado de cada elemento. | Carlos Mendonça | Média | Jean Carlos |
 | **US-17** | **Enquanto** usuário com necessidade de foco, **desejo** ativar um modo de interface simplificado que remova elementos decorativos e banners, **para** me concentrar apenas na tarefa que estou executando. | Carlos Mendonça, Ana Beatriz | Baixa | Ricky Brendon |
+| **US-18** | **Enquanto** administrador do sistema, **desejo** gerenciar o status das contas de usuários (ativar, inativar, alterar níveis de acesso), **para** garantir que apenas pessoas autorizadas da comunidade acadêmica utilizem a plataforma com as permissões corretas. | Carlos Mendonça | Alta | Jean Carlos |
+| **US-19** | **Enquanto** coordenador de pesquisa, **desejo** cadastrar, editar e encerrar editais das pró-reitorias (PIBIC, PACE, PIBEX, etc.), **para** que eles fiquem disponíveis no feed de oportunidades dos professores de forma centralizada. | Carlos Mendonça | Alta | Luzinéia Rebelo |
+| **US-20** | **Enquanto** administrador do sistema, **desejo** visualizar um dashboard administrativo com métricas consolidadas (quantidade de projetos ativos e total de usuários), **para** monitorar o engajamento e o uso global da plataforma. | Carlos Mendonça | Média | Pedro Jhevison |
+| **US-21** | **Enquanto** administrador do sistema, **desejo** consultar um histórico básico (logs) de acessos e ações críticas, **para** auditar eventuais problemas técnicos e garantir a segurança institucional dos dados. | Carlos Mendonça | Baixa | Jean Carlos |
