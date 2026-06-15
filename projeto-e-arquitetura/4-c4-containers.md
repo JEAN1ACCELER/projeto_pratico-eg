@@ -48,7 +48,7 @@ O pipeline de CI/CD, gerenciado pelo **GitHub Actions**, automatiza o deploy con
 | **Banco de Dados** | PostgreSQL + Prisma ORM | Railway | Persiste dados de usuários, projetos, tarefas, reuniões e documentos. |
 | **Serviço de Geração de PDF** | Node.js / PDFKit | Integrado ao Backend | Gera automaticamente relatórios parciais e declarações de bolsista em formato PDF oficial da UFAM. |
 
-### 🔘 Sistemas Externos Integrados
+###  Sistemas Externos Integrados
 
 | Sistema | Tipo | Papel no E-Project |
 |:---|:---|:---|
