@@ -69,28 +69,6 @@ flowchart TB
     eproject -- "Autentica usuários\nvia e-mail/senha (JWT)" --> firebaseauth
     eproject -- "Envia notificações push\nde prazos e atualizações" --> fcm
 
-**Figura 1 —** Diagrama de Contexto do E-Project. Representa os três perfis de usuários que interagem com o sistema e os dois sistemas externos integrados (Firebase Authentication e Firebase Cloud Messaging).
-
----
-
-## 3.4 Detalhamento por Partes
-
-### Parte 1 — Professor Orientador e E-Project
-
-O professor é o principal usuário do sistema. Ele interage com o E-Project para obter uma visão centralizada de todos os seus projetos acadêmicos, acompanhar o progresso dos orientandos, revisar e aprovar entregas, monitorar prazos e gerar documentos institucionais automaticamente.
-
-```mermaid
-flowchart LR
-    professor["👨‍🏫 Professor Orientador\n[Person]\nOrientador com múltiplos projetos\nsimultâneos (PIBIC, PIBEX,\nPós-Graduação). Precisa de visão\nmacro e alertas de atraso."]
-
-    eproject["🎓 E-Project\n[Software System]\nPlataforma web PWA para\ngestão de projetos acadêmicos."]
-
-    professor -- "1. Acessa dashboard de projetos" --> eproject
-    professor -- "2. Revisa e aprova tarefas" --> eproject
-    professor -- "3. Gera documentos institucionais" --> eproject
-    professor -- "4. Acompanha presença em reuniões" --> eproject
-```
-
 **Figura 2 —** Interações do Professor Orientador com o E-Project.
 
 ---
