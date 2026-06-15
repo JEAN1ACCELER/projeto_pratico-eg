@@ -108,35 +108,32 @@ Abaixo, apresentamos um comparativo visual e tabular das principais necessidades
 
 <img width="514" height="720" alt="image" src="https://github.com/user-attachments/assets/5c5aa091-52c4-45ef-b5a7-71811d2ca11f" />
 
-### 3.2 Persona de Professor: Dr. Carlos Mendonça
+### 3.2 Persona do Administrador / Coordenador: Dr. Carlos Mendonça
 
-**Nome:** Dr. Carlos Mendonça
-**Idade:** 52 anos
-**Ocupação:** Pesquisador Produtividade e Orientador (12 orientandos)
-**Perfil:** Dr. Carlos é um professor experiente e altamente produtivo, com uma grande carga de orientações em diversas modalidades (PIBIC, PIBITI, PIBEX, Pós-Graduação). Ele valoriza a eficiência e a capacidade de ter uma visão estratégica de todos os seus projetos, sem se perder em detalhes operacionais.
+**Nome:** Dr. Carlos Mendonça  
+**Idade:** 52 anos  
+**Ocupação:** Coordenador de Pesquisa e Administrador do Sistema  
+**Perfil:** Dr. Carlos atua na coordenação de pesquisa da instituição, sendo o responsável pelo gerenciamento de programas como PIBIC, PIBITI e PIBEX. Como administrador da plataforma E-Project, ele exerce o "comando geral" técnico e gerencial. Ele valoriza a segurança, a organização dos dados institucionais e a eficiência na publicação de editais e no controle de acessos de professores e alunos.
 
 **Objetivos:**
-*   Ter uma visão macro e atualizada do progresso de todos os seus orientandos e projetos.
-*   Identificar rapidamente quais alunos estão atrasados ou precisam de atenção.
-*   Gerenciar prazos de editais e entregas de forma centralizada.
-*   Reduzir o tempo gasto com tarefas administrativas e burocráticas.
-*   Garantir a qualidade e a conformidade dos relatórios e documentos.
+* Gerenciar o status das contas de usuários (ativar, desativar, redefinir senhas e gerenciar permissões).
+* Publicar, atualizar e encerrar editais das pró-reitorias de forma centralizada para que apareçam no feed dos professores.
+* Ter uma visão macro e acessar relatórios gerenciais sobre a quantidade de projetos ativos e o uso global da plataforma.
+* Garantir a segurança, a auditoria básica e a integridade das informações no sistema.
 
 **Desafios:**
-*   Dificuldade em consolidar informações de múltiplos projetos e alunos, que muitas vezes utilizam ferramentas diferentes.
-*   Perda de prazos importantes devido à falta de um sistema de alerta eficaz.
-*   Excesso de e-mails e comunicações fragmentadas sobre o status dos projetos.
-*   A necessidade de revisar manualmente muitos documentos antes da assinatura.
+* Lidar com um grande volume de contas de usuários e requisições de suporte para acesso.
+* Garantir que os prazos e regras dos novos editais institucionais sejam comunicados de forma imediata e sem falhas.
+* Dificuldade em auditar e monitorar o status global das atividades de pesquisa sem um painel centralizado.
 
 **Necessidades:**
-*   Um dashboard intuitivo que apresente o status de todos os projetos e orientandos de forma clara.
-*   Alertas e notificações personalizáveis para prazos e entregas pendentes.
-*   Ferramentas de automação para a geração e revisão de documentos.
-*   Um sistema que permita a visualização rápida de quem está atrasado e o que precisa ser feito.
-*   Integração com sistemas institucionais para evitar a redigitação de dados.
+* Um painel de controle (dashboard administrativo) exclusivo para gestão de usuários, papéis e permissões.
+* Interface dedicada e ágil para criação, edição e disparo de editais que alimentarão o sistema.
+* Acesso a logs básicos e relatórios consolidados de uso da plataforma para prestação de contas à instituição.
+* Integração segura que permita validar se os usuários pertencem à comunidade acadêmica.
 
-**Citação:** _"Com tantos projetos e alunos, preciso de um copiloto digital que me dê a visão geral e me avise o que é crítico. Não quero saber de cada clique, mas sim se meus alunos estão no caminho certo e se os prazos serão cumpridos."_
-
+**Citação:** 
+> "Como coordenador, preciso garantir que a plataforma seja o ambiente seguro e oficial da nossa pesquisa. Meu foco é gerenciar os acessos e manter os editais sempre atualizados para que os professores e alunos não tenham dores de cabeça com a burocracia."
 <img width="752" height="868" alt="image" src="https://github.com/user-attachments/assets/1e979ae5-c7f8-4ff0-8fa9-e600a211119a" />
 
 ### 3.3 Persona de Aluno: Ana Beatriz
