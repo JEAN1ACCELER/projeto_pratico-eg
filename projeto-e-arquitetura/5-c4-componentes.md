@@ -45,6 +45,9 @@ A separação em componentes funcionais é motivada por três razões centrais:
 
 ## 5.3 Diagrama de Componentes da API Backend
 
+<img width="2032" height="1071" alt="3-c4-contexto-Página-3 drawio" src="https://github.com/user-attachments/assets/096c0335-4f83-4b2a-8c2f-cbbd12eda5f0" />
+
+
 ```mermaid
 flowchart LR
     pwa["Aplicação Web PWA"]
