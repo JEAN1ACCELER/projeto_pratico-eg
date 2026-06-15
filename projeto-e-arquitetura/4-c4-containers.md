@@ -60,7 +60,8 @@ O pipeline de CI/CD, gerenciado pelo **GitHub Actions**, automatiza o deploy con
 
 ## 4.4 Diagrama de Containers — Visão Completa
 
-![Diagrama de Containers do E-Project](./imgs/4-c4-containers.png)
+<img width="1612" height="1191" alt="3-c4-contexto-Página-2 drawio" src="https://github.com/user-attachments/assets/828ed56d-d48a-4221-9dec-6eac22343090" />
+
 
 **Figura 1 —** Diagrama de Containers do E-Project. Representa os quatro containers internos (PWA, API RESTful, Banco de Dados e Serviço de PDF), os três sistemas externos integrados (Firebase Auth, FCM e GitHub Actions) e os três perfis de usuário que interagem com a plataforma.
 
