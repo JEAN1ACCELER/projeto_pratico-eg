@@ -1,4 +1,3 @@
-<img width="541" height="766" alt="Captura de tela 2026-06-15 105305" src="https://github.com/user-attachments/assets/946e690e-759b-46a6-804c-bc62a6bdb0fb" />
 <div align="center">
 
 # Diagrama de Containers
