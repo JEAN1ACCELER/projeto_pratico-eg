@@ -1,3 +1,4 @@
+<img width="541" height="766" alt="Captura de tela 2026-06-15 105305" src="https://github.com/user-attachments/assets/946e690e-759b-46a6-804c-bc62a6bdb0fb" />
 <div align="center">
 
 # Diagrama de Containers
@@ -137,7 +138,7 @@ O **Firebase Cloud Messaging (FCM)** é o mecanismo de notificações push do E-
 
 O **GitHub Actions** orquestra o processo de integração e entrega contínua. A cada *commit* na branch principal, o pipeline automaticamente executa os testes, realiza o *build* da aplicação e implanta o frontend na **Vercel** e o backend no **Railway**, garantindo entregas rápidas e sem intervenção manual.
 
-![Parte 7 — Pipeline CI/CD](./imgs/4-c4-containers-parte7.png)
+<img width="541" height="766" alt="Captura de tela 2026-06-15 105305" src="https://github.com/user-attachments/assets/12142f94-0d30-4205-9dd2-57c5c3a2474c" />
 
 **Figura 8 —** Pipeline de CI/CD com GitHub Actions realizando deploy automático para Vercel (frontend) e Railway (backend).
 
