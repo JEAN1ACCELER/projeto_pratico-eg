@@ -106,10 +106,11 @@ A arquitetura do E-Project é projetada para ser modular e com integrações bem
 
 | Camada | Tecnologia | Justificativa |
 |:---|:---|:---|
-| Frontend | React (PWA) | Interface de usuário reativa, experiência de aplicativo nativo, funcionalidades offline. |
+| Frontend | React (PWA) + Recharts | Interface reativa e offline. O Recharts suportará a renderização dos dashboards com métricas para professores e administradores. |
 | Backend | Node.js/Express | Ambiente de execução JavaScript de alta performance, framework web robusto para API RESTful. |
 | Banco de Dados | PostgreSQL | SGBDR confiável, escalável e com recursos avançados para dados estruturados. Conformidade com ePING. |
-| Autenticação | Firebase Authentication | Solução de autenticação segura, escalável e de fácil integração. Suporte a JWT e futura expansão para OAuth2/SSO. |
+| Autenticação e Permissões | Firebase Auth + Admin SDK | Solução segura para login e gestão de utilizadores. O Admin SDK permitirá ao Administrador ativar, inativar e definir perfis de acesso (Roles). |
+| Auditoria (Logs) | Winston | Biblioteca de backend para capturar e armazenar logs de ações críticas e acessos, viabilizando a auditoria do sistema. |
 | CI/CD | GitHub Actions | Automação de build, teste e deploy, garantindo entregas rápidas e confiáveis. |
 | Hospedagem Frontend | Vercel | Hospedagem especializada em frontend com deploy contínuo integrado ao GitHub. |
 | Hospedagem Backend | Railway | Hospedagem do servidor e banco de dados no mesmo ambiente, simplificando a configuração. |
