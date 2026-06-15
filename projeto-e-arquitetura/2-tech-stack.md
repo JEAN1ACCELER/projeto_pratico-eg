@@ -1,11 +1,11 @@
 <div align="center">
 
-# 🛠️ Tech Stack — E-Project
+#  Tech Stack — E-Project
 *Mapa completo das tecnologias que compõem o E-Project*
 
 ---
 
-> 💡 Stack construída para rodar como **PWA full-stack JavaScript** — do frontend reativo até a geração automática de documentos oficiais da UFAM.
+>  Stack construída para rodar como **PWA full-stack JavaScript** — do frontend reativo até a geração automática de documentos oficiais da UFAM.
 
 </div>
 
@@ -19,7 +19,7 @@ O E-Project será desenvolvido com um conjunto de tecnologias modernas e robusta
 
 <div align="center">
 
-  ### 🖥️ Frontend & UI
+  ###  Frontend & UI
 ![REACT](https://img.shields.io/badge/React-PWA-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![TAILWIND](https://img.shields.io/badge/Tailwind%20CSS-Estilização-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 ![REDUX](https://img.shields.io/badge/Redux-Estado%20Global-764ABC?style=flat-square&logo=redux&logoColor=white)
@@ -31,7 +31,7 @@ O E-Project será desenvolvido com um conjunto de tecnologias modernas e robusta
 
 <div align="center">
 
-### ⚙️ Backend & API
+###  Backend & API
 ![NODE](https://img.shields.io/badge/Node.js-Servidor-339933?style=flat-square&logo=node.js&logoColor=white)
 ![EXPRESS](https://img.shields.io/badge/Express.js-API%20RESTful-000000?style=flat-square&logo=express&logoColor=white)
 ![TYPESCRIPT](https://img.shields.io/badge/TypeScript-Tipagem-3178C6?style=flat-square&logo=typescript&logoColor=white)
@@ -44,7 +44,7 @@ O E-Project será desenvolvido com um conjunto de tecnologias modernas e robusta
 
 <div align="center">
 
-### 🗄️ Banco de Dados & Autenticação
+###  Banco de Dados & Autenticação
 ![POSTGRES](https://img.shields.io/badge/PostgreSQL-Banco%20de%20Dados-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 ![FIREBASE AUTH](https://img.shields.io/badge/Firebase%20Auth-Autenticação-FFCA28?style=flat-square&logo=firebase&logoColor=black)
 ![PRISMA](https://img.shields.io/badge/Prisma-ORM-2D3748?style=flat-square&logo=prisma&logoColor=white)
@@ -59,7 +59,7 @@ O E-Project será desenvolvido com um conjunto de tecnologias modernas e robusta
 
 <div align="center">
 
-### ☁️ Infraestrutura & Deploy
+###  Infraestrutura & Deploy
 ![VERCEL](https://img.shields.io/badge/Vercel-Frontend-000000?style=flat-square&logo=vercel&logoColor=white)
 ![RAILWAY](https://img.shields.io/badge/Railway-Backend-0B0D0E?style=flat-square&logo=railway&logoColor=white)
 ![GITHUB ACTIONS](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-2088FF?style=flat-square&logo=githubactions&logoColor=white)
@@ -77,7 +77,7 @@ O E-Project será desenvolvido com um conjunto de tecnologias modernas e robusta
 
 <div align="center">
 
-### 🔔 Notificações & Documentos
+###  Notificações & Documentos
 ![FCM](https://img.shields.io/badge/Firebase%20FCM-Notificações%20Push-FFCA28?style=flat-square&logo=firebase&logoColor=black)
 ![PDFKIT](https://img.shields.io/badge/PDFKit-Geração%20de%20PDF-CC0000?style=flat-square&logo=adobeacrobatreader&logoColor=white)
 
