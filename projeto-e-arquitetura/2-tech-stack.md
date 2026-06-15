@@ -17,10 +17,14 @@
 
 O E-Project será desenvolvido com um conjunto de tecnologias modernas e robustas, selecionadas para garantir escalabilidade, manutenibilidade e uma excelente experiência de usuário. A *stack* tecnológica abrange desde o *frontend* até o *backend*, banco de dados, autenticação, notificações, geração de documentos, hospedagem e processos de CI/CD.
 
-### 🖥️ Frontend & UI
+<div align="center">
+
+  ### 🖥️ Frontend & UI
 ![REACT](https://img.shields.io/badge/React-PWA-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![TAILWIND](https://img.shields.io/badge/Tailwind%20CSS-Estilização-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 ![REDUX](https://img.shields.io/badge/Redux-Estado%20Global-764ABC?style=flat-square&logo=redux&logoColor=white)
+
+</div>
 
 ### Frontend
 - **React (PWA):** Um *framework* JavaScript para construção de interfaces de usuário reativas e eficientes. A implementação como *Progressive Web App* (PWA) permitirá que o aplicativo seja instalado em dispositivos móveis e *desktops*, oferecendo uma experiência similar a um aplicativo nativo, com funcionalidades *offline* e notificações.
