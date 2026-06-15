@@ -165,11 +165,13 @@ Na camada de **Apresentação** do E-Project, o padrão **MVC** é adaptado para
 As *Views* são implementadas por meio de componentes React funcionais responsáveis pela exibição das informações ao usuário. Entre as principais interfaces do sistema destacam-se:
 
 - Dashboard do orientador, contendo cards com projetos ativos e indicadores de acompanhamento;
+- Dashboard administrativo, contendo métricas de uso global e logs do sistema;
 - Quadro Kanban de tarefas, organizado nas colunas:
   - A Fazer;
   - Em Andamento;
   - Concluído;
-- Feed de editais com filtros e mecanismos de busca;
+- Feed de editais com filtros e mecanismos de busca e formulários de cadastro/edição de editais para a coordenação;
+- Painel de gestão de usuários para ativação, inativação e controle de permissões;
 - Formulários para lançamento de notas, frequência e relatórios acadêmicos.
 
 ### Model (Estado da Aplicação)
@@ -249,7 +251,8 @@ Após a validação, a camada de Infraestrutura grava os dados no banco PostgreS
 │                                                                             │
 │               Express.js (Controllers + Services)                           │
 │                                                                             │
-│  Controllers: AuthController, ProjectController, TaskController             │
+│  Controllers: AuthController, ProjectController, TaskController,            │
+│               UserController                                                │
 │                                                                             │
 │  Services:    ProjectService, TaskService, EditalService                    │
 │                                                                             │
@@ -280,133 +283,7 @@ Após a validação, a camada de Infraestrutura grava os dados no banco PostgreS
 │ │ - Projetos      │ │ - JWT Tokens    │ │ - Notificações             │      │
 │ │ - Usuários      │ │ - Social Login  │ │ - Scraping de Editais      │      │
 │ │ - Tarefas       │ │ - Roles         │ │                            │      │
+│ │ - Logs Auditoria│ │                 │ │                            │      │
 │ └─────────────────┘ └─────────────────┘ └────────────────────────────┘      │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
-```
-
-**Figura 1 – Arquitetura Geral do E-Project baseada em Arquitetura em Camadas e MVC.**
-
-*Fonte: Elaborado pelo autor (2026).*
-
----
-
-<img width="516" height="349" alt="Screenshot 2026-06-08 at 11-58-45 Cap  7 Arquitetura – Engenharia de Software Moderna" src="https://github.com/user-attachments/assets/fb78c2c6-3788-491d-a362-c1c859ef0ea9" />
-
-**Figura 2 – Arquitetura MVC.**
-*Fonte: Elaborado por Marco Tulio Valente (2020).*
-
-
-## 4.1 Detalhamento dos Componentes da Arquitetura
-
-| Componente | Tecnologia | Responsabilidade Específica no E-Project |
-|------------|------------|------------------------------------------|
-| **View (React)** | React + Tailwind CSS | Renderiza dashboards, quadro Kanban, formulários de cadastro de projetos e tarefas, feed de editais e relatórios acadêmicos. |
-| **Controller (Frontend)** | Redux Thunk / Context API | Gerencia o estado da aplicação, dispara ações assíncronas para a API e trata eventos de interação do usuário, como cliques, submissões de formulários e filtros. |
-| **Controller (Backend)** | Express.js | Recebe requisições REST (`POST`, `GET`, `PUT`, `DELETE`), valida autenticação e permissões dos usuários e encaminha as operações para os serviços correspondentes. |
-| **Service** | Node.js | Implementa os casos de uso do sistema e orquestra operações complexas, como cadastro de projetos, gerenciamento de tarefas, geração de relatórios e envio de notificações. |
-| **Model (Domínio)** | Classes TypeScript | Contém as entidades e regras de negócio da aplicação, incluindo validações de projetos, tarefas, usuários e editais, além do cálculo automático de indicadores e status. |
-| **Repository** | Prisma ORM / TypeORM | Abstrai o acesso ao banco de dados por meio de repositórios, disponibilizando operações de persistência e consulta das entidades do sistema. |
-| **Banco de Dados** | PostgreSQL | Armazena informações de usuários, projetos, tarefas, orientações, editais, relatórios, registros de presença e logs do sistema. |
-| **Autenticação** | Firebase Authentication | Realiza autenticação de usuários por e-mail e senha ou provedores externos, gera e valida tokens JWT e controla perfis de acesso. |
-| **Hospedagem** | Vercel / Netlify | Hospeda o frontend em formato PWA e permite integração contínua com repositórios GitHub para implantação automatizada. |
-
-### Descrição dos Componentes
-
-#### View (React)
-
-A camada de visualização é composta por componentes React responsáveis pela apresentação das informações aos usuários. Essa camada inclui dashboards, quadros Kanban, formulários e telas de acompanhamento de projetos acadêmicos.
-
-#### Controller (Frontend)
-
-Os controladores do frontend coordenam as interações do usuário com a interface, atualizam o estado global da aplicação e realizam chamadas à API backend por meio de requisições HTTP.
-
-#### Controller (Backend)
-
-Os controladores implementados em Express.js recebem as requisições do frontend, realizam validações iniciais e encaminham os dados para os serviços responsáveis pelas regras de negócio.
-
-#### Service
-
-A camada de serviços concentra a lógica de aplicação e os casos de uso do sistema, atuando como intermediária entre os controladores e o domínio.
-
-#### Model (Domínio)
-
-Representa o núcleo do sistema e contém as entidades acadêmicas e suas respectivas regras de negócio, garantindo consistência e integridade dos dados.
-
-#### Repository
-
-Os repositórios encapsulam o acesso ao banco de dados, permitindo que a camada de domínio permaneça desacoplada da tecnologia de persistência utilizada.
-
-#### Banco de Dados
-
-O PostgreSQL é responsável pelo armazenamento persistente de todas as informações gerenciadas pelo sistema.
-
-#### Autenticação
-
-O Firebase Authentication fornece mecanismos de autenticação, autorização e gerenciamento de sessões dos usuários.
-
-#### Hospedagem
-
-A camada de hospedagem disponibiliza a aplicação para acesso externo, utilizando serviços de deploy contínuo integrados ao GitHub.
-# Arquitetura de Software: Três Camadas vs MVC
-
-Este documento resume e compara dois importantes padrões arquiteturais: **Arquitetura em Três Camadas** e **Model-View-Controller (MVC)**, com base na evolução histórica e aplicação em projetos modernos (como o E-Project).
-
-## Arquitetura em Três Camadas
-
-A Arquitetura em Três Camadas é um padrão comum na construção de sistemas de informação corporativos. Ela surgiu com a migração de sistemas de mainframes para plataformas distribuídas, a partir do final da década de 80.
-
-### As Três Camadas
-
-<img width="666" height="434" alt="Screenshot 2026-06-08 at 12-36-10 Cap  7 Arquitetura – Engenharia de Software Moderna" src="https://github.com/user-attachments/assets/f0816292-1bc6-4f88-ba02-da705e112e1f" />
-
-**Figura 3 – Arquitetura em Três Camadas.**
-*Fonte: Elaborado por Marco Tulio Valente (2020).*
-
-
-| Camada | Responsabilidade | Exemplo no E-Project |
-| :--- | :--- | :--- |
-| **1. Interface com o Usuário (Apresentação)** | Toda interação com o usuário: exibição de informação, coleta de eventos (cliques, digitação), etc. Pode ser desktop, web ou mobile. | Interface React PWA: dashboards, formulários de projetos, quadro Kanban. |
-| **2. Lógica de Negócio (Aplicação)** | Implementa as regras de negócio do sistema. Validações, cálculos, fluxos de trabalho. | Node.js/Express: regras como "notas entre 0 e valor da avaliação", notificações por e-mail. |
-| **3. Banco de Dados** | Armazena os dados manipulados pelo sistema. | PostgreSQL: tabelas de usuários, projetos, tarefas, orientações. |
-
-### Características Importantes
-
-- **Arquitetura Distribuída:** Normalmente, a camada de interface executa na máquina do cliente, a camada de negócio em um servidor de aplicação, e o banco de dados em um servidor dedicado.
-- **Modularidade:** A camada de aplicação pode conter módulos como fachadas (para facilitar acesso) e persistência (para isolar o banco de dados).
-- **Comparação com 2 camadas:** Em sistemas de duas camadas, a interface e a lógica de negócio são unidas no cliente. A desvantagem é que todo o processamento ocorre no cliente, exigindo maior poder computacional.
-
----
-
-## Diferença entre MVC e Três Camadas (Pergunta Frequente)
-
-A confusão entre estes termos é comum. A melhor forma de entendê-los é através de sua **evolução histórica**, que revela que atuam em níveis de abstração diferentes e foram criados para propósitos distintos.
-
-<img width="625" height="364" alt="Screenshot 2026-06-08 at 12-40-37 Cap  7 Arquitetura – Engenharia de Software Moderna" src="https://github.com/user-attachments/assets/5df32f81-601a-40e0-80b7-09aa559f48cd" />
-
-**Figura 4 – Arquitetura MVC Web junatamnete com a trẽs camadas.**
-*Fonte: Elaborado por Marco Tulio Valente (2020).*
-
-### Resumo Rápido
-
-- **Arquitetura em Três Camadas:** É uma **arquitetura de sistema** (macroarquitetura). Preocupa-se com a distribuição física e lógica de um sistema completo (frontend, backend, banco de dados).
-- **Padrão MVC:** É um **padrão de apresentação** (microarquitetura). Preocupa-se com a organização interna da camada de interface com o usuário (como separar o código da tela da lógica de domínio).
-
-### Linha do Tempo e Evolução
-
-```mermaid
-timeline
-    title Evolução Histórica de MVC e 3 Camadas
-    section 1970s
-        MVC Clássico : Criado para o Smalltalk-80
-                    : Foco: Interfaces Gráficas (janelas, botões, mouse)
-                    : Objetivo: Separar Modelo (dados) da Visão (UI) e Controlador (eventos)
-    section 1990s
-        3 Camadas   : Popularizou-se com sistemas distribuídos
-                    : Foco: Separar Apresentação, Lógica e Dados em servidores diferentes
-                    : Uso: MVC é usado *dentro* da camada de apresentação
-    section 2000s
-        MVC Web     : Frameworks (Spring, Rails, Django) adaptam o MVC
-                    : Visão = HTML, Controller = processa requisições, Model = banco de dados
-                    : Resultado: Fim da distinção clara (MVC Web = 3 Camadas?)
-
