@@ -25,8 +25,6 @@ Neste nível, cada "container" representa uma unidade implantável e executável
 - **Como os containers se comunicam** entre si e com sistemas externos;
 - **Onde cada container é hospedado**.
 
- **Importante:** "Container" no modelo C4 não se refere ao Docker. Representa qualquer unidade executável isolada — uma aplicação web, uma API, um banco de dados ou um serviço de background.
-
 ---
 
 ## 4.2 Explicação Geral do Diagrama
