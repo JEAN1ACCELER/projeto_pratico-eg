@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📦 Diagrama de Containers
+# Diagrama de Containers
 
 **E-Project** · C4 Model · Nível 2
 
@@ -25,7 +25,7 @@ Neste nível, cada "container" representa uma unidade implantável e executável
 - **Como os containers se comunicam** entre si e com sistemas externos;
 - **Onde cada container é hospedado**.
 
-> ⚠️ **Importante:** "Container" no modelo C4 não se refere ao Docker. Representa qualquer unidade executável isolada — uma aplicação web, uma API, um banco de dados ou um serviço de background.
+ **Importante:** "Container" no modelo C4 não se refere ao Docker. Representa qualquer unidade executável isolada — uma aplicação web, uma API, um banco de dados ou um serviço de background.
 
 ---
 
@@ -41,7 +41,7 @@ O pipeline de CI/CD, gerenciado pelo **GitHub Actions**, automatiza o deploy con
 
 ## 4.3 Descrição dos Containers
 
-### 🟦 Containers Internos do E-Project
+###  Containers Internos do E-Project
 
 | Container | Tecnologia | Hospedagem | Responsabilidade |
 |:---|:---|:---|:---|
