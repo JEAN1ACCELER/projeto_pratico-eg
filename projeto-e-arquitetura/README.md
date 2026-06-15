@@ -20,7 +20,7 @@ Esta pasta contém o detalhamento da **Arquitetura de Software do E-Project**, d
 
 ---
 
-## 📂 Estrutura de Documentos
+##  Estrutura de Documentos
 
 A documentação está organizada de forma hierárquica, facilitando a compreensão desde os padrões arquiteturais até a rastreabilidade com as histórias de usuário:
 
@@ -36,7 +36,7 @@ A documentação está organizada de forma hierárquica, facilitando a compreens
 
 ---
 
-## 🛠️ Tecnologias Principais
+##  Tecnologias Principais
 
 O E-Project utiliza uma *stack* moderna baseada em **JavaScript Full-Stack**:
 
@@ -48,9 +48,9 @@ O E-Project utiliza uma *stack* moderna baseada em **JavaScript Full-Stack**:
 
 ---
 
-## 💡 Informações Importantes
+##  Informações Importantes
 
-> ⚠️ **Integridade da Documentação:**
+>  **Integridade da Documentação:**
 > Todos os diagramas presentes nestes documentos foram modelados com base no backlog do TP1. As referências cruzadas no documento `7-rastreabilidade.md` garantem a consistência entre o que foi planejado (TP1) e o que foi arquitetado (TP2).
 
 ---
