@@ -42,7 +42,8 @@ O E-Project será desenvolvido com um conjunto de tecnologias modernas e robusta
 
 ### Backend
 - **Node.js/Express:** Node.js será o ambiente de execução JavaScript no lado do servidor, e Express.js será o *framework* web para construir a API RESTful. Essa combinação é ideal para aplicações de alta performance e escaláveis, permitindo o uso de JavaScript em toda a *stack* (*full-stack* JavaScript).
-- ![WINSTON](https://img.shields.io/badge/Winston-Logs%20e%20Auditoria-FF9900?style=flat-square&logo=node.js&logoColor=white)
+
+ ![WINSTON](https://img.shields.io/badge/Winston-Logs%20e%20Auditoria-FF9900?style=flat-square&logo=node.js&logoColor=white)
 ### Backend
 - **Winston:** Biblioteca de *logging* universal para Node.js. Será implementada para registar o histórico de acessos e ações críticas no sistema (criação de editais, alteração de permissões), permitindo a auditoria e garantindo a segurança institucional exigida pelo perfil Administrador.
 
