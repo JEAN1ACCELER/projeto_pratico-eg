@@ -158,11 +158,6 @@ O diagrama de contexto evidencia que o E-Project atua como um sistema centraliza
 
 As integrações externas do MVP limitam-se ao ecossistema Firebase — **Authentication** para controle de acesso e **FCM** para comunicação proativa com os usuários — mantendo a arquitetura simples, segura e coerente com o tech stack definido.
 
----
-
-## 📚 Referências
-
-- [1] BROWN, Simon. *System context diagram | C4 model*. Disponível em: <https://c4model.com/diagrams/system-context>
 
 ---
 
