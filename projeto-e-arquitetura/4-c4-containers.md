@@ -75,7 +75,8 @@ Os três perfis de usuário do E-Project interagem com o sistema exclusivamente 
 
 O **Professor Orientador** acessa dashboards de projetos, revisa tarefas e gera documentos institucionais. O **Aluno Orientando** visualiza seu cronograma, envia entregas e registra presença em reuniões. O **Administrador / Coordenador** gerencia contas de usuários, publica editais institucionais e visualiza métricas de uso em dashboards interativos (construídos com a biblioteca Recharts).
 
-![Parte 1 — Usuários e PWA](./imgs/4-c4-containers-parte1.png)
+<img width="606" height="800" alt="Captura de tela 2026-06-15 105812" src="https://github.com/user-attachments/assets/c187f685-e7aa-48dc-bccf-e2c8dc7744d0" />
+
 
 **Figura 2 —** Interação dos três perfis de usuário com o container da Aplicação Web (PWA) via HTTPS.
 
@@ -85,7 +86,7 @@ O **Professor Orientador** acessa dashboards de projetos, revisa tarefas e gera 
 
 O frontend se comunica com o backend por meio de requisições **HTTP/JSON**. Toda operação que exige persistência, regra de negócio ou integração com serviços externos passa obrigatoriamente pela API RESTful. A autenticação de cada requisição é validada por meio do token **JWT** emitido pelo Firebase, garantindo que apenas usuários autorizados acessem os recursos do sistema.
 
-![Parte 2 — PWA e API RESTful](./imgs/4-c4-containers-parte2.png)
+<img width="1162" height="604" alt="Captura de tela 2026-06-15 105940" src="https://github.com/user-attachments/assets/9d52a6b8-3c39-4560-8b4a-2c47faf5d05a" />
 
 **Figura 3 —** Comunicação entre o container da Aplicação Web (PWA) e a API RESTful via protocolo HTTP/JSON.
 
@@ -97,7 +98,8 @@ A API RESTful persiste e consulta dados no **PostgreSQL** por meio do **Prisma O
 
 As principais entidades armazenadas são: usuários, projetos, tarefas, orientações, reuniões, documentos, editais e **logs de auditoria**. O backend utiliza a biblioteca **Winston** para capturar ações críticas (ex: exclusão de projetos, alteração de permissões) e registrá-las no banco, garantindo a segurança e o histórico exigidos pela gestão administrativa.
 
-![Parte 3 — API e Banco de Dados](./imgs/4-c4-containers-parte3.png)
+<img width="653" height="772" alt="Captura de tela 2026-06-15 110021" src="https://github.com/user-attachments/assets/500e7d87-b4dd-44bb-ab55-54dd5a2033ea" />
+
 
 **Figura 4 —** Integração entre a API RESTful e o Banco de Dados PostgreSQL via Prisma ORM.
 
@@ -107,7 +109,8 @@ As principais entidades armazenadas são: usuários, projetos, tarefas, orienta�
 
 Quando o usuário solicita um documento oficial — como um relatório parcial ou uma declaração de bolsista — a API aciona o **Serviço de Geração de PDF**, que utiliza a biblioteca **PDFKit** para compor o documento no padrão da UFAM. O arquivo gerado é devolvido ao frontend para download direto pelo usuário, eliminando o preenchimento manual e reduzindo erros nos documentos oficiais.
 
-![Parte 4 — API e Serviço de PDF](./imgs/4-c4-containers-parte4.png)
+<img width="1229" height="497" alt="Captura de tela 2026-06-15 110124" src="https://github.com/user-attachments/assets/2e536091-3853-4913-95a7-6e3bb442661d" />
+
 
 **Figura 5 —** Fluxo de geração automática de documentos PDF envolvendo a API, o Serviço de PDF e o Frontend.
 
