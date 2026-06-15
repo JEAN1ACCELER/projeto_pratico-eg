@@ -31,7 +31,7 @@ Neste nível, cada "container" representa uma unidade implantável e executável
 
 O E-Project é composto por **quatro containers internos** que colaboram para entregar todas as funcionalidades da plataforma, além de **três sistemas externos** integrados via APIs públicas.
 
-A arquitetura segue um fluxo claro: os **três perfis de usuário** (Professor Orientador, Aluno Orientando e Administrador) acessam o sistema exclusivamente pela **Aplicação Web (PWA)** hospedada na Vercel. Essa camada de apresentação se comunica com a **API RESTful** (backend Node.js/Express, hospedado no Railway) via requisições HTTP/JSON. A API é o **hub central de processamento**: ela lê e persiste dados no **Banco de Dados PostgreSQL**, aciona o **Serviço de Geração de PDF** para criar documentos oficiais, valida autenticações junto ao **Firebase Authentication** e dispara alertas pelo **Firebase Cloud Messaging**.
+A arquitetura segue um fluxo claro: os **três perfis de usuário** (Professor Orientador, Aluno Orientando e Administrador) acessam o sistema exclusivamente pela **Aplicação Web (PWA)** hospedada na Vercel. Essa camada de apresentação se comunica com a **API RESTful** (backend Node.js/Express, hospedado no Railway) via requisições HTTP/JSON. A API é o **hub central de processamento**: ela lê e persiste dados no **Banco de Dados PostgreSQL**, aciona o **Serviço de Geração de PDF** para criar documentos oficiais, audita ações críticas e acessos (via **Winston**), valida autenticações junto ao **Firebase Authentication** e dispara alertas pelo **Firebase Cloud Messaging**.
 
 O pipeline de CI/CD, gerenciado pelo **GitHub Actions**, automatiza o deploy contínuo tanto do frontend (na Vercel) quanto do backend (no Railway).
 
@@ -39,16 +39,16 @@ O pipeline de CI/CD, gerenciado pelo **GitHub Actions**, automatiza o deploy con
 
 ## 4.3 Descrição dos Containers
 
-###  Containers Internos do E-Project
+### 📦 Containers Internos do E-Project
 
 | Container | Tecnologia | Hospedagem | Responsabilidade |
 |:---|:---|:---|:---|
-| **Aplicação Web (PWA)** | JavaScript / React | Vercel | Interface do usuário. Exibe projetos, tarefas, documentos e notificações. Instalável como PWA. |
-| **API RESTful** | TypeScript / Node.js + Express | Railway | Processa regras de negócio, autentica requisições via JWT, gerencia projetos, tarefas e documentos. |
-| **Banco de Dados** | PostgreSQL + Prisma ORM | Railway | Persiste dados de usuários, projetos, tarefas, reuniões e documentos. |
+| **Aplicação Web (PWA)** | JavaScript / React / Recharts | Vercel | Interface do usuário. Exibe projetos, tarefas, documentos, notificações e dashboards visuais com métricas. Instalável como PWA. |
+| **API RESTful** | TypeScript / Node.js + Express + Winston | Railway | Processa regras de negócio, autentica requisições via JWT, gerencia projetos, tarefas, documentos e audita logs de segurança. |
+| **Banco de Dados** | PostgreSQL + Prisma ORM | Railway | Persiste dados de usuários, projetos, tarefas, reuniões, documentos, editais e logs de auditoria. |
 | **Serviço de Geração de PDF** | Node.js / PDFKit | Integrado ao Backend | Gera automaticamente relatórios parciais e declarações de bolsista em formato PDF oficial da UFAM. |
 
-###  Sistemas Externos Integrados
+### 🔌 Sistemas Externos Integrados
 
 | Sistema | Tipo | Papel no E-Project |
 |:---|:---|:---|
@@ -72,7 +72,7 @@ O pipeline de CI/CD, gerenciado pelo **GitHub Actions**, automatiza o deploy con
 
 Os três perfis de usuário do E-Project interagem com o sistema exclusivamente por meio da **Aplicação Web (PWA)**, acessada via navegador utilizando HTTPS. Por ser implementada como *Progressive Web App*, ela pode ser instalada no dispositivo e oferece funcionalidades offline básicas.
 
-O **Professor Orientador** acessa dashboards de projetos, revisa tarefas e gera documentos institucionais. O **Aluno Orientando** visualiza seu cronograma, envia entregas e registra presença em reuniões. O **Administrador** gerencia configurações gerais e dados institucionais do sistema.
+O **Professor Orientador** acessa dashboards de projetos, revisa tarefas e gera documentos institucionais. O **Aluno Orientando** visualiza seu cronograma, envia entregas e registra presença em reuniões. O **Administrador / Coordenador** gerencia contas de usuários, publica editais institucionais e visualiza métricas de uso em dashboards interativos (construídos com a biblioteca Recharts).
 
 ![Parte 1 — Usuários e PWA](./imgs/4-c4-containers-parte1.png)
 
@@ -94,7 +94,7 @@ O frontend se comunica com o backend por meio de requisições **HTTP/JSON**. To
 
 A API RESTful persiste e consulta dados no **PostgreSQL** por meio do **Prisma ORM**, que abstrai as operações de banco de dados e garante tipagem segura em TypeScript. Ambos — API e banco — são hospedados no Railway, no mesmo ambiente, o que simplifica a configuração de rede e reduz a latência entre os serviços.
 
-As principais entidades armazenadas são: usuários, projetos, tarefas, orientações, reuniões, documentos e editais.
+As principais entidades armazenadas são: usuários, projetos, tarefas, orientações, reuniões, documentos, editais e **logs de auditoria**. O backend utiliza a biblioteca **Winston** para capturar ações críticas (ex: exclusão de projetos, alteração de permissões) e registrá-las no banco, garantindo a segurança e o histórico exigidos pela gestão administrativa.
 
 ![Parte 3 — API e Banco de Dados](./imgs/4-c4-containers-parte3.png)
 
@@ -168,6 +168,7 @@ O Diagrama de Containers evidencia a **separação clara de responsabilidades** 
 - A **API RESTful** centraliza todo o processamento, regras de negócio e orquestração de serviços externos.
 - O **Banco de Dados PostgreSQL** é o único ponto de persistência, acessado exclusivamente pela API — nunca diretamente pelo frontend.
 - O **Serviço de PDF** é encapsulado como módulo independente, facilitando futuras evoluções nos templates de documentos.
+- A inclusão de ferramentas específicas como **Recharts** (no Frontend) e **Winston** (no Backend) atende diretamente aos requisitos de rastreabilidade do painel gerencial, permitindo a geração de métricas visuais e o registro seguro de logs de auditoria.
 
 Os sistemas externos do Firebase foram mantidos mínimos no MVP (apenas Authentication e FCM), assegurando uma arquitetura simples, segura e alinhada ao tech stack definido.
 
