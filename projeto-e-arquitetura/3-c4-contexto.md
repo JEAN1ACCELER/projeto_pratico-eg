@@ -30,7 +30,7 @@ O **E-Project** é uma plataforma web PWA voltada à gestão de projetos acadêm
 |------|-----------|
 | **Professor Orientador** | Acompanha projetos, revisa tarefas, monitora prazos, gera documentos e visualiza o progresso dos orientandos |
 | **Aluno Orientando** | Executa tarefas, envia entregas, registra presença em reuniões e acompanha o andamento do projeto |
-| **Administrador Geral do Sistema** | Gerencia configurações gerais, cadastra modalidades e mantém dados institucionais no sistema |
+| **Administrador / Coordenador** | Gerencia contas e permissões de usuários, publica e atualiza editais institucionais, e audita métricas e logs do sistema |
 
 ### 🔌 Sistemas externos integrados
 
@@ -43,6 +43,7 @@ O diagrama evidencia que o E-Project atua como um **hub centralizador** no ecoss
 
 > ⚠️ **Nota sobre MVP:** A integração com os Portais Institucionais da UFAM (PROPESP/PROEXT) está prevista para uma fase posterior ao MVP e, por isso, não consta neste diagrama.
 
+
 ---
 
 ## 3.3 Diagrama de Contexto — Visão Completa
@@ -53,9 +54,9 @@ flowchart TB
 
     aluno["👨‍🎓 Aluno Orientando\n[Person]\nExecuta tarefas, envia documentos,\nregistra presença em reuniões\ne acompanha prazos do projeto."]
 
-    admin["🛠️ Administrador Geral do Sistema\n[Person]\nGerencia configurações gerais,\ncadastra modalidades e mantém\ndados institucionais do sistema."]
+    admin["🛠️ Administrador / Coordenador\n[Person]\nGerencia contas de usuários,\npublica editais institucionais,\ne audita métricas e logs."]
 
-    eproject["🎓 E-Project\n[Software System]\nPlataforma web PWA para\ncentralização e gestão de projetos\nacadêmicos da UFAM.\nModalidades: PIBIC, PIBITI, PIBEX, PASSE, Pós-Graduação."]
+    eproject["🎓 E-Project\n[Software System]\nPlataforma web PWA para\ncentralização e gestão de projetos\nacadêmicos da UFAM.\nModalidades: PIBIC, PIBITI, PIBEX, PACE, Pós-Graduação."]
 
     firebaseauth["🔐 Firebase Authentication\n[Software System]\nServiço do Google para autenticação\nsegura dos usuários via e-mail/senha\ncom suporte a JWT."]
 
@@ -63,11 +64,10 @@ flowchart TB
 
     professor -- "Gerencia projetos, tarefas,\ndocumentos e orientandos" --> eproject
     aluno -- "Executa tarefas, envia\narquivos e registra presença" --> eproject
-    admin -- "Configura modalidades\ne dados institucionais" --> eproject
+    admin -- "Gerencia acessos, publica editais\ne visualiza métricas/logs" --> eproject
 
     eproject -- "Autentica usuários\nvia e-mail/senha (JWT)" --> firebaseauth
     eproject -- "Envia notificações push\nde prazos e atualizações" --> fcm
-```
 
 **Figura 1 —** Diagrama de Contexto do E-Project. Representa os três perfis de usuários que interagem com o sistema e os dois sistemas externos integrados (Firebase Authentication e Firebase Cloud Messaging).
 
