@@ -6,7 +6,7 @@
 
 ---
 
-## 📊 1. Sumário Executivo de Qualidade
+## 1. Sumário Executivo de Qualidade
 
 A tabela abaixo consolida as métricas de triagem da auditoria de requisitos, categorizando os apontamentos por domínio de impacto tecnológico e de negócios. A análise identificou oportunidades críticas de refatoração para garantir o *Definition of Ready* (DoR) antes da fase de desenvolvimento.
 
@@ -21,7 +21,7 @@ A tabela abaixo consolida as métricas de triagem da auditoria de requisitos, ca
 
 ---
 
-## 🟢 2. Matriz de Mitigação: Defeitos Aceitos e Refatorados
+## 2. Matriz de Mitigação: Defeitos Aceitos e Refatorados
 
 As seções a seguir detalham as correções arquiteturais e textuais aplicadas. Cada item justificado altera diretamente os Critérios de Aceite (CA) ou as Regras de Negócio (RN) do sistema.
 
@@ -149,7 +149,7 @@ O sistema deve assegurar fé pública nos dados institucionais e conformidade ab
 
 ---
 
-## 🛑 3. Resoluções Estratégicas: Falsos Positivos e Decisões de Domínio
+## 3. Resoluções Estratégicas: Falsos Positivos e Decisões de Domínio
 
 A auditoria reportou falhas que, após análise cruzada entre a equipe de Engenharia e Produto, foram **rejeitadas** por colidirem com invariantes do domínio (Regras Institucionais da UFAM) ou com axiomas de Engenharia Ágil.
 
