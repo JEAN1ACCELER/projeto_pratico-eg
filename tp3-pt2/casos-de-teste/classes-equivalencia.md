@@ -210,7 +210,7 @@ Enquanto Orientador, desejo visualizar e filtrar os editais disponíveis, para i
 
 ---
 
-## US-06 — Aprovar ou solicitar correção de tarefa
+## US-06 — Avaliar tarefa submetida
 
 **História do Usuário**:
 Enquanto Orientador, desejo avaliar as tarefas impostas aos alunos, para acompanhar o progresso do projeto e garantir a qualidade das entregas.
