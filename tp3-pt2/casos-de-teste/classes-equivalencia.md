@@ -83,7 +83,7 @@ Enquanto Orientador, desejo visualizar um painel central, para acompanhar os pro
 | Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
 |:---|:---|:---|:---|
 | Vínculo do projeto com o orientador | Projeto vinculado ao orientador autenticado (1) | Projeto vinculado a outro orientador (2) | Projeto inexistente ou removido (3) |
-| Status do projeto | Projeto ativo/em andamento (4) | Projeto encerrado (5) | — (condição lógica binária) |
+| Status do projeto | Projeto ativo/em andamento (4) | Projeto encerrado (5) | |
 | Autenticação do usuário | Usuário autenticado como orientador (6) | Usuário não autenticado (7) | |
 
 ### Tabela de Casos de Teste
@@ -158,7 +158,7 @@ Enquanto Orientador, desejo criar e definir tarefas para um projeto, para organi
 |:---|:---|:---|:---|
 | Vínculo com projeto | Projeto existente e ativo (1) | Projeto inexistente (2) | Projeto encerrado (3) |
 | Preenchimento das informações da tarefa | Título, descrição e prazo preenchidos corretamente (4) | Campos obrigatórios vazios (5) | Prazo final anterior à data atual (6) |
-| Associação da tarefa ao projeto | Tarefa associada a um único projeto (7) | Tentativa de associar a mais de um projeto (8) | — (condição lógica binária) |
+| Associação da tarefa ao projeto | Tarefa associada a um único projeto (7) | Tentativa de associar a mais de um projeto (8) | |
 
 ### Tabela de Casos de Teste
 
@@ -195,8 +195,8 @@ Enquanto Orientador, desejo visualizar e filtrar os editais disponíveis, para i
 | Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
 |:---|:---|:---|:---|
 | Existência/integridade do edital | Edital cadastrado e com informações completas (1) | Edital inexistente (2) | Edital com informações obrigatórias ausentes (3) |
-| Aplicação de filtros | Filtro retorna editais que atendem aos critérios selecionados (4) | Filtro retorna editais que não atendem aos critérios selecionados (5) | — (condição lógica binária) |
-| Origem do edital (escopo PROPESP/PROEXT) | Edital proveniente de fonte autorizada (PROPESP/PROEXT) (6) | Edital proveniente de fonte fora do escopo definido (7) | — (condição lógica binária) |
+| Aplicação de filtros | Filtro retorna editais que atendem aos critérios selecionados (4) | Filtro retorna editais que não atendem aos critérios selecionados (5) | |
+| Origem do edital (escopo PROPESP/PROEXT) | Edital proveniente de fonte autorizada (PROPESP/PROEXT) (6) | Edital proveniente de fonte fora do escopo definido (7) | |
 
 ### Tabela de Casos de Teste
 
