@@ -136,8 +136,6 @@ Enquanto Orientador, desejo cadastrar um novo projeto acadêmico, para iniciar o
 
 ## US-04 — Criar e definir tarefa a orientar
 
-> ⚠️ **Inconsistência registrada:** As "Regras de Negócio" da Issue #25 (US04) referem-se a editais, não a tarefas. Trata-se de erro de copy-paste identificado durante a elaboração das classes de equivalência. As regras abaixo foram corrigidas para refletir o domínio real da história.
-
 **História do Usuário**:
 Enquanto Orientador, desejo criar e definir tarefas para um projeto, para organizar e acompanhar as atividades a serem realizadas pelos alunos.
 
