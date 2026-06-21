@@ -4,73 +4,89 @@
 **Fase:** Trabalho Prático III - Consolidação de Inspeção e Refatoração de Backlog
 
 ## Objetivo
-Este documento apresenta os resultados da auditoria cruzada (inspeção) realizada por outras equipes no repositório do projeto. O objetivo é detalhar as *Issues* geradas no GitHub, avaliando-as isoladamente. Indicamos claramente quais apontamentos foram considerados pertinentes (corrigidos) e quais foram classificados como falsos positivos (não corrigidos ou reavaliados), acompanhados de suas devidas justificativas técnicas.
+Este documento apresenta os resultados da auditoria cruzada (inspeção) realizada no repositório do projeto. O objetivo é detalhar as *Issues* geradas, avaliando-as isoladamente. Indicamos claramente quais apontamentos foram considerados pertinentes (corrigidos) e qual foi classificado como falso positivo (reavaliado), acompanhados de suas devidas justificativas técnicas.
 
 ---
 
 ## 1. Relação de Issues Criadas no GitHub
 
-> **📌 Nota ao Avaliador:** Para facilitar a rastreabilidade, todas as *issues* no repositório foram categorizadas com **labels** de status (ex: `Revisadas`, `Corrigido`, `Não Corrigido (Falso Positivo)`). Acesse os links na tabela abaixo para consultar a resolução diretamente no GitHub.
+> **📌 Nota ao Avaliador:** Para facilitar a rastreabilidade, todas as *issues* inspecionadas no repositório receberam a tag geral **`Revisadas`**. Além disso, foram categorizadas com *labels* de status final de resolução, conforme a tabela abaixo:
 
 | Issue GitHub | História de Usuário (US) | Status / Label Aplicada |
 | :---: | :--- | :--- |
-| **[Issue #51](COLE_O_LINK_AQUI)** | US02 - Visualizar painel central | 🟢 Corrigido |
-| **[Issue #50](COLE_O_LINK_AQUI)** | US03 - Cadastrar novo projeto acadêmico | 🟢 Corrigido |
-| **[Issue #49](COLE_O_LINK_AQUI)** | US04 - Criar e definir tarefa a orientar | 🟢 Corrigido |
-| **[Issue #48](COLE_O_LINK_AQUI)** | US05 - Visualizar e filtrar editais no feed unificado | 🟢 Corrigido |
-| **[Issue #46](COLE_O_LINK_AQUI)** | US10 - Visualizar tarefas pendentes | 🟢 Corrigido |
-| **[Issue #45](COLE_O_LINK_AQUI)** | US13 - Realizar check-in de presença | 🟢 Corrigido |
-| **[Issue #47](COLE_O_LINK_AQUI)** | US06 - Aprovar ou solicitar editais | 🟡 Parcial (Título corrigido / Enunciado mantido) |
-| **[Issue #52](COLE_O_LINK_AQUI)** | US08 - Regra de "Somente Leitura" no Histórico | 🔴 Não Corrigido (Reavaliado) |
+| **Issue #48** | US05 - Visualizar e filtrar editais no feed unificado | 🟢 Corrigido |
+| **Issue #49** | US04 - Criar e definir tarefa a orientar | 🟢 Corrigido |
+| **Issue #50** | US03 - Cadastrar novo projeto acadêmico | 🟢 Corrigido |
+| **Issue #51** | US02 - Visualizar painel central | 🟢 Corrigido |
+| **Issue #52** | US08 - Regra de "Somente Leitura" e Downloads | 🟢 Corrigido |
+| **Issue #53** | US08 - Impossibilidade de Reativação de Projetos | 🔴 Não Corrigido (Reavaliado) |
+| **Issue #54** | US07 - Geração individual de documentos | 🟢 Corrigido |
+| **Issue #55** | US12 - Configuração de notificação global | 🟢 Corrigido |
+| **Issue #56** | US09 - Realizar check-in de presença (Validação PIN) | 🟢 Corrigido |
+| **Issue #57** | US11 - Limite de caracteres | 🟢 Corrigido |
+| **Issue #58** | US06 - Aprovar ou solicitar editais | 🟢 Corrigido |
+| **Issue #60** | US16 - Navegar com botões rotulados e layout linear | 🟢 Corrigido |
+| **Issue #61** | US15 - Ajustar tamanho de fonte e contraste | 🟢 Corrigido |
+| **Issue #62** | US10 - Visualizar tarefas pendentes | 🟢 Corrigido |
 
 ---
 
 ## 2. Problemas Pertinentes (Aceitos e Corrigidos)
 
-Nesta seção, detalhamos as *issues* que reportaram defeitos reais e agregaram valor ao projeto. O Backlog foi refatorado para mitigar estas falhas.
+Nesta seção, detalhamos as *issues* que reportaram defeitos reais (omissões e ambiguidades) e agregaram valor ao projeto. O Backlog foi refatorado para mitigar estas falhas e parametrizar as regras para as equipes de Front-end e Back-end.
 
-### Issue #51 (US02) - Ambiguidade em Requisito Não-Funcional
-* **Problema Apontado:** O critério de aceite possuía falha de clareza ao usar o termo subjetivo "carregar rápido em conexão de boa qualidade".
-* **Diagnóstico:** Requisitos Não-Funcionais precisam de *thresholds* exatos para viabilizar testes automatizados.
-* **Correção Aplicada:** Trocamos a subjetividade por uma métrica de SLA clara. O sistema agora exige tempo de resposta de "até 3 segundos sob uma banda de rede estável >= 10 Mbps".
+### Issue #60 (US16) - Ambiguidade em Zoom e Interatividade
+* **Problema Apontado:** O requisito sobre acessibilidade não definia o que era um elemento interativo nem o limite objetivo para perda de funcionalidade em escalas de zoom.
+* **Diagnóstico:** Sem limites numéricos e escopo claro baseados na WCAG, a equipe de QA não teria como realizar testes de acessibilidade objetivos.
+* **Correção Aplicada:** Definimos que "elementos interativos" incluem botões, links, abas e formulários. Especificamos que a interface deve suportar ampliação de até **200%** sem sobreposição ou necessidade de rolagem horizontal para funções críticas.
 
-### Issue #50 (US03) - Falta de Estado Intermediário
-* **Problema Apontado:** O projeto exigia um aluno vinculado para ser ativado, mas a interface não previa um estado para salvamento prévio.
-* **Diagnóstico:** A ausência de estado transitório impede o salvamento no banco de dados e prejudica a usabilidade.
-* **Correção Aplicada:** Implementação da transição de status. Projetos salvos sem alunos recebem o status **'Rascunho'**. Apenas quando um aluno é vinculado, o status muda automaticamente para **'Em Andamento'**.
+### Issue #61 (US15) - Omissão de Métricas de Acessibilidade
+* **Problema Apontado:** Faltavam valores precisos para os níveis de fonte e não havia especificação da taxa de contraste para o tema de "Alto Contraste".
+* **Diagnóstico:** Especificações subjetivas impedem a adequação real a normativas de acessibilidade.
+* **Correção Aplicada:** Fixamos o tamanho da fonte em unidades relativas (1rem/100%, 1.25rem/125%, 1.5rem/150%) e exigimos taxa mínima de contraste de **7:1** (nível AAA da WCAG) no tema escuro.
+
+### Issue #62 (US10) - Ambiguidade no Parâmetro de Urgência
+* **Problema Apontado:** A funcionalidade ordenava tarefas da "mais urgente primeiro", mas não definia matematicamente a partir de quando uma tarefa é considerada urgente.
+* **Diagnóstico:** A utilização do termo "urgente" sem critério quantitativo impede a correta ordenação no banco de dados e as tratativas visuais no front-end.
+* **Correção Aplicada:** Criamos a regra de negócio exata: uma tarefa entra no status/tag "Urgente" quando seu prazo de entrega for **igual ou inferior a 48 horas**. A ordenação principal do feed passa a ser `data_vencimento ASC`.
+
+### Issue #56 (US09) - Falha Lógica na Validação de Presença
+* **Problema Apontado:** O check-in era realizado apenas por um clique no aplicativo, sem validação real de presença física.
+* **Diagnóstico:** O modelo puramente *Client-Side* abria margem para fraudes sistêmicas (marcação de presença sem comparecimento).
+* **Correção Aplicada:** O fluxo foi alterado para exigir a inserção de um Código PIN (OTP) de 4 dígitos, gerado no sistema do orientador durante o encontro.
 
 ### Issue #49 (US04) - Omissão de Ciclo de Vida e Restrição de Prazo
 * **Problema Apontado:** Falta de clareza sobre os status de uma tarefa e omissão de limite máximo para a definição de prazo de entrega.
-* **Diagnóstico:** A falta de status impede a modelagem do banco, e a ausência de trava temporal geraria inconsistências de datas.
-* **Correção Aplicada:** Inserido o ciclo Kanban (A Fazer, Em Andamento, Concluída, Atrasada) e criada a regra de negócio que bloqueia a criação de tarefas com datas de entrega que superem o encerramento do projeto.
+* **Diagnóstico:** A ausência de uma "trava temporal" permitiria cadastrar tarefas para datas muito além do encerramento oficial do projeto.
+* **Correção Aplicada:** Inserido o ciclo Kanban (A Fazer, Em Andamento, Concluída, Atrasada) e aplicada a regra limitadora: a data máxima de uma tarefa não pode ultrapassar a data final do projeto acadêmico.
 
-### Issue #48 (US05) - Escopo de Integração Vago
-* **Problema Apontado:** O requisito mencionava integrar dados das "principais pró-reitorias" de forma aberta e inespecífica.
-* **Diagnóstico:** Termos abertos geram *Scope Creep* (inchaço de escopo) e inviabilizam a entrega do MVP.
-* **Correção Aplicada:** O escopo foi delimitado estritamente. O *fetch* de dados ocorrerá unicamente via integração com as APIs da **PROPESP** e **PROEXT**.
+### Issue #50 (US03) - Falta de Estado Intermediário para Projetos
+* **Problema Apontado:** O projeto exigia um aluno vinculado para ser ativado, mas não previa um estado para salvamento prévio.
+* **Diagnóstico:** A ausência de estado transitório inviabiliza o trabalho em progresso e prejudica a usabilidade de criação de cadastros longos.
+* **Correção Aplicada:** Criado o status **'Rascunho'** para projetos salvos sem alunos. O status transita para **'Em Andamento'** automaticamente ao vincular os discentes.
 
-### Issue #46 (US10) - Ordenação Subjetiva e Inconsistência de Dicionário
-* **Problema Apontado:** A funcionalidade ordenava tarefas por prazo "mais urgente", não definindo o que é "urgente". O critério 4 também usava a palavra "instruções", diferindo dos campos criados na US04.
-* **Diagnóstico:** A lógica requer um parâmetro algorítmico exato e o sistema não pode ter ambiguidades no Dicionário de Dados.
-* **Correção Aplicada:** A ordenação foi parametrizada para usar `data_vencimento ASC` e tarefas "Atrasadas" ganharam prioridade no topo. O termo "instruções" foi padronizado para "descrição" para manter simetria (1:1) com a US04.
+### Issue #51 (US02) - Ambiguidade em SLA de Desempenho
+* **Problema Apontado:** Uso de termo subjetivo "carregar rápido em conexão de boa qualidade".
+* **Diagnóstico:** Requisitos não-funcionais devem ser testáveis e automatizáveis.
+* **Correção Aplicada:** Substituído por uma métrica técnica rigorosa: SLA de tempo de resposta máximo de **3 segundos** sob rede de pelo menos 10 Mbps.
 
-### Issue #45 (US13) - Falha Lógica na Validação de Presença
-* **Problema Apontado:** O check-in era realizado apenas por um clique no aplicativo, sem validação real de presença física.
-* **Diagnóstico:** Esse modelo focado no lado do cliente (*Client-Side*) permite fraudes sistêmicas (presença sem comparecimento).
-* **Correção Aplicada:** O fluxo foi alterado para validação síncrona. Agora, o check-in exige a inserção de um Código PIN (OTP) de 4 dígitos gerado pelo orientador no momento do encontro presencial.
+### Issue #48 (US05) - Escopo Vago de Integração de Editais
+* **Problema Apontado:** O requisito solicitava integrar dados das "principais pró-reitorias" sem especificar quais.
+* **Diagnóstico:** Termos abertos geram inchaço de escopo (*Scope Creep*).
+* **Correção Aplicada:** O escopo foi blindado, limitando o *fetch* de dados unicamente aos endpoints das **PROPESP** e **PROEXT**.
+
+### Issue #52 (US08) - Esclarecimento: Leitura x Download
+* **Problema Apontado:** O termo "somente leitura" no histórico abria dúvidas sobre a permissão de download de arquivos finalizados.
+* **Diagnóstico:** Faltava delimitar onde acabava o privilégio de "visualização" e onde entrava a "extração" dos arquivos em tela.
+* **Correção Aplicada:** Documento refatorado para esclarecer a separação, mantendo explicitamente autorizada a visualização dos dados e o download de documentos, mas bloqueando a edição/deleção.
 
 ---
 
 ## 3. Problemas Reavaliados e Não Corrigidos (Falsos Positivos)
 
-Nesta seção, detalhamos os apontamentos que foram **rejeitados** após análise técnica da equipe, acompanhados de suas devidas justificativas metodológicas ou conceituais.
+Nesta seção, encontra-se a única *issue* **rejeitada** após análise técnica da equipe, acompanhada da justificativa pela qual a funcionalidade se manterá conforme originalmente idealizada.
 
-### Issue #52 (US08) - Regra de "Somente Leitura" (Ambiguidade sobre Downloads)
-* **Problema Apontado:** A equipe indicou omissão argumentando que o termo "somente leitura" no histórico é ambíguo em relação a ações de download de documentos, não deixando claro se o acesso se restringe apenas à visualização em tela.
-* **Justificativa para Não Correção (Reavaliação Técnica):** Trata-se de um falso positivo conceitual. Na arquitetura de software (padrão REST e Sistemas de Arquivos), o privilégio *Read-Only* refere-se exclusivamente ao bloqueio de mutação de dados (métodos de criação, edição ou exclusão). A "leitura" abrange, intrinsecamente, a extração e o download de arquivos já consolidados no servidor. Logo, não há falha estrutural no requisito.
-* **Veredito:** O defeito técnico foi recusado. Contudo, para fins de pacificação da documentação e para mitigar futuras dúvidas da equipe de Frontend, o texto do requisito recebeu um pequeno adendo: *"mantendo liberada a visualização dos dados em tela e o download de todos os documentos previamente gerados."*
-
-### Issue #47 (US06) - Exigência de Fluxo Técnico no Enunciado BDD
-* **Problema Apontado:** Foi reportado como defeito (omissão) o fato de o enunciado da história não descrever "de que maneira a necessidade será atendida pelo sistema".
-* **Justificativa para Não Correção (Reavaliação Metodológica):** Este apontamento fere os princípios da Engenharia de Requisitos Ágil. O formato *Behavior-Driven Development* (BDD - *Eu como... Quero... Para que...*) foca estritamente na percepção de valor de negócio do usuário e **nunca em especificações técnicas, fluxos de tela ou soluções algorítmicas**. Inserir o "como o sistema vai fazer" na narrativa primária é um anti-padrão. Os detalhes de comportamento residem exclusivamente nos Critérios de Aceite.
-* **Veredito:** A narrativa da US06 foi mantida intacta em sua forma original. *(Nota: O único ajuste aceito desta issue foi a renomeação do Título da US para alinhar com o escopo).*
+### Issue #53 (US08) - Impossibilidade de Reativação de Projetos
+* **Problema Apontado:** Foi apontado como "defeito" o fato de o sistema não possuir um botão para "reativar" projetos que foram encerrados ou cancelados.
+* **Justificativa para Não Correção:** Trata-se de um falso positivo, pois essa ausência é **proposital**. O projeto obedece a uma Regra de Negócio de auditoria acadêmica (imutabilidade de registros concluídos). Uma vez que um projeto entra no estado de "Histórico", seu ciclo de vida é encerrado e os dados se tornam evidências oficiais. A criação de um botão de "reativação" comprometeria o *compliance* de versionamento e prazos do sistema acadêmico.
+* **Veredito:** Mantida a irreversibilidade por design. A US não sofreu alterações. Defeito rejeitado.
