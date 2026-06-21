@@ -102,7 +102,7 @@ Como orientador, quero visualizar um painel central, para acompanhar os projetos
 ## US-03 — Cadastrar novo projeto acadêmico
 
 **História do Usuário**
-Como orientador, quero cadastrar um novo projeto acadêmico, para iniciar o acompanhamento das atividades acadêmicas com meus alunos.
+Enquanto Orientador, desejo cadastrar um novo projeto acadêmico, para iniciar o acompanhamento das atividades acadêmicas com meus alunos
 
 **Critérios de Aceitação**
 - O sistema deve permitir o cadastro de um projeto com o preenchimento das informações obrigatórias.
