@@ -29,7 +29,7 @@ Para cada US são produzidos três artefatos:
 - **Tabela de Classes de Equivalência** (Condição de Entrada | Classes Válidas | Classes Inválidas)
 - **Tabela de Casos de Teste** (Caso | Classes de Equivalência | Entradas | Resultado Esperado)
 
-> **Regra de ouro aplicada:** cada caso de teste inválido testa uma única classe inválida por vez, mantendo todas as demais condições válidas, evitando que valores errados mascarem mutuamente uns aos outros.
+
 
 ---
 
