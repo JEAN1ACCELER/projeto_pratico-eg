@@ -4,7 +4,7 @@
 **Fase:** Trabalho Prático III - Consolidação de Inspeção e Refatoração de Backlog
 
 ## Objetivo
-Este documento apresenta os resultados da auditoria cruzada (inspeção) realizada no repositório do projeto. O objetivo é detalhar as *Issues* geradas, avaliando-as isoladamente. Indicamos claramente quais apontamentos foram considerados pertinentes (corrigidos) e qual foi classificado como falso positivo (reavaliado), acompanhados de suas devidas justificativas técnicas.
+Este documento apresenta os resultados da auditoria cruzada (inspeção) realizada no repositório do projeto. O objetivo é detalhar as *Issues* geradas, avaliando-as isoladamente. Indicamos claramente quais problemas foram corrigidos, não corrigidos ou reavaliados, acompanhados de suas devidas justificativas técnicas.
 
 ---
 
