@@ -90,3 +90,20 @@ Nesta seção, encontra-se a única *issue* **rejeitada** após análise técnic
 * **Problema Apontado:** Foi apontado como "defeito" o fato de o sistema não possuir um botão para "reativar" projetos que foram encerrados ou cancelados.
 * **Justificativa para Não Correção:** Trata-se de um falso positivo, pois essa ausência é **proposital**. O projeto obedece a uma Regra de Negócio de auditoria acadêmica (imutabilidade de registros concluídos). Uma vez que um projeto entra no estado de "Histórico", seu ciclo de vida é encerrado e os dados se tornam evidências oficiais. A criação de um botão de "reativação" comprometeria o *compliance* de versionamento e prazos do sistema acadêmico.
 * **Veredito:** Mantida a irreversibilidade por design. A US não sofreu alterações. Defeito rejeitado.
+
+## 4. Sessão extra - Impacto da Refatoração na Usabilidade (Heurísticas de Nielsen)
+
+A inspeção e correção desses requisitos não apenas alinhou regras de negócio, mas também mitigou preventivamente graves falhas de usabilidade no sistema. Para mensurar esse ganho de maturidade, categorizamos os problemas corrigidos com base nas **10 Heurísticas de Jakob Nielsen**. 
+
+Abaixo, apresentamos o gráfico de distribuição de melhorias e o mapeamento de como a refatoração impactou diretamente a qualidade da interface para o usuário final:
+
+### Gráfico de Melhorias por Heurística
+
+```mermaid
+pie title Distribuição de Falhas de Usabilidade Prevenidas
+    "Prevenção de Erros (H5)" : 4
+    "Consistência e Padrões (H4)" : 4
+    "Controle e Liberdade (H3)" : 2
+    "Compatibilidade com o Mundo Real (H2)" : 2
+    "Estética e Acessibilidade (H8)" : 1
+    "Visibilidade do Status (H1)" : 1
