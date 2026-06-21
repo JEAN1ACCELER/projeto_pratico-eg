@@ -16,11 +16,11 @@
 
 ## Introdução — Classes de Equivalência
 
-No contexto do desenvolvimento do sistema **M-Project**, foi adotada a técnica de **Classes de Equivalência** como estratégia de apoio à análise de requisitos e à definição de cenários de validação do sistema. Essa abordagem é amplamente utilizada em Engenharia de Software para organizar e estruturar os possíveis valores de entrada de um sistema, reduzindo a redundância de combinações e facilitando a identificação de comportamentos esperados e não esperados.
+No contexto do desenvolvimento do sistema **E-Project**, foi adotada a técnica de **Classes de Equivalência** como estratégia de apoio à análise de requisitos e à definição de cenários de validação do sistema. Essa abordagem é amplamente utilizada em Engenharia de Software para organizar e estruturar os possíveis valores de entrada de um sistema, reduzindo a redundância de combinações e facilitando a identificação de comportamentos esperados e não esperados.
 
 A aplicação dessa técnica permite dividir o domínio de entradas de cada funcionalidade em grupos chamados classes de equivalência, que representam conjuntos de valores com comportamento semelhante sob as mesmas regras de negócio. Dessa forma, cada classe representa um cenário válido ou inválido que impacta diretamente o funcionamento do sistema.
 
-Neste documento, a técnica foi aplicada sobre as **17 histórias de usuário do M-Project**, contemplando diferentes funcionalidades do sistema, como autenticação, gestão de projetos, tarefas, avaliações, presença, notificações e acessibilidade. Cada história de usuário foi analisada individualmente, resultando na identificação de suas respectivas condições de entrada e na definição das classes de equivalência válidas e inválidas.
+Neste documento, a técnica foi aplicada sobre as **17 histórias de usuário do E-Project**, contemplando diferentes funcionalidades do sistema, como autenticação, gestão de projetos, tarefas, avaliações, presença, notificações e acessibilidade. Cada história de usuário foi analisada individualmente, resultando na identificação de suas respectivas condições de entrada e na definição das classes de equivalência válidas e inválidas.
 
 As tabelas a seguir apresentam, para cada história de usuário, a decomposição das condições de entrada do sistema, bem como suas classes de equivalência válidas e inválidas, conforme as regras de negócio definidas no escopo do projeto.
 
