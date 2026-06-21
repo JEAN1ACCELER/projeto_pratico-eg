@@ -29,9 +29,7 @@ Para cada US são produzidos três artefatos:
 
 ## US-01 — Login no sistema
 
-**História do Usuário**:
-
-Enquanto Usuário, desejo realizar login no sistema, para acessar as funcionalidades conforme meu perfil.
+**História do Usuário**: Enquanto Usuário, desejo realizar login no sistema, para acessar as funcionalidades conforme meu perfil.
 
 **Critérios de Aceitação**
 - O sistema deve permitir o login quando usuário e senha forem válidos.
@@ -67,7 +65,7 @@ Enquanto Usuário, desejo realizar login no sistema, para acessar as funcionalid
 
 ## US-02 — Visualizar painel central
 
-**História do Usuário**
+**História do Usuário**:
 Enquanto Orientador, desejo visualizar um painel central, para acompanhar os projetos sob minha responsabilidade.
 
 **Critérios de Aceitação**
@@ -102,7 +100,7 @@ Enquanto Orientador, desejo visualizar um painel central, para acompanhar os pro
 
 ## US-03 — Cadastrar novo projeto acadêmico
 
-**História do Usuário**
+**História do Usuário**:
 Enquanto Orientador, desejo cadastrar um novo projeto acadêmico, para iniciar o acompanhamento das atividades acadêmicas com meus alunos
 
 **Critérios de Aceitação**
@@ -140,7 +138,7 @@ Enquanto Orientador, desejo cadastrar um novo projeto acadêmico, para iniciar o
 
 > ⚠️ **Inconsistência registrada:** As "Regras de Negócio" da Issue #25 (US04) referem-se a editais, não a tarefas. Trata-se de erro de copy-paste identificado durante a elaboração das classes de equivalência. As regras abaixo foram corrigidas para refletir o domínio real da história.
 
-**História do Usuário**
+**História do Usuário**:
 Enquanto Orientador, desejo criar e definir tarefas para um projeto, para organizar e acompanhar as atividades a serem realizadas pelos alunos.
 
 **Critérios de Aceitação**
@@ -179,7 +177,7 @@ Enquanto Orientador, desejo criar e definir tarefas para um projeto, para organi
 
 ## US-05 — Visualizar e filtrar editais no feed unificado
 
-**História do Usuário**
+**História do Usuário**:
 Enquanto Orientador, desejo visualizar e filtrar os editais disponíveis, para identificar oportunidades relevantes para meus projetos acadêmicos.
 
 **Critérios de Aceitação**
@@ -218,7 +216,7 @@ Enquanto Orientador, desejo visualizar e filtrar os editais disponíveis, para i
 
 > ⚠️ **Inconsistência registrada:** O título da Issue #27 é "US06 - Aprovar ou solicitar editais no feed unificado", porém o conteúdo descreve avaliação de tarefas dos alunos. Erro de copy-paste identificado durante a elaboração das classes de equivalência. Correção proposta: renomear para "US06 - Avaliar tarefa submetida pelo aluno".
 
-**História do Usuário**
+**História do Usuário**:
 Enquanto Orientador, desejo avaliar as tarefas impostas aos alunos, para acompanhar o progresso do projeto e garantir a qualidade das entregas.
 
 **Critérios de Aceitação**
@@ -257,7 +255,7 @@ Enquanto Orientador, desejo avaliar as tarefas impostas aos alunos, para acompan
 
 > ⚠️ **Inconsistência registrada:** O título da Issue #28 é "US07 — Gerar documento oficial automaticamente", porém o conteúdo descreve integralmente o reenvio de tarefa pelo aluno após solicitação de correção. Terceira ocorrência do mesmo padrão de erro de copy-paste. Correção proposta: renomear para "US07 - Reenviar tarefa para correção" e abrir nova issue para geração de documento oficial.
 
-**História do Usuário**
+**História do Usuário**:
 Enquanto Aluno, desejo reenviar uma tarefa após solicitação de correção, para atender às configurações solicitadas pelo orientador e concluir a atividade.
 
 **Critérios de Aceitação**
@@ -294,7 +292,7 @@ Enquanto Aluno, desejo reenviar uma tarefa após solicitação de correção, pa
 
 ## US-08 — Consultar histórico de projetos encerrados
 
-**História do Usuário**
+**História do Usuário**:
 Enquanto Orientador, desejo consultar projetos encerrados, para fins de histórico.
 
 **Critérios de Aceitação**
@@ -331,7 +329,7 @@ Enquanto Orientador, desejo consultar projetos encerrados, para fins de históri
 
 ## US-09 — Registrar e acompanhar controle de presença
 
-**História do Usuário**
+**História do Usuário**:
 Enquanto Orientador, desejo registrar a presença dos alunos em reuniões de projeto, para acompanhar o engajamento de cada um.
 
 **Critérios de Aceitação**
@@ -369,7 +367,7 @@ Enquanto Orientador, desejo registrar a presença dos alunos em reuniões de pro
 
 ## US-10 — Visualizar tarefas pendentes
 
-**História do Usuário**
+**História do Usuário**:
 Enquanto Aluno, desejo visualizar todas as tarefas pendentes que foram atribuídas a mim, para saber exatamente o que preciso entregar e em qual prazo.
 
 **Critérios de Aceitação**
@@ -408,7 +406,7 @@ Enquanto Aluno, desejo visualizar todas as tarefas pendentes que foram atribuíd
 
 ## US-11 — Submeter arquivo em uma tarefa
 
-**História do Usuário**
+**História do Usuário**:
 Enquanto Aluno, desejo submeter arquivos em tarefas, para cumprir atividades.
 
 **Critérios de Aceitação**
@@ -447,7 +445,7 @@ Enquanto Aluno, desejo submeter arquivos em tarefas, para cumprir atividades.
 
 ## US-12 — Receber notificação de nova tarefa
 
-**História do Usuário**
+**História do Usuário**:
 Enquanto Usuário, desejo receber notificações, para acompanhar atualizações relacionadas às minhas ações e eventos no sistema.
 
 **Critérios de Aceitação**
@@ -484,7 +482,7 @@ Enquanto Usuário, desejo receber notificações, para acompanhar atualizações
 
 ## US-13 — Realizar check-in de presença
 
-**História do Usuário**
+**História do Usuário**:
 Enquanto Aluno, desejo realizar check-in de presença, para garantir o registro da minha participação.
 
 **Critérios de Aceitação**
@@ -527,7 +525,7 @@ Enquanto Aluno, desejo realizar check-in de presença, para garantir o registro 
 
 ## US-14 — Consultar feedback do orientador
 
-**História do Usuário**
+**História do Usuário**:
 Enquanto Aluno, desejo consultar feedbacks, para melhorar meu desempenho.
 
 **Critérios de Aceitação**
@@ -562,7 +560,7 @@ Enquanto Aluno, desejo consultar feedbacks, para melhorar meu desempenho.
 
 ## US-15 — Ajustar tamanho de fonte e contraste
 
-**História do Usuário**
+**História do Usuário**:
 "Enquanto Usuário, desejo ajustar a acessibilidade, para melhorar a usabilidade."
 
 **Critérios de Aceitação**
@@ -600,7 +598,7 @@ Enquanto Aluno, desejo consultar feedbacks, para melhorar meu desempenho.
 
 ## US-16 — Navegar com botões rotulados e layout linear
 
-**História do Usuário**
+**História do Usuário**:
 Enquanto Usuário, desejo navegar com botões rotulados, para facilitar o uso.
 
 **Critérios de Aceitação**
@@ -636,7 +634,7 @@ Enquanto Usuário, desejo navegar com botões rotulados, para facilitar o uso.
 
 ## US-17 — Utilização modo de foco sem distrações
 
-**História do Usuário**
+**História do Usuário**:
 Enquanto Usuário, desejo ativar modo foco, para reduzir distrações.
 
 **Critérios de Aceitação**
