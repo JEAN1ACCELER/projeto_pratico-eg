@@ -249,8 +249,6 @@ Enquanto Orientador, desejo avaliar as tarefas impostas aos alunos, para acompan
 
 ## US-07 — Reenviar tarefa para correção
 
-> ⚠️ **Inconsistência registrada:** O título da Issue #28 é "US07 — Gerar documento oficial automaticamente", porém o conteúdo descreve integralmente o reenvio de tarefa pelo aluno após solicitação de correção. Terceira ocorrência do mesmo padrão de erro de copy-paste. Correção proposta: renomear para "US07 - Reenviar tarefa para correção" e abrir nova issue para geração de documento oficial.
-
 **História do Usuário**:
 Enquanto Aluno, desejo reenviar uma tarefa após solicitação de correção, para atender às configurações solicitadas pelo orientador e concluir a atividade.
 
