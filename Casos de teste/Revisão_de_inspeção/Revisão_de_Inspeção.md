@@ -10,24 +10,24 @@ Este documento apresenta os resultados da auditoria cruzada (inspeção) realiza
 
 ## 1. Relação de Issues Criadas no GitHub
 
-> **📌 Nota ao Avaliador:** Para facilitar a rastreabilidade, todas as *issues* inspecionadas no repositório receberam a tag geral **`Revisadas`**. Além disso, foram categorizadas com *labels* de status final de resolução, conforme a tabela abaixo:
+> **📌 Nota ao Avaliador:** Para facilitar a rastreabilidade, todas as *issues* inspecionadas no repositório receberam a tag geral **`Revisadas`**. Além disso, foram categorizadas com *labels* de status final de resolução, conforme a tabela abaixo. Clique no número da Issue para acessá-la diretamente no GitHub:
 
 | Issue GitHub | História de Usuário (US) | Status / Label Aplicada |
 | :---: | :--- | :--- |
-| **Issue #48** | US05 - Visualizar e filtrar editais no feed unificado | 🟢 Corrigido |
-| **Issue #49** | US04 - Criar e definir tarefa a orientar | 🟢 Corrigido |
-| **Issue #50** | US03 - Cadastrar novo projeto acadêmico | 🟢 Corrigido |
-| **Issue #51** | US02 - Visualizar painel central | 🟢 Corrigido |
-| **Issue #52** | US08 - Regra de "Somente Leitura" e Downloads | 🟢 Corrigido |
-| **Issue #53** | US08 - Impossibilidade de Reativação de Projetos | 🔴 Não Corrigido (Reavaliado) |
-| **Issue #54** | US07 - Geração individual de documentos | 🟢 Corrigido |
-| **Issue #55** | US12 - Configuração de notificação global | 🟢 Corrigido |
-| **Issue #56** | US09 - Realizar check-in de presença (Validação PIN) | 🟢 Corrigido |
-| **Issue #57** | US11 - Limite de caracteres | 🟢 Corrigido |
-| **Issue #58** | US06 - Aprovar ou solicitar editais | 🟢 Corrigido |
-| **Issue #60** | US16 - Navegar com botões rotulados e layout linear | 🟢 Corrigido |
-| **Issue #61** | US15 - Ajustar tamanho de fonte e contraste | 🟢 Corrigido |
-| **Issue #62** | US10 - Visualizar tarefas pendentes | 🟢 Corrigido |
+| **[Issue #48](https://github.com/JEAN1ACCELER/projeto_pratico-eg/issues/48)** | US05 - Visualizar e filtrar editais no feed unificado | 🟢 Corrigido |
+| **[Issue #49](https://github.com/JEAN1ACCELER/projeto_pratico-eg/issues/49)** | US04 - Criar e definir tarefa a orientar | 🟢 Corrigido |
+| **[Issue #50](https://github.com/JEAN1ACCELER/projeto_pratico-eg/issues/50)** | US03 - Cadastrar novo projeto acadêmico | 🟢 Corrigido |
+| **[Issue #51](https://github.com/JEAN1ACCELER/projeto_pratico-eg/issues/51)** | US02 - Visualizar painel central | 🟢 Corrigido |
+| **[Issue #52](https://github.com/JEAN1ACCELER/projeto_pratico-eg/issues/52)** | US08 - Regra de "Somente Leitura" e Downloads | 🟢 Corrigido |
+| **[Issue #53](https://github.com/JEAN1ACCELER/projeto_pratico-eg/issues/53)** | US08 - Impossibilidade de Reativação de Projetos | 🔴 Não Corrigido (Reavaliado) |
+| **[Issue #54](https://github.com/JEAN1ACCELER/projeto_pratico-eg/issues/54)** | US07 - Geração individual de documentos | 🟢 Corrigido |
+| **[Issue #55](https://github.com/JEAN1ACCELER/projeto_pratico-eg/issues/55)** | US12 - Configuração de notificação global | 🟢 Corrigido |
+| **[Issue #56](https://github.com/JEAN1ACCELER/projeto_pratico-eg/issues/56)** | US09 - Realizar check-in de presença (Validação PIN) | 🟢 Corrigido |
+| **[Issue #57](https://github.com/JEAN1ACCELER/projeto_pratico-eg/issues/57)** | US11 - Limite de caracteres | 🟢 Corrigido |
+| **[Issue #58](https://github.com/JEAN1ACCELER/projeto_pratico-eg/issues/58)** | US06 - Aprovar ou solicitar editais | 🟢 Corrigido |
+| **[Issue #60](https://github.com/JEAN1ACCELER/projeto_pratico-eg/issues/60)** | US16 - Navegar com botões rotulados e layout linear | 🟢 Corrigido |
+| **[Issue #61](https://github.com/JEAN1ACCELER/projeto_pratico-eg/issues/61)** | US15 - Ajustar tamanho de fonte e contraste | 🟢 Corrigido |
+| **[Issue #62](https://github.com/JEAN1ACCELER/projeto_pratico-eg/issues/62)** | US10 - Visualizar tarefas pendentes | 🟢 Corrigido |
 
 ---
 
@@ -82,7 +82,7 @@ Nesta seção, detalhamos as *issues* que reportaram defeitos reais (omissões e
 
 ---
 
-## 3. Problemas Reavaliados e Não Corrigidos (Falsos Positivos)
+## 3. Problemas Reavaliados e Não Corrigidos
 
 Nesta seção, encontra-se a única *issue* **rejeitada** após análise técnica da equipe, acompanhada da justificativa pela qual a funcionalidade se manterá conforme originalmente idealizada.
 
