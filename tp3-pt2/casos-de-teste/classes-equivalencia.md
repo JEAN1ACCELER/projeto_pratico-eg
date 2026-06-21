@@ -119,8 +119,8 @@ Enquanto Orientador, desejo cadastrar um novo projeto acadêmico, para iniciar o
 | Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
 |:---|:---|:---|:---|
 | Preenchimento das informações obrigatórias | Campos obrigatórios preenchidos corretamente (1) | Campos obrigatórios vazios/faltando (2) | Informações em formato inválido (ex: data de término anterior à data de início) (3) |
-| Vinculação de alunos ao projeto | Projeto com pelo menos 1 aluno vinculado (4) | Projeto sem nenhum aluno vinculado (5) | — (condição lógica binária) |
-| Alteração manual de status | Status definido automaticamente pela regra de negócio (6) | Tentativa de marcar manualmente como "Ativo" sem aluno vinculado (7) |  |
+| Vinculação de alunos ao projeto | Projeto com pelo menos 1 aluno vinculado (4) | Projeto sem nenhum aluno vinculado (5) | |
+| Alteração manual de status | Status definido automaticamente pela regra de negócio (6) | Tentativa de marcar manualmente como "Ativo" sem aluno vinculado (7) | |
 
 ### Tabela de Casos de Teste
 
