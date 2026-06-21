@@ -29,7 +29,8 @@ Para cada US são produzidos três artefatos:
 
 ## US-01 — Login no sistema
 
-**História do Usuário**
+**História do Usuário**:
+
 Enquanto Usuário, desejo realizar login no sistema, para acessar as funcionalidades conforme meu perfil.
 
 **Critérios de Aceitação**
