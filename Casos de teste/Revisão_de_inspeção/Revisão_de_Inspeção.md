@@ -40,45 +40,124 @@ Nesta seção, detalhamos as *issues* que reportaram defeitos reais (omissões e
 * **Diagnóstico:** Sem limites numéricos e escopo claro baseados na WCAG, a equipe de QA não teria como realizar testes de acessibilidade objetivos.
 * **Correção Aplicada:** Definimos que "elementos interativos" incluem botões, links, abas e formulários. Especificamos que a interface deve suportar ampliação de até **200%** sem sobreposição ou necessidade de rolagem horizontal para funções críticas.
 
+<p align="center">
+  <strong>📸 Evidência da Imagem:</strong><br><br>
+  <img src="https://drive.google.com/uc?export=view&id=1-TQxWVI4zt95MXH6qNMNpAdQcHLjGWxF" alt="Issue #60" width="85%">
+  <br>
+  <em>Legenda: Registro da Issue #60 no repositório do projeto, evidenciando a detecção e correção do requisito de acessibilidade.</em>
+</p>
+
+---
+
 ### Issue #61 (US15) - Omissão de Métricas de Acessibilidade
 * **Problema Apontado:** Faltavam valores precisos para os níveis de fonte e não havia especificação da taxa de contraste para o tema de "Alto Contraste".
 * **Diagnóstico:** Especificações subjetivas impedem a adequação real a normativas de acessibilidade.
 * **Correção Aplicada:** Fixamos o tamanho da fonte em unidades relativas (1rem/100%, 1.25rem/125%, 1.5rem/150%) e exigimos taxa mínima de contraste de **7:1** (nível AAA da WCAG) no tema escuro.
+
+<p align="center">
+  <strong>📸 Evidência da Imagem:</strong><br><br>
+  <img src="https://drive.google.com/uc?export=view&id=1aVmqWLVMhjMf3VERysDzqa2yilqC_bYv" alt="Issue #61" width="85%">
+  <br>
+  <em>Legenda: Registro da Issue #61 no repositório, comprovando o detalhamento das métricas de contraste e fonte.</em>
+</p>
+
+---
 
 ### Issue #62 (US10) - Ambiguidade no Parâmetro de Urgência
 * **Problema Apontado:** A funcionalidade ordenava tarefas da "mais urgente primeiro", mas não definia matematicamente a partir de quando uma tarefa é considerada urgente.
 * **Diagnóstico:** A utilização do termo "urgente" sem critério quantitativo impede a correta ordenação no banco de dados e as tratativas visuais no front-end.
 * **Correção Aplicada:** Criamos a regra de negócio exata: uma tarefa entra no status/tag "Urgente" quando seu prazo de entrega for **igual ou inferior a 48 horas**. A ordenação principal do feed passa a ser `data_vencimento ASC`.
 
+<p align="center">
+  <strong>📸 Evidência da Imagem:</strong><br><br>
+  <img src="https://drive.google.com/uc?export=view&id=1BTRMD6ZNfQdW14DiRHCiDyOsQiUbiDtJ" alt="Issue #62" width="85%">
+  <br>
+  <em>Legenda: Registro da Issue #62 no repositório, documentando a implementação da nova regra de negócio para tarefas urgentes.</em>
+</p>
+
+---
+
 ### Issue #56 (US09) - Falha Lógica na Validação de Presença
 * **Problema Apontado:** O check-in era realizado apenas por um clique no aplicativo, sem validação real de presença física.
 * **Diagnóstico:** O modelo puramente *Client-Side* abria margem para fraudes sistêmicas (marcação de presença sem comparecimento).
 * **Correção Aplicada:** O fluxo foi alterado para exigir a inserção de um Código PIN (OTP) de 4 dígitos, gerado no sistema do orientador durante o encontro.
+
+<p align="center">
+  <strong>📸 Evidência da Imagem:</strong><br><br>
+  <img src="https://drive.google.com/uc?export=view&id=1NBT2kNXwUqnh7dINcVc5cMUBE3vfKNrr" alt="Issue #56" width="85%">
+  <br>
+  <em>Legenda: Registro da Issue #56, demonstrando a alteração no fluxo de validação de check-in.</em>
+</p>
+
+---
 
 ### Issue #49 (US04) - Omissão de Ciclo de Vida e Restrição de Prazo
 * **Problema Apontado:** Falta de clareza sobre os status de uma tarefa e omissão de limite máximo para a definição de prazo de entrega.
 * **Diagnóstico:** A ausência de uma "trava temporal" permitiria cadastrar tarefas para datas muito além do encerramento oficial do projeto.
 * **Correção Aplicada:** Inserido o ciclo Kanban (A Fazer, Em Andamento, Concluída, Atrasada) e aplicada a regra limitadora: a data máxima de uma tarefa não pode ultrapassar a data final do projeto acadêmico.
 
+<p align="center">
+  <strong>📸 Evidência da Imagem:</strong><br><br>
+  <img src="https://drive.google.com/uc?export=view&id=1Kb9K9eL7IiTJ_X7uSWtae01XkrMRog1R" alt="Issue #49" width="85%">
+  <br>
+  <em>Legenda: Registro da Issue #49, indicando a adição de restrições de prazo e novo ciclo de status.</em>
+</p>
+
+---
+
 ### Issue #50 (US03) - Falta de Estado Intermediário para Projetos
 * **Problema Apontado:** O projeto exigia um aluno vinculado para ser ativado, mas não previa um estado para salvamento prévio.
 * **Diagnóstico:** A ausência de estado transitório inviabiliza o trabalho em progresso e prejudica a usabilidade de criação de cadastros longos.
 * **Correção Aplicada:** Criado o status **'Rascunho'** para projetos salvos sem alunos. O status transita para **'Em Andamento'** automaticamente ao vincular os discentes.
+
+<p align="center">
+  <strong>📸 Evidência da Imagem:</strong><br><br>
+  <img src="https://drive.google.com/uc?export=view&id=1lZuSv1ulKOI84coiHlm43YTwvrjhOpJb" alt="Issue #50" width="85%">
+  <br>
+  <em>Legenda: Registro da Issue #50, evidenciando a inclusão do status 'Rascunho' na regra do projeto.</em>
+</p>
+
+---
 
 ### Issue #51 (US02) - Ambiguidade em SLA de Desempenho
 * **Problema Apontado:** Uso de termo subjetivo "carregar rápido em conexão de boa qualidade".
 * **Diagnóstico:** Requisitos não-funcionais devem ser testáveis e automatizáveis.
 * **Correção Aplicada:** Substituído por uma métrica técnica rigorosa: SLA de tempo de resposta máximo de **3 segundos** sob rede de pelo menos 10 Mbps.
 
+<p align="center">
+  <strong>📸 Evidência da Imagem:</strong><br><br>
+  <img src="https://drive.google.com/uc?export=view&id=1qobrC2woz1sE8G8dffYSZ7llv0YLxT5I" alt="Issue #51" width="85%">
+  <br>
+  <em>Legenda: Registro da Issue #51, comprovando a fixação de um SLA testável para carregamento.</em>
+</p>
+
+---
+
 ### Issue #48 (US05) - Escopo Vago de Integração de Editais
 * **Problema Apontado:** O requisito solicitava integrar dados das "principais pró-reitorias" sem especificar quais.
 * **Diagnóstico:** Termos abertos geram inchaço de escopo (*Scope Creep*).
 * **Correção Aplicada:** O escopo foi blindado, limitando o *fetch* de dados unicamente aos endpoints das **PROPESP** e **PROEXT**.
 
+<p align="center">
+  <strong>📸 Evidência da Imagem:</strong><br><br>
+  <img src="https://drive.google.com/uc?export=view&id=1T5U12irneTax8bb1AB4Xxs1rve6ceckL" alt="Issue #48" width="85%">
+  <br>
+  <em>Legenda: Registro da Issue #48, delimitando o escopo da integração de APIs no repositório.</em>
+</p>
+
+---
+
 ### Issue #52 (US08) - Esclarecimento: Leitura x Download
 * **Problema Apontado:** O termo "somente leitura" no histórico abria dúvidas sobre a permissão de download de arquivos finalizados.
 * **Diagnóstico:** Faltava delimitar onde acabava o privilégio de "visualização" e onde entrava a "extração" dos arquivos em tela.
 * **Correção Aplicada:** Documento refatorado para esclarecer a separação, mantendo explicitamente autorizada a visualização dos dados e o download de documentos, mas bloqueando a edição/deleção.
+
+<p align="center">
+  <strong>📸 Evidência da Imagem:</strong><br><br>
+  <img src="https://drive.google.com/uc?export=view&id=1BS_W2BmPZ4g8VGzas3W2IjQE0BReGrhi" alt="Issue #52" width="85%">
+  <br>
+  <em>Legenda: Registro da Issue #52, esclarecendo as permissões do sistema em modo Histórico.</em>
+</p>
 
 ---
 
@@ -91,7 +170,16 @@ Nesta seção, encontra-se a única *issue* **rejeitada** após análise técnic
 * **Justificativa para Não Correção:** Trata-se de um falso positivo, pois essa ausência é **proposital**. O projeto obedece a uma Regra de Negócio de auditoria acadêmica (imutabilidade de registros concluídos). Uma vez que um projeto entra no estado de "Histórico", seu ciclo de vida é encerrado e os dados se tornam evidências oficiais. A criação de um botão de "reativação" comprometeria o *compliance* de versionamento e prazos do sistema acadêmico.
 * **Veredito:** Mantida a irreversibilidade por design. A US não sofreu alterações. Defeito rejeitado.
 
-## 4. Sessão extra - Impacto da Refatoração na Usabilidade (Heurísticas de Nielsen)
+<p align="center">
+  <strong>📸 Evidência da Imagem:</strong><br><br>
+  <img src="https://drive.google.com/uc?export=view&id=1ThFCu7kSAs2ZZkt51WdYdMoQpKQMzfgK" alt="Issue #53" width="85%">
+  <br>
+  <em>Legenda: Registro da Issue #53, justificando tecnicamente o encerramento da issue sem modificação da regra.</em>
+</p>
+
+---
+
+## 4. Sessão extra -impacto da Refatoração na Usabilidade (Heurísticas de Nielsen)
 
 A inspeção e correção desses requisitos não apenas alinhou regras de negócio, mas também mitigou preventivamente graves falhas de usabilidade no sistema. Para mensurar esse ganho de maturidade, categorizamos os problemas corrigidos com base nas **10 Heurísticas de Jakob Nielsen**. 
 
