@@ -10,18 +10,20 @@ Este documento apresenta os resultados da auditoria cruzada (inspeção) realiza
 
 ## 1. Relação de Issues Criadas no GitHub
 
+> **📌 Nota ao Avaliador:** Para facilitar a rastreabilidade e a correção, todas as *issues* no repositório foram devidamente categorizadas com **labels** de status (ex: `Revisadas`, `Corrigido`, `Não Corrigido (Falso Positivo)`). Acesse os links na tabela abaixo para consultar a resolução, as edições e as justificativas aplicadas diretamente no GitHub.
+
 Abaixo estão listadas as issues apontadas pela equipe inspetora, associadas às respectivas Histórias de Usuário (US) do nosso *Backlog*:
 
-| Issue GitHub | História de Usuário (US) | Status da Avaliação |
+| Issue GitHub | História de Usuário (US) | Status / Label Aplicada |
 | :---: | :--- | :--- |
-| **#51** | US02 - Visualizar painel central | 🟢 Corrigido |
-| **#50** | US03 - Cadastrar novo projeto acadêmico | 🟢 Corrigido |
-| **#49** | US04 - Criar e definir tarefa a orientar | 🟢 Corrigido |
-| **#48** | US05 - Visualizar e filtrar editais no feed unificado | 🟢 Corrigido |
-| **#46** | US10 - Visualizar tarefas pendentes | 🟢 Corrigido |
-| **#45** | US13 - Realizar check-in de presença | 🟢 Corrigido |
-| **#47** | US06 - Aprovar ou solicitar editais | 🟡 Parcial (Título corrigido / Enunciado mantido) |
-| **#52** | US08 - Regra de "Somente Leitura" no Histórico | 🔴 Não Corrigido (Falso Positivo) |
+| **[Issue #51](COLE_O_LINK_AQUI)** | US02 - Visualizar painel central | 🟢 Corrigido |
+| **[Issue #50](COLE_O_LINK_AQUI)** | US03 - Cadastrar novo projeto acadêmico | 🟢 Corrigido |
+| **[Issue #49](COLE_O_LINK_AQUI)** | US04 - Criar e definir tarefa a orientar | 🟢 Corrigido |
+| **[Issue #48](COLE_O_LINK_AQUI)** | US05 - Visualizar e filtrar editais no feed unificado | 🟢 Corrigido |
+| **[Issue #46](COLE_O_LINK_AQUI)** | US10 - Visualizar tarefas pendentes | 🟢 Corrigido |
+| **[Issue #45](COLE_O_LINK_AQUI)** | US13 - Realizar check-in de presença | 🟢 Corrigido |
+| **[Issue #47](COLE_O_LINK_AQUI)** | US06 - Aprovar ou solicitar editais | 🟡 Parcial (Título corrigido / Enunciado mantido) |
+| **[Issue #52](COLE_O_LINK_AQUI)** | US08 - Regra de "Somente Leitura" no Histórico | 🔴 Não Corrigido (Falso Positivo) |
 
 ---
 
