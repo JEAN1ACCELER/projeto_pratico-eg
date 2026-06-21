@@ -84,7 +84,7 @@ Enquanto Orientador, desejo visualizar um painel central, para acompanhar os pro
 |:---|:---|:---|:---|
 | Vínculo do projeto com o orientador | Projeto vinculado ao orientador autenticado (1) | Projeto vinculado a outro orientador (2) | Projeto inexistente ou removido (3) |
 | Status do projeto | Projeto ativo/em andamento (4) | Projeto encerrado (5) | — (condição lógica binária) |
-| Autenticação do usuário | Usuário autenticado como orientador (6) | Usuário não autenticado (7) |  |
+| Autenticação do usuário | Usuário autenticado como orientador (6) | Usuário não autenticado (7) | |
 
 ### Tabela de Casos de Teste
 
