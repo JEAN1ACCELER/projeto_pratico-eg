@@ -1,178 +1,99 @@
-# 📄 Relatório Técnico: Auditoria e Resolução de Requisitos (QA Review)
+# 📄 Relatório de Inspeção e Refatoração de Requisitos
 
-**Projeto:** E-Project (Gestão de Projetos Acadêmicos)  
-**Fase:** Trabalho Prático III - Consolidação de Inspeção e Refatoração de Backlog  
-**Objetivo:** Estabelecer o rastreio rigoroso das não-conformidades apontadas na auditoria cruzada, documentando o *rationale* arquitetural e as ações de mitigação aplicadas ao repositório oficial da plataforma.
+**Projeto:** E-Project (Gestão de Projetos Acadêmicos)
+**Fase:** Trabalho Prático III - Consolidação de Inspeção e Refatoração de Backlog
 
----
-
-## 1. Sumário Executivo de Qualidade
-
-A tabela abaixo consolida as métricas de triagem da auditoria de requisitos, categorizando os apontamentos por domínio de impacto tecnológico e de negócios. A análise identificou oportunidades críticas de refatoração para garantir o *Definition of Ready* (DoR) antes da fase de desenvolvimento.
-
-| Categoria do Defeito | Aceitos / Mitigados | Rejeitados (Falso Positivo) | Impacto Principal no Sistema |
-| :--- | :---: | :---: | :--- |
-| **Integridade e Lógica de Negócios** | 6 | 1 | Regras de transição de estado, consistência temporal e fluxos acadêmicos. |
-| **Performance e Escalabilidade (RNF)** | 1 | 0 | SLAs de resposta e viabilização de testes de carga/estresse automatizados. |
-| **Segurança e Prevenção de Fraudes** | 1 | 0 | Validação de sessões físicas (Check-in/Presença) com fatores síncronos. |
-| **UI/UX e Acessibilidade (WCAG)** | 4 | 0 | Compatibilidade estrutural com tecnologias assistivas e responsividade. |
-| **Rastreabilidade e Padrões Ágeis** | 3 | 2 | Dicionário de dados, padronização de nomenclatura e semântica de User Stories. |
-| **Total Global** | **15** | **3** | - |
+## Objetivo
+Este documento apresenta os resultados da auditoria cruzada (inspeção) realizada por outras equipes no nosso repositório. O objetivo é detalhar as *Issues* geradas no GitHub, indicando claramente quais apontamentos foram considerados pertinentes e corrigidos, e quais foram classificados como falsos positivos (não corrigidos) com suas devidas justificativas.
 
 ---
 
-## 2. Matriz de Mitigação: Defeitos Aceitos e Refatorados
+## 1. Relação de Issues Criadas no GitHub
 
-As seções a seguir detalham as correções arquiteturais e textuais aplicadas. Cada item justificado altera diretamente os Critérios de Aceite (CA) ou as Regras de Negócio (RN) do sistema.
+Abaixo estão listadas as issues apontadas pela equipe inspetora, associadas às respectivas Histórias de Usuário (US) do nosso *Backlog*:
 
-### 2.1. Refatoração de Lógica de Negócios e Dicionário de Dados
-
-A auditoria revelou inconsistências no ciclo de vida das entidades centrais. A mitigação focou em fechar brechas na *State Machine* (Máquina de Estados) e na integridade referencial temporal do banco de dados.
-
-#### US03 - Cadastrar Projeto Acadêmico (Gerenciamento de Estados)
-* **Análise Lógica (Omissão):** A transição para o estado "Ativo" exigia a presença de um aluno, mas a interface permitia o salvamento imediato. Sem um estado intermediário, a persistência geraria uma *Constraint Violation* no banco ou uma UI inconsistente. A implementação do estado transitório ("Rascunho") resolve a fricção de UX.
-
-| Atributo | Estado Anterior (Com Defeito) | Solução Aplicada (Repositório Atualizado) |
-| :--- | :--- | :--- |
-| **Transição de Estado (RN)** | "Cada projeto deve ter pelo menos um aluno contratado para ser ativado." | "O sistema permite salvar projeto sem aluno vinculado, atribuindo status **'Rascunho' (Inativo)**. A transição para **'Em Andamento' (Ativo)** ocorre unicamente via *trigger* de vinculação de orientando." |
-
-> **Evidência de Refatoração:** > ![Evidência US03](COLE_AQUI_A_URL_DO_DRIVE)  
-> *Figura 1: Implementação da regra de transição de status 'Rascunho' na US03.*
-
-#### US04 - Criar Tarefas (Ciclo de Vida Kanban e Restrição Temporal)
-* **Análise Lógica (Omissão):** A ausência do mapeamento completo do ciclo de vida das tarefas impediria a modelagem de *Enum Types* no banco de dados. Adicionalmente, mitigou-se uma falha de *Temporal Integrity* onde tarefas poderiam ter prazos fora da vigência do contrato do projeto.
-
-| Atributo | Estado Anterior (Com Defeito) | Solução Aplicada (Repositório Atualizado) |
-| :--- | :--- | :--- |
-| **Estados Kanban (RN)** | Apenas o status "Pendente" era especificado. | Inserção do pipeline completo: **'A Fazer', 'Em Andamento', 'Em Revisão', 'Concluída' e 'Atrasada'**. |
-| **Integridade Temporal (RN)** | Sem limite superior de data definido. | "O backend rejeitará o POST/PUT de tarefas cuja **data de entrega seja superior à data de encerramento** do projeto associado." |
-
-> **Evidência de Refatoração:** > ![Evidência US04](COLE_AQUI_A_URL_DO_DRIVE)  
-> *Figura 2: Definição dos Enums de status e restrições de integridade temporal na US04.*
-
-#### US10 - Tarefas Pendentes (Padronização e Algoritmo de Ordenação)
-* **Análise Lógica (Ambiguidade/Inconsistência):** A métrica de "urgência" era subjetiva, impossibilitando a construção algorítmica da *query* (ex: `ORDER BY`). A nomenclatura "Instruções" foi refatorada para "Descrição" para garantir simetria com o Dicionário de Dados da US04.
-
-| Atributo | Estado Anterior (Com Defeito) | Solução Aplicada (Repositório Atualizado) |
-| :--- | :--- | :--- |
-| **Algoritmo de Ordenação (RN)** | "ordenadas por prazo (mais urgente primeiro)" | "Ordenação via `data_vencimento ASC`. Tarefas **'Atrasadas'** recebem prioridade absoluta (*Pin to top*) com alerta visual crítico (#FF0000)." |
-| **Semântica de Dados (CA)** | Acessar "instruções". | Acessar "descrição completa" (Alinhamento 1:1 com a modelagem da US04). |
-
-> **Evidência de Refatoração:** > ![Evidência US10](COLE_AQUI_A_URL_DO_DRIVE)  
-> *Figura 3: Parametrização matemática do algoritmo de ordenação de tarefas na US10.*
-
-#### US06 - Revisão de Entregas (Correção de Escopo Semântico)
-* **Análise Lógica (Fato Incorreto):** O título original ("Aprovar Editais") causava uma severa desagregação de escopo (*Scope Creep*). O desalinhamento entre o título e a intenção da história corromperia a Rastreabilidade (Traceability Matrix).
-
-| Atributo | Estado Anterior (Com Defeito) | Solução Aplicada (Repositório Atualizado) |
-| :--- | :--- | :--- |
-| **Título e Ação** | "US06 - Aprovar ou solicitar editais no feed..." | "US06 - Revisar e avaliar entregas de tarefas." |
-
-> **Evidência de Refatoração:** > ![Evidência US06](COLE_AQUI_A_URL_DO_DRIVE)  
-> *Figura 4: Alinhamento de responsabilidade única (Single Responsibility) no título da US06.*
+| Issue GitHub | História de Usuário (US) | Status da Avaliação |
+| :---: | :--- | :--- |
+| **#51** | US02 - Visualizar painel central | 🟢 Corrigido |
+| **#50** | US03 - Cadastrar novo projeto acadêmico | 🟢 Corrigido |
+| **#49** | US04 - Criar e definir tarefa a orientar | 🟢 Corrigido |
+| **#48** | US05 - Visualizar e filtrar editais no feed unificado | 🟢 Corrigido |
+| **#46** | US10 - Visualizar tarefas pendentes | 🟢 Corrigido |
+| **#45** | US13 - Realizar check-in de presença | 🟢 Corrigido |
+| **#47** | US06 - Aprovar ou solicitar editais | 🟡 Parcial (Título corrigido / Enunciado mantido) |
+| **#52** | US08 - Regra de "Somente Leitura" no Histórico | 🔴 Não Corrigido (Falso Positivo) |
 
 ---
 
-### 2.2. Perfomance, Infraestrutura e Limites de Fronteira
+## 2. Problemas Pertinentes (Aceitos e Corrigidos)
 
-Requisitos sem métricas quantitativas ou sem limites de *payload* foram refatorados para viabilizar testes de integração, carga e proteção de infraestrutura.
+Nesta seção, detalhamos os defeitos que **fizeram sentido** e agregaram valor ao projeto. As histórias foram editadas para refletir as correções.
 
-#### US02 - Dashboard Central (SLA de Performance)
-* **Análise Lógica (Ambiguidade):** Requisitos Não-Funcionais (RNF) com termos relativos ("boa conexão") são anti-padrões. É imperativo estipular *thresholds* quantitativos para viabilizar testes em esteiras de CI/CD (ex: Lighthouse/Jest).
+### Issue #51 (US02) - Ambiguidade em Requisito Não-Funcional
+* **Problema Apontado:** O critério de aceite usava o termo subjetivo "carregar rápido em conexão de boa qualidade".
+* **Correção Aplicada:** Trocamos a subjetividade por uma métrica exata.
+* **Resultado:** O critério agora exige tempo de resposta de "até 3 segundos sob uma banda de rede estável >= 10 Mbps", permitindo testes automatizados reais.
 
-| Atributo | Estado Anterior (Com Defeito) | Solução Aplicada (Repositório Atualizado) |
-| :--- | :--- | :--- |
-| **Threshold de Performance (CA)**| "carregar em menos de 3s em conexão de boa qualidade" | "O dashboard deve resolver todas as requisições em até **3 segundos** sob uma banda de rede estável **>= 10 Mbps**." |
+> ![Print da Issue #51](COLE_AQUI_A_URL_DO_DRIVE)
 
-> **Evidência de Refatoração:** > ![Evidência US02](COLE_AQUI_A_URL_DO_DRIVE)  
-> *Figura 5: Refinamento de RNF com métricas testáveis para automação de Quality Assurance.*
+### Issue #50 (US03) - Falta de Estado Intermediário
+* **Problema Apontado:** O projeto exigia um aluno para ficar ativo, mas a interface permitia o salvamento antes disso, o que poderia gerar erro no banco de dados.
+* **Correção Aplicada:** Inclusão de uma nova regra de transição de estado.
+* **Resultado:** Projetos salvos sem alunos recebem o status "Rascunho". Apenas quando um aluno é vinculado, o projeto muda para "Em Andamento" (Ativo).
 
-#### US11 - Mensagem Opcional (Prevenção de Sobrecarga - String Boundaries)
-* **Análise Lógica (Omissão):** A ausência de *Boundary Analysis* em campos de texto permite *Payloads* massivos que podem causar *Buffer Overflow* na base de dados ou corrupção do layout (DOM).
+> ![Print da Issue #50](COLE_AQUI_A_URL_DO_DRIVE)
 
-| Atributo | Estado Anterior (Com Defeito) | Solução Aplicada (Repositório Atualizado) |
-| :--- | :--- | :--- |
-| **Limites (RN)** | "incluir uma mensagem opcional junto ao envio" | "O campo de mensagem (Input Text) será mapeado com restrição absoluta (Max-Length) de **500 caracteres**." |
+### Issue #49 (US04) - Omissão de Ciclo de Vida e Restrição de Prazo
+* **Problema Apontado:** Tarefas não tinham estados claros definidos e os prazos podiam ultrapassar o limite de encerramento do projeto.
+* **Correção Aplicada:** Mapeamento de estados e restrição temporal de integridade.
+* **Resultado:** Inserido o fluxo (A Fazer, Em Andamento, Concluída, Atrasada) e criada a regra que bloqueia tarefas com datas de entrega superiores à vigência do projeto.
 
-> **Evidência de Refatoração:** > ![Evidência US11](COLE_AQUI_A_URL_DO_DRIVE)  
-> *Figura 6: Implementação de proteção de layout e limitação estrutural de payload.*
+> ![Print da Issue #49](COLE_AQUI_A_URL_DO_DRIVE)
 
-#### US05 e US12 - Definição de Escopo de MVP (Context Mapping)
-* **Análise Lógica (Ambiguidade):** Integrações abertas ("principais pró-reitorias") e funcionalidades globais vagas ("configurar notificações") introduzem risco ao cronograma. A mitigação isolou o domínio estritamente para o Produto Mínimo Viável (MVP).
+### Issue #48 (US05) - Escopo de Integração Vago
+* **Problema Apontado:** A história falava em buscar dados das "principais pró-reitorias", o que deixa o escopo de desenvolvimento aberto e perigoso.
+* **Correção Aplicada:** Delimitação de escopo (MVP).
+* **Resultado:** A integração foi restrita nominalmente apenas às APIs da **PROPESP** e **PROEXT**.
 
-| Atributo | Estado Anterior (Com Defeito) | Solução Aplicada (Repositório Atualizado) |
-| :--- | :--- | :--- |
-| **Integração (US05)**| "principais pró-reitorias (PROPESP, PROEXT)..." | "Fetch de dados restrito exclusivamente e unicamente às APIs da **PROPESP e PROEXT**." |
-| **Settings (US12)** | "configurar preferências de notificação" | "MVP: Chave booleana (*Toggle Global*) única no perfil para ativar/desativar todas as interrupções de push." |
+> ![Print da Issue #48](COLE_AQUI_A_URL_DO_DRIVE)
 
-> **Evidências de Refatoração:** > ![Evidência US05](COLE_AQUI_A_URL_DO_DRIVE)  
-> *Figura 7: Restrição de fronteira de integração a duas pró-reitorias na US05.* > ![Evidência US12](COLE_AQUI_A_URL_DO_DRIVE)  
-> *Figura 8: Simplificação de estado de configuração na US12.*
+### Issue #46 (US10) - Ordenação Subjetiva e Inconsistência de Dicionário
+* **Problema Apontado:** A ordenação era definida como "mais urgente primeiro" (sem critério lógico) e usava o termo "instruções" em vez de "descrição" (que era usado na US04).
+* **Correção Aplicada:** Padronização semântica e definição de algoritmo.
+* **Resultado:** A ordenação agora é feita por `data_vencimento ASC` (crescente), priorizando tarefas "Atrasadas". O termo foi padronizado para "descrição".
 
----
+> ![Print da Issue #46](COLE_AQUI_A_URL_DO_DRIVE)
 
-### 2.3. Autenticidade, Segurança e Acessibilidade (Compliance)
+### Issue #45 (US13) - Falha Lógica na Validação de Presença
+* **Problema Apontado:** O check-in era feito apenas clicando em um botão no aplicativo, abrindo brecha para que o aluno marcasse presença mesmo não estando no local.
+* **Correção Aplicada:** Implementação de validação síncrona.
+* **Resultado:** A presença agora exige um Código PIN (OTP) de 4 dígitos gerado pelo orientador no momento do encontro.
 
-O sistema deve assegurar fé pública nos dados institucionais e conformidade absoluta com as normativas internacionais de acessibilidade na web.
+> ![Print da Issue #45](COLE_AQUI_A_URL_DO_DRIVE)
 
-#### US09 e US13 - Validação de Check-in (Mecanismo Antifraude)
-* **Análise Lógica (Omissão Grave):** O registro de evento focado apenas no lado do cliente (*Client-Side Logging*) abria vetor para falsificação de presenças (*Spoofing*). O mecanismo evoluiu para uma validação síncrona em duas etapas (*Two-Step Verification*).
+### Issue #47 (US06) - Desalinhamento de Título (Escopo)
+* **Problema Apontado:** O título da história era "Aprovar Editais", mas a descrição falava sobre revisar as entregas de tarefas dos alunos.
+* **Correção Aplicada:** Renomeação da US para alinhar título e narrativa.
+* **Resultado:** O título foi atualizado para "Revisar e avaliar entregas de tarefas". *(Nota: Outro apontamento desta issue foi rejeitado, veja na seção 3).*
 
-| Atributo | Estado Anterior (Com Defeito) | Solução Aplicada (Repositório Atualizado) |
-| :--- | :--- | :--- |
-| **Segurança (CA)**| "realizar check-in a partir do aplicativo" | "Presença validada via **Código PIN (OTP de 4 dígitos)** gerado dinamicamente no painel do orientador para validação síncrona pelo aluno em sala." |
-
-> **Evidência de Refatoração:** > ![Evidência US09_13](COLE_AQUI_A_URL_DO_DRIVE)  
-> *Figura 9: Estruturação de token síncrono para garantia de fé pública e auditoria acadêmica.*
-
-#### US07 - Declaração de Bolsista (Modelagem de Relatório)
-* **Análise Lógica (Omissão):** Documentos acadêmicos são entidades nominais singulares. Agrupar dados de múltiplas instâncias em um único PDF corrompe a utilidade legal do documento.
-
-| Atributo | Estado Anterior (Com Defeito) | Solução Aplicada (Repositório Atualizado) |
-| :--- | :--- | :--- |
-| **Data Binding (RN)**| "preenchidos com os dados do projeto cadastrado" | "Geração estritamente individual. O payload do PDF consumirá apenas os dados e o ID do usuário selecionado (relação 1:1)." |
-
-> **Evidência de Refatoração:** > ![Evidência US07](COLE_AQUI_A_URL_DO_DRIVE)  
-> *Figura 10: Parametrização da geração de relatórios vinculando documento ao identificador único do usuário.*
-
-#### US15 e US16 - Acessibilidade Visual (Diretrizes WCAG 2.1 AAA)
-* **Análise Lógica (Ambiguidade):** Leis modernas de acessibilidade exigem valores exatos. O refinamento garantiu o cumprimento do protocolo internacional *Web Content Accessibility Guidelines* (WCAG).
-
-| Atributo | Estado Anterior (Com Defeito) | Solução Aplicada (Repositório Atualizado) |
-| :--- | :--- | :--- |
-| **Escalas e Cores (US15)**| "3 níveis... opções de tema Alto Contraste." | "Scales: **100%, 125%, 150%**. Contraste AAA: BG **#000000**, Texto **#FFFF00 ou #FFFFFF**." |
-| **Leitores (US16)** | "não depender exclusivamente de ícone..." | "Todo componente clicável exige propriedade **'aria-label'**. Operabilidade preservada em **zoom de 200%** sem sobreposição de blocos (*Reflow*)." |
-
-> **Evidências de Refatoração:** > ![Evidência US15](COLE_AQUI_A_URL_DO_DRIVE)  
-> *Figura 11: Inclusão de metadados absolutos de CSS e HEX codes.* > ![Evidência US16](COLE_AQUI_A_URL_DO_DRIVE)  
-> *Figura 12: Definição de propriedades ARIA e responsividade limite.*
+> ![Print da Issue #47](COLE_AQUI_A_URL_DO_DRIVE)
 
 ---
 
-## 3. Resoluções Estratégicas: Falsos Positivos e Decisões de Domínio
+## 3. Problemas Reavaliados e Não Corrigidos (Falsos Positivos)
 
-A auditoria reportou falhas que, após análise cruzada entre a equipe de Engenharia e Produto, foram **rejeitadas** por colidirem com invariantes do domínio (Regras Institucionais da UFAM) ou com axiomas de Engenharia Ágil.
+Nesta seção, detalhamos os apontamentos feitos pela equipe inspetora que foram **rejeitados** pela nossa equipe. Estes problemas não faziam sentido com as regras de negócio reais ou entravam em conflito com a metodologia Ágil.
 
-### 3.1. US08 - Acesso em "Somente Leitura" (Ambiguidade Apontada)
-* **Análise do Apontamento:** A inspeção questionou se o termo "somente leitura" bloqueava o download de arquivos em projetos encerrados.
-* **Justificativa Técnica (Rejeição com Adendo):** No ecossistema REST e em sistemas operacionais, o privilégio *Read-Only* refere-se à camada de mutação de dados (bloqueio de métodos `POST`, `PUT`, `DELETE`). A leitura (`GET`) compreende integralmente a extração de *Blobs/Files* para o disco local. O apontamento central é um falso positivo conceitual, porém, aplicamos um adendo pacificador (para mitigar dúvidas da equipe de Front-end).
-* **Solução:** O defeito foi recusado, mas o texto recebeu a adição: *"mantendo liberada a visualização dos dados em tela e o download de todos os documentos previamente gerados."*
+### Issue #52 (US08) - Exigência de "Reativação de Projetos"
+* **Problema Apontado (Inventado):** A equipe avaliadora alegou que a história estava incompleta porque faltava um fluxo/botão para "reativar projetos encerrados" que estavam no Histórico.
+* **Justificativa para Não Correção:** A avaliação não considerou o contexto de negócio (Domínio). Editais institucionais da UFAM (como PIBIC/PACE) possuem ciclos orçamentários rígidos e datas de início/fim estritas governadas por edital. 
+* **Veredito:** O término do projeto é um **Estado Final Absoluto**. Permitir a reativação no banco de dados abriria brechas para extensão irregular de prazos e pagamentos de bolsas. Requisito rejeitado por ferir a integridade dos dados acadêmicos.
 
-> **Documentação da Justificativa:** > ![Justificativa US08 - Leitura](COLE_AQUI_A_URL_DO_DRIVE)  
-> *Figura 13: Esclarecimento técnico sobre o comportamento de segurança Read-Only na Issue.*
+> ![Print da Issue #52](COLE_AQUI_A_URL_DO_DRIVE)
 
-### 3.2. US08 - Reativação de Projetos Históricos (Omissão Apontada)
-* **Análise do Apontamento:** A inspeção reportou a falta de um fluxo sistêmico para "reativar projetos encerrados automaticamente".
-* **Justificativa de Domínio - DDD (Rejeição Absoluta):** O projeto espelha o regulamento estrito das pró-reitorias. Editais possuem ciclos orçamentários fixos. O encerramento de um projeto é um **Estado Final Absoluto (Terminal State)**. Permitir *rollbacks* ou reativações no banco de dados abriria vulnerabilidades para pagamentos indevidos de bolsas, gerando Risco de Auditoria (*Compliance Risk*).
-* **Solução:** Requisito firmemente rejeitado. Adicionada uma diretriz de segurança: *"Projetos no status Histórico são imutáveis e impossibilitados de reativação em qualquer circunstância."*
+### Issue #47 (US06) - Exigência de Detalhes Técnicos na Narrativa
+* **Problema Apontado (Inventado):** A equipe avaliadora reportou como defeito o fato de a narrativa da User Story "não descrever de que maneira a necessidade será atendida pelo sistema".
+* **Justificativa para Não Correção:** O apontamento entra em contradição com as boas práticas de Engenharia de Requisitos (Padrão Ágil). A narrativa padrão (*Eu como... Quero... Para que...*) foca estritamente em **quem** precisa, **o que** deseja e o **valor de negócio**, e **nunca em especificações técnicas ou de como a tela vai funcionar**. O "como" o sistema atende à necessidade é papel exclusivo dos Critérios de Aceitação.
+* **Veredito:** A narrativa foi mantida em seu formato original, e o apontamento foi descartado como falso positivo metodológico.
 
-> **Documentação da Justificativa:** > ![Justificativa US08 - Reativação](COLE_AQUI_A_URL_DO_DRIVE)  
-> *Figura 14: Rejeição estruturada fundamentada nas regras de governança acadêmica.*
-
-### 3.3. US06 - Formato do Enunciado (Omissão Apontada)
-* **Análise do Apontamento:** A inspeção considerou defeito o fato de a narrativa "não descrever de que maneira a necessidade seria atendida".
-* **Justificativa Metodológica Ágil (Rejeição Absoluta):** O apontamento fere a fundação metodológica do *Behavior-Driven Development* (BDD) e do padrão Connextra (*As a... I want... So that...*). A narrativa primária de uma User Story foca unicamente na percepção de valor do usuário e **nunca em especificações de arquitetura, fluxos de interface ou soluções algorítmicas**. Exigir o "como" na narrativa quebra a independência do *Backlog*. Os fluxos residem nos Critérios de Aceite.
-* **Solução:** Defeito rejeitado. O enunciado permaneceu intocado, provando a maturidade metodológica da especificação original.
-
-> **Documentação da Justificativa:** > ![Justificativa US06 - Enunciado](COLE_AQUI_A_URL_DO_DRIVE)  
-> *Figura 15: Defesa teórica embasada no Manifesto Ágil e boas práticas de Engenharia de Requisitos registrada na Issue.*
+> ![Print da Justificativa Issue #47](COLE_AQUI_A_URL_DO_DRIVE)
