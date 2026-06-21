@@ -212,8 +212,6 @@ Enquanto Orientador, desejo visualizar e filtrar os editais disponíveis, para i
 
 ## US-06 — Aprovar ou solicitar correção de tarefa
 
-> ⚠️ **Inconsistência registrada:** O título da Issue #27 é "US06 - Aprovar ou solicitar editais no feed unificado", porém o conteúdo descreve avaliação de tarefas dos alunos. Erro de copy-paste identificado durante a elaboração das classes de equivalência. Correção proposta: renomear para "US06 - Avaliar tarefa submetida pelo aluno".
-
 **História do Usuário**:
 Enquanto Orientador, desejo avaliar as tarefas impostas aos alunos, para acompanhar o progresso do projeto e garantir a qualidade das entregas.
 
@@ -233,9 +231,9 @@ Enquanto Orientador, desejo avaliar as tarefas impostas aos alunos, para acompan
 
 | Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
 |:---|:---|:---|:---|
-| Perfil do usuário avaliador | Usuário é o orientador responsável pelo projeto (1) | Usuário não é orientador / não autorizado (2) | — (condição lógica binária) |
+| Perfil do usuário avaliador | Usuário é o orientador responsável pelo projeto (1) | Usuário não é orientador / não autorizado (2) | |
 | Estado de submissão da tarefa | Tarefa submetida pelo aluno e pendente de avaliação (3) | Tarefa ainda não submetida pelo aluno (4) | Tarefa já avaliada anteriormente, sem nova submissão (5) |
-| Status final da avaliação | Status único definido (Aprovada OU Correção Solicitada) (6) | Tentativa de definir mais de um status simultaneamente (7) | — (condição lógica binária) |
+| Status final da avaliação | Status único definido (Aprovada OU Correção Solicitada) (6) | Tentativa de definir mais de um status simultaneamente (7) | |
 
 ### Tabela de Casos de Teste
 
@@ -272,9 +270,9 @@ Enquanto Aluno, desejo reenviar uma tarefa após solicitação de correção, pa
 
 | Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
 |:---|:---|:---|:---|
-| Vínculo do aluno ao projeto | Aluno alinhado/vinculado ao projeto (1) | Aluno não alinhado ao projeto (2) | — (condição lógica binária) |
+| Vínculo do aluno ao projeto | Aluno alinhado/vinculado ao projeto (1) | Aluno não alinhado ao projeto (2) | |
 | Estado/histórico da tarefa | Tarefa com correção solicitada, aguardando reenvio (3) | Tarefa sem solicitação de correção anterior (4) | Tarefa já aprovada (5) |
-| Avaliação do envio anterior | Envio anterior já avaliado pelo orientador (6) | Envio anterior ainda pendente de avaliação (7) | — (condição lógica binária) |
+| Avaliação do envio anterior | Envio anterior já avaliado pelo orientador (6) | Envio anterior ainda pendente de avaliação (7) | |
 
 ### Tabela de Casos de Teste
 
@@ -309,9 +307,9 @@ Enquanto Orientador, desejo consultar projetos encerrados, para fins de históri
 
 | Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
 |:---|:---|:---|:---|
-| Status do projeto | Projeto com status "Encerrado" (1) | Projeto com status "Ativo" ou "Rascunho" (2) | — (condição lógica binária) |
+| Status do projeto | Projeto com status "Encerrado" (1) | Projeto com status "Ativo" ou "Rascunho" (2) | |
 | Vínculo do projeto com o orientador autenticado | Projeto pertence ao orientador autenticado (3) | Projeto pertence a outro orientador (4) | Projeto inexistente ou removido do sistema (5) |
-| Autenticação do usuário | Usuário autenticado no sistema (6) | Usuário não autenticado (7) | — (condição lógica binária) |
+| Autenticação do usuário | Usuário autenticado no sistema (6) | Usuário não autenticado (7) | |
 
 ### Tabela de Casos de Teste
 
@@ -346,10 +344,10 @@ Enquanto Orientador, desejo registrar a presença dos alunos em reuniões de pro
 
 | Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
 |:---|:---|:---|:---|
-| Vínculo do aluno ao projeto | Aluno vinculado ao projeto (1) | Aluno não vinculado ao projeto (2) | — (condição lógica binária) |
-| Existência do evento/reunião | Evento/reunião existente no sistema (3) | Evento/reunião inexistente (4) | — (condição lógica binária) |
-| Autorização do usuário registrador | Usuário autorizado como orientador do projeto (5) | Usuário não autorizado a atuar como orientador (6) | — (condição lógica binária) |
-| Duplicidade do registro | Registro único de presença por aluno/evento (7) | Tentativa de registro duplicado para o mesmo aluno no mesmo evento (8) | — (condição lógica binária) |
+| Vínculo do aluno ao projeto | Aluno vinculado ao projeto (1) | Aluno não vinculado ao projeto (2) | |
+| Existência do evento/reunião | Evento/reunião existente no sistema (3) | Evento/reunião inexistente (4) | |
+| Autorização do usuário registrador | Usuário autorizado como orientador do projeto (5) | Usuário não autorizado a atuar como orientador (6) | |
+| Duplicidade do registro | Registro único de presença por aluno/evento (7) | Tentativa de registro duplicado para o mesmo aluno no mesmo evento (8) |  |
 
 ### Tabela de Casos de Teste
 
@@ -385,9 +383,9 @@ Enquanto Aluno, desejo visualizar todas as tarefas pendentes que foram atribuíd
 | Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
 |:---|:---|:---|:---|
 | Vínculo da tarefa com o aluno autenticado | Tarefa pertence ao aluno e ao projeto do qual ele faz parte (1) | Tarefa pertence a outro aluno (2) | Tarefa não pertence ao projeto do aluno (3) |
-| Status da tarefa | Tarefa com status "Pendente" (4) | Tarefa com status "Concluído" (5) | — (condição lógica binária) |
-| Autenticação do usuário | Usuário autenticado (6) | Usuário não autenticado (7) | — (condição lógica binária) |
-| Prazo da tarefa | Tarefa com prazo futuro, não vencida (8) | Tarefa com prazo expirado (vencida) (9) | — (condição lógica binária) |
+| Status da tarefa | Tarefa com status "Pendente" (4) | Tarefa com status "Concluído" (5) | |
+| Autenticação do usuário | Usuário autenticado (6) | Usuário não autenticado (7) | |
+| Prazo da tarefa | Tarefa com prazo futuro, não vencida (8) | Tarefa com prazo expirado (vencida) (9) | |
 
 ### Tabela de Casos de Teste
 
@@ -423,9 +421,9 @@ Enquanto Aluno, desejo submeter arquivos em tarefas, para cumprir atividades.
 
 | Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
 |:---|:---|:---|:---|
-| Vínculo do aluno ao projeto da tarefa | Aluno vinculado ao projeto da tarefa (1) | Aluno não vinculado ao projeto da tarefa (2) | — (condição lógica binária) |
-| Prazo da tarefa | Envio realizado dentro do prazo da tarefa (3) | Envio realizado após o prazo da tarefa (4) | — (condição lógica binária) |
-| Formato do arquivo | Arquivo em formato permitido pelo sistema (5) | Arquivo em formato não permitido (6) | — (condição de conjunto, 1 inválida) |
+| Vínculo do aluno ao projeto da tarefa | Aluno vinculado ao projeto da tarefa (1) | Aluno não vinculado ao projeto da tarefa (2) | |
+| Prazo da tarefa | Envio realizado dentro do prazo da tarefa (3) | Envio realizado após o prazo da tarefa (4) | |
+| Formato do arquivo | Arquivo em formato permitido pelo sistema (5) | Arquivo em formato não permitido (6) | |
 | Tamanho do arquivo | Arquivo com tamanho dentro do limite permitido (7) | Arquivo excede o limite máximo de tamanho (8) | Arquivo vazio (0 bytes) (9) |
 
 ### Tabela de Casos de Teste
@@ -463,8 +461,8 @@ Enquanto Usuário, desejo receber notificações, para acompanhar atualizações
 | Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
 |:---|:---|:---|:---|
 | Relação da notificação com o destinatário | Notificação relacionada ao usuário autenticado (1) | Notificação sem relação com o usuário autenticado (2) | Notificação pertencente a outro usuário sendo exibida indevidamente (3) |
-| Relevância do evento gerador | Evento considerado relevante pelo sistema (4) | Evento considerado irrelevante pelo sistema (5) | — (condição lógica binária) |
-| Status da conta do destinatário | Usuário com conta ativa (6) | Usuário com conta inativa/desativada (7) | — (condição lógica binária) |
+| Relevância do evento gerador | Evento considerado relevante pelo sistema (4) | Evento considerado irrelevante pelo sistema (5) | |
+| Status da conta do destinatário | Usuário com conta ativa (6) | Usuário com conta inativa/desativada (7) | |
 
 ### Tabela de Casos de Teste
 
@@ -502,10 +500,10 @@ Enquanto Aluno, desejo realizar check-in de presença, para garantir o registro 
 
 | Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
 |:---|:---|:---|:---|
-| Vínculo do aluno ao projeto/evento | Aluno vinculado ao projeto e ao evento (1) | Aluno não vinculado ao projeto (2) | — (condição lógica binária) |
+| Vínculo do aluno ao projeto/evento | Aluno vinculado ao projeto e ao evento (1) | Aluno não vinculado ao projeto (2) | |
 | PIN informado | PIN de 4 dígitos válido e gerado pelo orientador (3) | PIN inválido ou incorreto (4) | PIN expirado (5) |
 | Existência e horário do evento | Evento existente e dentro do horário permitido (6) | Evento inexistente (7) | Check-in fora do horário permitido do evento (8) |
-| Duplicidade do check-in | Primeiro check-in do aluno no evento (9) | Tentativa de check-in duplicado no mesmo evento (10) | — (condição lógica binária) |
+| Duplicidade do check-in | Primeiro check-in do aluno no evento (9) | Tentativa de check-in duplicado no mesmo evento (10) | |
 
 ### Tabela de Casos de Teste
 
@@ -541,9 +539,9 @@ Enquanto Aluno, desejo consultar feedbacks, para melhorar meu desempenho.
 
 | Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
 |:---|:---|:---|:---|
-| Vínculo do feedback com o aluno | Feedback vinculado a tarefa do próprio aluno (1) | Feedback pertencente a outro aluno (2) | — (condição lógica binária) |
+| Vínculo do feedback com o aluno | Feedback vinculado a tarefa do próprio aluno (1) | Feedback pertencente a outro aluno (2) | |
 | Estado de avaliação da tarefa | Tarefa já avaliada pelo orientador (3) | Tarefa ainda não avaliada (4) | — (condição lógica binária) |
-| Responsabilidade do orientador | Feedback emitido pelo orientador responsável pelo projeto (5) | Feedback emitido por orientador não responsável pelo projeto (6) | — (condição lógica binária) |
+| Responsabilidade do orientador | Feedback emitido pelo orientador responsável pelo projeto (5) | Feedback emitido por orientador não responsável pelo projeto (6) | |
 
 ### Tabela de Casos de Teste
 
@@ -579,7 +577,7 @@ Enquanto Aluno, desejo consultar feedbacks, para melhorar meu desempenho.
 |:---|:---|:---|:---|
 | Tamanho de fonte selecionado | Tamanho dentro dos limites suportados pela interface (1) | Tamanho abaixo do mínimo suportado (ilegível) (2) | Tamanho acima do máximo suportado pela interface (3) |
 | Nível de contraste selecionado | Contraste dentro dos limites que garantem legibilidade (4) | Contraste insuficiente para leitura (5) | Contraste acima do limite máximo suportado (6) |
-| Escopo da alteração | Alterações aplicadas apenas ao usuário autenticado (7) | Alterações sendo aplicadas a outros usuários (8) | — (condição lógica binária) |
+| Escopo da alteração | Alterações aplicadas apenas ao usuário autenticado (7) | Alterações sendo aplicadas a outros usuários (8) | |
 
 ### Tabela de Casos de Teste
 
@@ -615,8 +613,8 @@ Enquanto Usuário, desejo navegar com botões rotulados, para facilitar o uso.
 | Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
 |:---|:---|:---|:---|
 | Identificação textual dos botões | Botão possui rótulo textual claro e descritivo (1) | Botão possui apenas ícone sem texto identificador (2) | Botão possui texto vago que não descreve sua função (3) |
-| Dependência de elementos visuais para navegação | Navegação funciona com e sem elementos visuais descritivos (4) | Navegação depende exclusivamente de elementos visuais não descritivos (5) | — (condição lógica binária) |
-| Compatibilidade com navegação por teclado | Todas as funcionalidades essenciais acessíveis pelo teclado (6) | Interface impede o uso do teclado em funcionalidade essencial (7) | — (condição lógica binária) |
+| Dependência de elementos visuais para navegação | Navegação funciona com e sem elementos visuais descritivos (4) | Navegação depende exclusivamente de elementos visuais não descritivos (5) | |
+| Compatibilidade com navegação por teclado | Todas as funcionalidades essenciais acessíveis pelo teclado (6) | Interface impede o uso do teclado em funcionalidade essencial (7) | |
 
 ### Tabela de Casos de Teste
 
@@ -650,10 +648,10 @@ Enquanto Usuário, desejo ativar modo foco, para reduzir distrações.
 
 | Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
 |:---|:---|:---|:---|
-| Ativação/desativação do modo foco | Modo foco ativado e desativado corretamente pelo usuário (1) | Modo foco não responde ao comando de ativação/desativação (2) | — (condição lógica binária) |
+| Ativação/desativação do modo foco | Modo foco ativado e desativado corretamente pelo usuário (1) | Modo foco não responde ao comando de ativação/desativação (2) | |
 | Visibilidade do conteúdo principal | Conteúdo principal permanece visível e acessível com modo foco ativo (3) | Conteúdo principal ocultado pelo modo foco (4) | Funcionalidade essencial do sistema ocultada pelo modo foco (5) |
-| Impacto nas ações do usuário | Modo foco não impede navegação nem execução das ações principais (6) | Modo foco impede a navegação ou execução de ações principais (7) | — (condição lógica binária) |
-| Integridade dos dados | Modo foco não altera nem modifica dados do usuário (8) | Modo foco altera ou modifica dados do usuário indevidamente (9) | — (condição lógica binária) |
+| Impacto nas ações do usuário | Modo foco não impede navegação nem execução das ações principais (6) | Modo foco impede a navegação ou execução de ações principais (7) | |
+| Integridade dos dados | Modo foco não altera nem modifica dados do usuário (8) | Modo foco altera ou modifica dados do usuário indevidamente (9) | |
 
 ### Tabela de Casos de Teste
 
