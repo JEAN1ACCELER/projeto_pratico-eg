@@ -48,7 +48,7 @@ Para cada US são produzidos três artefatos:
 |:---|:---|:---|:---|
 | Usuário informado | Usuário cadastrado e preenchido (1) | Usuário inexistente (2) | Campo de usuário vazio (3) |
 | Senha informada | Senha correta e preenchida (4) | Senha incorreta (5) | Campo de senha vazio (6) |
-| Status da conta | Usuário ativo (7) | Usuário inativo (8) | — |
+| Status da conta | Usuário ativo (7) | Usuário inativo (8) |  |
 
 ### Tabela de Casos de Teste
 
