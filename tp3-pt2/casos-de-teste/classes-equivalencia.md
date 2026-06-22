@@ -92,7 +92,7 @@ Enquanto Orientador, desejo visualizar um painel central, para acompanhar os pro
 | Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
 |:---|:---|:---|:---|
 | Vínculo do projeto com o orientador | Projeto vinculado ao orientador autenticado (1) | Projeto vinculado a outro orientador (2) | Projeto inexistente ou removido (3) |
-| Status do projeto | Projeto ativo/em andamento (4) | Projeto encerrado (5) | |
+| Status do projeto | Projeto ativo/em andamento/inativo/pendente de vínculo (4)) | Projeto encerrado (5) | |
 | Autenticação do usuário | Usuário autenticado como orientador (6) | Usuário não autenticado (7) | |
 
 ### Tabela de Casos de Teste
@@ -116,27 +116,29 @@ Enquanto Orientador, desejo cadastrar um novo projeto acadêmico, para iniciar o
 - O sistema deve permitir o cadastro de um projeto com o preenchimento das informações obrigatórias.
 - O sistema deve permitir salvar o projeto mesmo sem alunos vinculados.
 - O sistema deve permitir a visualização do projeto após o cadastro.
-- O projeto deve ser considerado ativo somente após a vinculação de pelo menos um aluno.
+- O sistema deve exibir o projeto imediatamente após o cadastro no sistema, independentemente de vínculo com alunos.
+- O projeto deve ser considerado "Ativo" apenas quando houver pelo menos um aluno vinculado.
 
 **Regras de Negócio** — O sistema não deve permitir que o projeto:
-- Seja marcado como ativo quando não houver nenhum aluno vinculado;
-- Seja cadastrado sem o preenchimento das informações obrigatórias;
-- Tenha o status alterado manualmente para ativo sem que exista pelo menos um aluno vinculado.
+- o projeto seja marcado como "Ativo" quando não houver nenhum aluno vinculado;
+- o projeto seja cadastrado sem o preenchimento das informações obrigatórias;
+- o status do projeto seja alterado manualmente para "Ativo" sem que exista pelo menos um aluno vinculado;
+- projetos sem alunos vinculados sejam tratados como "Ativos" em qualquer parte do sistema.
 
 ### Tabela de Classes de Equivalência
 
 | Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
 |:---|:---|:---|:---|
-| Preenchimento das informações obrigatórias | Campos obrigatórios preenchidos corretamente (1) | Campos obrigatórios vazios/faltando (2) | Informações em formato inválido (ex: data de término anterior à data de início) (3) |
+| Preenchimento das informações obrigatórias | Campos obrigatórios preenchidos corretamente (1) | Campos obrigatórios vazios/faltando (2) | Dados inválidos/formato incorreto (3) |
 | Vinculação de alunos ao projeto | Projeto com pelo menos 1 aluno vinculado (4) | Projeto sem nenhum aluno vinculado (5) | |
-| Alteração manual de status | Status definido automaticamente pela regra de negócio (6) | Tentativa de marcar manualmente como "Ativo" sem aluno vinculado (7) | |
+| Status do Projeto|Projeto criado como “Inativo” ou “Pendente de vínculo” inicialmente (6) | Projeto marcado manualmente como “Ativo” sem alunos vinculados (7) | |
 
 ### Tabela de Casos de Teste
 
 | Caso | Classes de Equivalência | Entradas | Resultado Esperado |
 |:---|:---|:---|:---|
-| Caso 1 | 1, 4, 6 | Campos obrigatórios válidos + 1 aluno vinculado | Projeto cadastrado e status definido automaticamente como "Ativo" |
-| Caso 2 | 1, 5, 6 | Campos obrigatórios válidos + nenhum aluno vinculado | Projeto cadastrado e salvo com status "Rascunho" (não ativo) |
+| Caso 1 | 1, 4, 6 | Projeto criado com dados válidos e aluno vinculado | Projeto criado e exibido como “Ativo” após vínculo de aluno |
+| Caso 2 | 1, 5, 6 | Projeto criado sem alunos vinculados | Projeto cadastrado e salvo com status "Rascunho" (não ativo) |
 | Caso 3 | 2, 4, 6 | Campos obrigatórios vazios (ex: título não informado) | Cadastro rejeitado — informações obrigatórias pendentes |
 | Caso 4 | 3, 4, 6 | Data de término anterior à data de início | Cadastro rejeitado — informações em formato/lógica inválida |
 | Caso 5 | 1, 5, 7 | Projeto sem aluno vinculado + tentativa manual de definir status como "Ativo" | Sistema rejeita a alteração — status permanece "Rascunho" |
@@ -153,32 +155,41 @@ Enquanto Orientador, desejo criar e definir tarefas para um projeto, para organi
 - O sistema deve permitir definir as informações básicas da tarefa, incluindo título, descrição e prazo final.
 - O sistema deve permitir a visualização da tarefa criada no contexto do projeto ao qual está vinculada.
 - A tarefa criada deve ficar associada exclusivamente ao projeto selecionado.
+- O sistema deve impedir a seleção de datas de prazo final superiores à data de término programada do projeto no momento do cadastro da tarefa.
+- O sistema deve desabilitar no calendário do front-end a seleção de datas posteriores à data de encerramento do projeto.
+- O sistema deve exibir mensagem de validação caso o usuário tente inserir manualmente uma data de prazo fora do intervalo permitido do projeto.
+- O sistema deve definir e exibir explicitamente o status da tarefa dentro do seu ciclo de vida (ex: Pendente, Em Andamento, Em Revisão, Concluído e Atrasado).
 
 **Regras de Negócio (corrigidas)** — O sistema não deve permitir que a tarefa:
-- Seja vinculada a um projeto inexistente;
+-Seja vinculada a um projeto inexistente;
 - Seja criada em um projeto encerrado;
 - Seja cadastrada sem título, descrição ou prazo final;
 - Tenha prazo final anterior à data atual;
-- Fique associada a mais de um projeto simultaneamente.
+- Tenha prazo final posterior à data de encerramento do projeto ao qual está vinculada;
+- Fique associada a mais de um projeto simultaneamente;
+- Possua estado indefinido fora dos status previstos no ciclo de vida da tarefa (Pendente, Em Andamento, Em Revisão, Concluído e Atrasado).
 
-### Tabela de Classes de Equivalência
-
-| Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
-|:---|:---|:---|:---|
-| Vínculo com projeto | Projeto existente e ativo (1) | Projeto inexistente (2) | Projeto encerrado (3) |
-| Preenchimento das informações da tarefa | Título, descrição e prazo preenchidos corretamente (4) | Campos obrigatórios vazios (5) | Prazo final anterior à data atual (6) |
-| Associação da tarefa ao projeto | Tarefa associada a um único projeto (7) | Tentativa de associar a mais de um projeto (8) | |
+| Condição de Entrada                     | Classes Válidas                                                  | Classes Inválidas                               | Classes Inválidas                                     |
+| :-------------------------------------- | :--------------------------------------------------------------- | :---------------------------------------------- | :---------------------------------------------------- |
+| Vínculo com projeto                     | Projeto existente e ativo (1)                                    | Projeto inexistente (2)                         | Projeto encerrado (3)                                 |
+| Preenchimento das informações da tarefa | Título, descrição e prazo preenchidos corretamente (4)           | Campos obrigatórios vazios (5)                  | Dados inválidos / formato incorreto (6)               |
+| Data de prazo da tarefa                 | Prazo entre data atual e data de encerramento do projeto (7)     | Prazo anterior à data atual (8)                 | Prazo posterior à data de encerramento do projeto (9) |
+| Associação da tarefa ao projeto         | Tarefa associada a um único projeto (10)                         | Tentativa de associar a mais de um projeto (11) | —                                                     |
+| Status da tarefa                        | Pendente / Em andamento / Em revisão / Concluído / Atrasado (12) | Status fora do ciclo definido (13)              | —                                                     |
 
 ### Tabela de Casos de Teste
 
-| Caso | Classes de Equivalência | Entradas | Resultado Esperado |
-|:---|:---|:---|:---|
-| Caso 1 | 1, 4, 7 | Projeto existente e ativo + título/descrição/prazo válidos | Tarefa criada com sucesso e vinculada ao projeto |
-| Caso 2 | 2, 4, 7 | Projeto inexistente + dados da tarefa válidos | Erro — projeto não encontrado |
-| Caso 3 | 3, 4, 7 | Projeto encerrado + dados da tarefa válidos | Erro — não é possível criar tarefa em projeto encerrado |
-| Caso 4 | 1, 5, 7 | Projeto válido + título ou descrição vazios | Erro — campos obrigatórios pendentes |
-| Caso 5 | 1, 6, 7 | Projeto válido + prazo final anterior à data atual | Erro — prazo inválido |
-| Caso 6 | 1, 4, 8 | Projeto válido + tentativa de vincular tarefa a 2 projetos | Sistema rejeita — tarefa deve pertencer a um único projeto |
+| Caso   | Classes de Equivalência | Entradas                                                           | Resultado Esperado                                      |
+| :----- | :---------------------- | :----------------------------------------------------------------- | :------------------------------------------------------ |
+| Caso 1 | 1, 4, 7, 10, 12         | Projeto existente e ativo + dados válidos + prazo dentro do limite | Tarefa criada com sucesso e vinculada ao projeto        |
+| Caso 2 | 2, 4, 7, 10, 12         | Projeto inexistente                                                | Erro — projeto não encontrado                           |
+| Caso 3 | 3, 4, 7, 10, 12         | Projeto encerrado                                                  | Erro — não é possível criar tarefa em projeto encerrado |
+| Caso 4 | 1, 5, 7, 10, 12         | Campos obrigatórios vazios                                         | Erro — validação de campos obrigatórios                 |
+| Caso 5 | 1, 6, 7, 10, 12         | Dados inválidos no preenchimento                                   | Erro — dados inválidos                                  |
+| Caso 6 | 1, 4, 8, 10, 12         | Prazo anterior à data atual                                        | Erro — prazo inválido                                   |
+| Caso 7 | 1, 4, 9, 10, 12         | Prazo posterior ao encerramento do projeto                         | Erro — fora do limite do projeto                        |
+| Caso 8 | 1, 4, 7, 11, 12         | Tentativa de vincular tarefa a mais de um projeto                  | Sistema rejeita — associação inválida                   |
+| Caso 9 | 1, 4, 7, 10, 13         | Status fora do ciclo definido                                      | Erro — status inválido                                  |
 
 ---
 
@@ -192,30 +203,35 @@ Enquanto Orientador, desejo visualizar e filtrar os editais disponíveis, para i
 - O sistema deve permitir aplicar filtros para refinar a visualização dos editais.
 - O sistema deve permitir a visualização dos detalhes de um edital selecionado.
 - O sistema deve atualizar a lista de editais conforme os filtros aplicados.
+- O sistema deve exibir exclusivamente editais oriundos das pró-reitorias definidas no escopo (PROPESP e PROEXT).
+- Cada edital listado deve conter obrigatoriamente: título, pró-reitoria de origem, prazo de inscrição e link de acesso.
 
 **Regras de Negócio** — O sistema não deve permitir que:
-- Sejam definidos editais não cadastrados no sistema;
-- Filtros retornem editais que não atendem aos critérios selecionados;
-- Sejam listados editais com informações obrigatórias ausentes;
-- O acesso aos detalhes seja realizado para um edital inexistente.
+- sejam exibidos editais não cadastrados no sistema;
+- sejam exibidos editais oriundos de pró-reitorias fora do escopo definido (qualquer outra que não seja PROPESP ou PROEXT);
+- filtros retornem editais que não atendam aos critérios selecionados;
+- sejam exibidos editais com informações obrigatórias ausentes;
+- o acesso aos detalhes seja realizado para um edital inexistente.
 
 ### Tabela de Classes de Equivalência
 
-| Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
-|:---|:---|:---|:---|
-| Existência/integridade do edital | Edital cadastrado e com informações completas (1) | Edital inexistente (2) | Edital com informações obrigatórias ausentes (3) |
-| Aplicação de filtros | Filtro retorna editais que atendem aos critérios selecionados (4) | Filtro retorna editais que não atendem aos critérios selecionados (5) | |
-| Origem do edital (escopo PROPESP/PROEXT) | Edital proveniente de fonte autorizada (PROPESP/PROEXT) (6) | Edital proveniente de fonte fora do escopo definido (7) | |
+| Condição de Entrada                  | Classes Válidas                                                   | Classes Inválidas                             | Classes Inválidas                                |
+| :----------------------------------- | :---------------------------------------------------------------- | :-------------------------------------------- | :----------------------------------------------- |
+| Existência e integridade do edital   | Edital cadastrado com informações completas (1)                   | Edital inexistente (2)                        | Edital com informações obrigatórias ausentes (3) |
+| Aplicação de filtros                 | Filtro retorna editais que atendem aos critérios selecionados (4) | Filtro retorna editais fora dos critérios (5) | —                                                |
+| Origem do edital (escopo do sistema) | Edital de PROPESP ou PROEXT (6)                                   | Edital de outras pró-reitorias (7)            | —                                                |
+
 
 ### Tabela de Casos de Teste
 
-| Caso | Classes de Equivalência | Entradas | Resultado Esperado |
-|:---|:---|:---|:---|
-| Caso 1 | 1, 4, 6 | Edital existente e completo + filtro coerente + fonte PROPESP/PROEXT | Lista exibida corretamente, detalhes acessíveis |
-| Caso 2 | 2, 4, 6 | Acesso aos detalhes de um edital inexistente | Erro — edital não encontrado |
-| Caso 3 | 3, 4, 6 | Edital cadastrado sem informações obrigatórias (ex: sem data de encerramento) | Edital não deve ser listado / erro de exibição |
-| Caso 4 | 1, 5, 6 | Filtro aplicado retorna editais que não atendem aos critérios selecionados | Erro — lista não corresponde ao filtro aplicado |
-| Caso 5 | 1, 4, 7 | Edital proveniente de fonte fora do escopo (não PROPESP/PROEXT) | Edital não deve ser exibido no feed |
+| Caso   | Classes de Equivalência | Entradas                                               | Resultado Esperado                               |
+| :----- | :---------------------- | :----------------------------------------------------- | :----------------------------------------------- |
+| Caso 1 | 1, 4, 6                 | Edital válido + filtro correto + origem PROPESP/PROEXT | Lista exibida corretamente e detalhes acessíveis |
+| Caso 2 | 2, 4, 6                 | Tentativa de acesso a edital inexistente               | Erro: edital não encontrado                      |
+| Caso 3 | 3, 4, 6                 | Edital com dados obrigatórios ausentes                 | Edital não deve ser exibido                      |
+| Caso 4 | 1, 5, 6                 | Filtro inválido ou incoerente                          | Lista não corresponde ao filtro aplicado         |
+| Caso 5 | 1, 4, 7                 | Edital fora do escopo (outra pró-reitoria)             | Edital não deve aparecer no feed                 |
+
 
 ---
 
@@ -226,33 +242,35 @@ Enquanto Orientador, desejo avaliar as tarefas impostas aos alunos, para acompan
 
 **Critérios de Aceitação**
 - O sistema deve permitir que o orientador visualize as tarefas submetidas pelos alunos.
-- O sistema deve permitir que o orientador avalie uma tarefa designada.
+- O sistema deve permitir que o orientador avalie uma tarefa submetida.
 - O sistema deve permitir que o orientador aprove uma tarefa ou solicite correção.
 - O sistema deve registrar o status final da avaliação da tarefa.
 
 **Regras de Negócio** — O sistema não deve permitir que a tarefa:
-- Seja avaliada por usuários que não sejam orientadores;
-- Seja avaliada sem que tenha sido previamente submetida pelo aluno;
-- Tenha mais de um status final simultaneamente;
-- Seja avaliada novamente sem que o aluno realize uma nova submissão após avaliação anterior.
+- seja avaliada por usuários que não sejam orientadores;
+- seja avaliada sem que tenha sido previamente submetida pelo aluno;
+- tenha mais de um status final simultaneamente (por exemplo, aprovada e com correção solicitada);
+- seja avaliada novamente sem que o aluno realize uma nova submissão após uma avaliação anterior.
+
 
 ### Tabela de Classes de Equivalência
 
-| Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
-|:---|:---|:---|:---|
-| Perfil do usuário avaliador | Usuário é o orientador responsável pelo projeto (1) | Usuário não é orientador / não autorizado (2) | |
-| Estado de submissão da tarefa | Tarefa submetida pelo aluno e pendente de avaliação (3) | Tarefa ainda não submetida pelo aluno (4) | Tarefa já avaliada anteriormente, sem nova submissão (5) |
-| Status final da avaliação | Status único definido (Aprovada OU Correção Solicitada) (6) | Tentativa de definir mais de um status simultaneamente (7) | |
+| Condição de Entrada           | Classes Válidas                                                     | Classes Inválidas                             | Classes Inválidas                         |
+| :---------------------------- | :------------------------------------------------------------------ | :-------------------------------------------- | :---------------------------------------- |
+| Perfil do usuário avaliador   | Usuário é orientador responsável pelo projeto (1)                   | Usuário não é orientador / não autorizado (2) | —                                         |
+| Estado da submissão da tarefa | Tarefa submetida e pendente de avaliação (3)                        | Tarefa não submetida (4)                      | Tarefa já avaliada sem nova submissão (5) |
+| Status final da avaliação     | Apenas um status final válido (Aprovada OU Correção solicitada) (6) | Múltiplos status simultâneos (7)              | —                                         |
 
 ### Tabela de Casos de Teste
 
-| Caso | Classes de Equivalência | Entradas | Resultado Esperado |
-|:---|:---|:---|:---|
-| Caso 1 | 1, 3, 6 | Orientador avalia tarefa submetida, define status único (ex: Aprovada) | Avaliação registrada com sucesso |
-| Caso 2 | 2, 3, 6 | Usuário não orientador tenta avaliar a tarefa | Acesso negado — usuário não autorizado |
-| Caso 3 | 1, 4, 6 | Orientador tenta avaliar tarefa que o aluno ainda não submeteu | Erro — tarefa não submetida |
-| Caso 4 | 1, 5, 6 | Orientador tenta reavaliar tarefa já avaliada, sem nova submissão do aluno | Erro — necessária nova submissão antes de reavaliar |
-| Caso 5 | 1, 3, 7 | Orientador tenta definir simultaneamente "Aprovada" e "Correção Solicitada" | Sistema rejeita — apenas um status final permitido |
+| Caso   | Classes de Equivalência | Entradas                                                 | Resultado Esperado                           |
+| :----- | :---------------------- | :------------------------------------------------------- | :------------------------------------------- |
+| Caso 1 | 1, 3, 6                 | Orientador avalia tarefa submetida e define status único | Avaliação registrada com sucesso             |
+| Caso 2 | 2, 3, 6                 | Usuário não autorizado tenta avaliar tarefa              | Acesso negado — usuário não autorizado       |
+| Caso 3 | 1, 4, 6                 | Tentativa de avaliar tarefa não submetida                | Erro — tarefa não foi submetida              |
+| Caso 4 | 1, 5, 6                 | Tentativa de reavaliar sem nova submissão do aluno       | Erro — nova submissão obrigatória            |
+| Caso 5 | 1, 3, 7                 | Tentativa de definir dois status simultaneamente         | Sistema rejeita — apenas um status permitido |
+
 
 ---
 
