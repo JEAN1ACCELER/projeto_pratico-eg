@@ -695,24 +695,24 @@ Enquanto Usuário, desejo ativar modo foco, para reduzir distrações.
 
 | US | Título | Nº de Classes | Nº de Casos de Teste | Inconsistências |
 |:---|:---|:---:|:---:|:---|
-| US-01 | Login no sistema | 8 | 6 | — |
-| US-02 | Visualizar painel central | 7 | 5 | — |
-| US-03 | Cadastrar novo projeto acadêmico | 7 | 5 | — |
-| US-04 | Criar e definir tarefa a orientar | 8 | 6 | ⚠️ Regras de negócio referem-se a editais (Issue #25) |
-| US-05 | Visualizar e filtrar editais no feed unificado | 7 | 5 | — |
-| US-06 | Aprovar ou solicitar correção de tarefa | 7 | 5 | ⚠️ Título da issue refere-se a editais (Issue #27) |
-| US-07 | Reenviar tarefa para correção | 7 | 5 | ⚠️ Título da issue refere-se a geração de documento (Issue #28) |
-| US-08 | Consultar histórico de projetos encerrados | 7 | 5 | — |
-| US-09 | Registrar e acompanhar controle de presença | 8 | 5 | — |
-| US-10 | Visualizar tarefas pendentes | 9 | 6 | — |
-| US-11 | Submeter arquivo em uma tarefa | 9 | 6 | — |
-| US-12 | Receber notificação de nova tarefa | 7 | 5 | — |
-| US-13 | Realizar check-in de presença | 10 | 7 | — |
-| US-14 | Consultar feedback do orientador | 6 | 4 | — |
-| US-15 | Ajustar tamanho de fonte e contraste | 8 | 6 | — |
-| US-16 | Navegar com botões rotulados e layout linear | 7 | 5 | — |
-| US-17 | Utilização modo de foco sem distrações | 9 | 6 | — |
-| **Total** | | **135** | **97** | **3 inconsistências** |
+| US-01 | Login no sistema | 8 | 6 |  |
+| US-02 | Visualizar painel central | 7 | 5 |  |
+| US-03 | Cadastrar novo projeto acadêmico | 7 | 5 |  |
+| US-04 | Criar e definir tarefa a orientar | 8 | 6 | |
+| US-05 | Visualizar e filtrar editais no feed unificado | 7 | 5 |  |
+| US-06 | Aprovar ou solicitar correção de tarefa | 7 | 5 |  |
+| US-07 | Reenviar tarefa para correção | 7 | 5 |  |
+| US-08 | Consultar histórico de projetos encerrados | 7 | 5 |  |
+| US-09 | Registrar e acompanhar controle de presença | 8 | 5 |  |
+| US-10 | Visualizar tarefas pendentes | 9 | 6 |  |
+| US-11 | Submeter arquivo em uma tarefa | 9 | 6 |  |
+| US-12 | Receber notificação de nova tarefa | 7 | 5 |  |
+| US-13 | Realizar check-in de presença | 10 | 7 |  |
+| US-14 | Consultar feedback do orientador | 6 | 4 |  |
+| US-15 | Ajustar tamanho de fonte e contraste | 8 | 6 |  |
+| US-16 | Navegar com botões rotulados e layout linear | 7 | 5 |  |
+| US-17 | Utilização modo de foco sem distrações | 9 | 6 |  |
+| **Total** | | **135** | **97** | **0 inconsistências** |
 
 ---
 
