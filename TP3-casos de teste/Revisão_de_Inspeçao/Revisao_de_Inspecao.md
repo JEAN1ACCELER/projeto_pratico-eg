@@ -1,11 +1,18 @@
-# 📄 Relatório de Inspeção e Refatoração de Requisitos
+<div align="center">
 
+# Revisão de Inspeção e Refatoração de Backlog
 
-**Projeto:** E-Project (Sistema de Gestão de Projetos Acadêmicos UFAM)
+**E-Project** · Trabalho Prático III · Engenharia de Software A
 
-**Fase:** Trabalho Prático III Parte II - Consolidação de Inspeção e Refatoração de Backlog
+---
 
-**Disciplina:** Engenharia de Software A
+![UFAM](https://img.shields.io/badge/ICET--UFAM-Engenharia%20de%20Software%20I-00663C?style=for-the-badge)
+![TP3](https://img.shields.io/badge/TP3-Revisão%20de%20Inspeção-7B2D8B?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Inspeção%20Concluída-brightgreen?style=for-the-badge)
+
+</div>
+
+---
 
 ## Objetivo
 Este documento apresenta os resultados da auditoria cruzada (inspeção) realizada no repositório do projeto. O objetivo é detalhar as *Issues* geradas, avaliando-as isoladamente. Indicamos claramente quais problemas foram corrigidos, não corrigidos ou reavaliados, acompanhados de suas devidas justificativas técnicas, garantindo a integridade e qualidade do Backlog.
