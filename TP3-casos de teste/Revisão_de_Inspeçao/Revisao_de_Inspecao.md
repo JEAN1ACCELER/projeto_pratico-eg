@@ -1,8 +1,9 @@
 # 📄 Relatório de Inspeção e Refatoração de Requisitos
 
-**Projeto:** E-Project (Gestão de Projetos Acadêmicos)
 
-**Fase:** Trabalho Prático III - Consolidação de Inspeção e Refatoração de Backlog
+**Projeto:** E-Project (Sistema de Gestão de Projetos Acadêmicos UFAM)
+
+**Fase:** Trabalho Prático III Parte II - Consolidação de Inspeção e Refatoração de Backlog
 
 **Disciplina:** Engenharia de Software A
 
