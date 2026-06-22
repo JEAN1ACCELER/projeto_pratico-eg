@@ -694,11 +694,11 @@ Enquanto Usuário, desejo ativar modo foco, para reduzir distrações.
 ## Resumo Geral
 
 | US | Título | Nº de Classes | Nº de Casos de Teste | Inconsistências |
-|:---|:---|:---:|:---:|:---|
+|:---|:---|:---:|:---:|:---:|
 | US-01 | Login no sistema | 8 | 6 |  |
 | US-02 | Visualizar painel central | 7 | 5 |  |
 | US-03 | Cadastrar novo projeto acadêmico | 7 | 5 |  |
-| US-04 | Criar e definir tarefa a orientar | 8 | 6 | |
+| US-04 | Criar e definir tarefa a orientar | 8 | 6 |  |
 | US-05 | Visualizar e filtrar editais no feed unificado | 7 | 5 |  |
 | US-06 | Aprovar ou solicitar correção de tarefa | 7 | 5 |  |
 | US-07 | Reenviar tarefa para correção | 7 | 5 |  |
@@ -712,7 +712,7 @@ Enquanto Usuário, desejo ativar modo foco, para reduzir distrações.
 | US-15 | Ajustar tamanho de fonte e contraste | 8 | 6 |  |
 | US-16 | Navegar com botões rotulados e layout linear | 7 | 5 |  |
 | US-17 | Utilização modo de foco sem distrações | 9 | 6 |  |
-| **Total** | | **135** | **97** | **0 inconsistências** |
+| **Total** |  | **121** | **92** | **0 inconsistências** |
 
 ---
 
