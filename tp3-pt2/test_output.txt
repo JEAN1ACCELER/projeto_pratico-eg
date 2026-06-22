@@ -1,0 +1,36 @@
+
+> sistema-validacao-tarefas-notificacoes@1.0.0 test:verbose
+> jest --verbose
+
+PASS tests/ValidadorNotificacao.test.js
+  US-12 — Receber notificação de nova tarefa (Classes de Equivalência)
+    ✓ Caso 1: notificação válida deve ser enviada e exibida corretamente (2 ms)
+    ✓ Caso 2: notificação sem destinatário não deve ser enviada (1 ms)
+    ✓ Caso 3: usuário não pode visualizar notificação de outro usuário
+    ✓ Caso 4: notificação não deve ser gerada para evento irrelevante (4 ms)
+    ✓ Caso 5: notificação não deve ser enviada para usuário inativo
+
+PASS tests/ValidadorLogin.test.js
+  US-01 — Login no sistema (Classes de Equivalência)
+    ✓ Caso 1: login válido deve ser realizado com sucesso (2 ms)
+    ✓ Caso 2: usuário inexistente deve falhar (1 ms)
+    ✓ Caso 3: campo de usuário vazio deve falhar
+    ✓ Caso 4: senha incorreta deve falhar
+    ✓ Caso 5: campo de senha vazio deve falhar
+    ✓ Caso 6: usuário inativo deve falhar mesmo com senha correta (3 ms)
+
+PASS tests/FiltroTarefasPendentes.test.js
+  US-10 — Visualizar tarefas pendentes (Classes de Equivalência)
+    ✓ Caso 1: tarefa válida do próprio aluno deve ser exibida (2 ms)
+    ✓ Caso 2: tarefa de outro aluno não deve ser exibida
+    ✓ Caso 3: tarefa fora do projeto do aluno não deve ser exibida
+    ✓ Caso 4: tarefa concluída não deve aparecer na lista de pendentes (1 ms)
+    ✓ Caso 5: usuário não autenticado não deve acessar a lista de tarefas
+    ✓ Caso 6: tarefa vencida deve ser exibida com destaque visual
+    ✓ Teste complementar: lista deve ser ordenada por prazo de entrega (1 ms)
+
+Test Suites: 3 passed, 3 total
+Tests:       18 passed, 18 total
+Snapshots:   0 total
+Time:        0.316 s
+Ran all test suites.

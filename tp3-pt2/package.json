@@ -1,0 +1,25 @@
+{
+  "name": "sistema-validacao-tarefas-notificacoes",
+  "version": "1.0.0",
+  "description": "Simulação de testes automatizados para validação de login, tarefas pendentes e notificações",
+  "main": "src/ValidadorLogin.js",
+  "scripts": {
+    "test": "jest",
+    "test:verbose": "jest --verbose",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "teste",
+    "validação",
+    "automatizado",
+    "jest",
+    "login",
+    "tarefas",
+    "notificações"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}

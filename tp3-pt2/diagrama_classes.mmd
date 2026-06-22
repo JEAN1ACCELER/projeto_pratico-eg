@@ -1,0 +1,30 @@
+classDiagram
+    class ValidadorLogin {
+        +validarLogin(usuario, senha)
+        +buscarUsuario(usuario)
+        -usuariosCadastrados
+    }
+    class FiltroTarefasPendentes {
+        +podeExibirTarefa(tarefa, contexto)
+        +listarTarefasPendentes(tarefas, contexto)
+    }
+    class ValidadorNotificacao {
+        +gerarNotificacao(params)
+        +visualizarNotificacao(notificacao, usuarioAutenticado)
+        -usuarios
+        -EVENTOS_RELEVANTES
+    }
+
+    ValidadorLogin --|> US01_Login
+    FiltroTarefasPendentes --|> US10_TarefasPendentes
+    ValidadorNotificacao --|> US12_Notificacoes
+
+    class US01_Login {
+        <<Story>>
+    }
+    class US10_TarefasPendentes {
+        <<Story>>
+    }
+    class US12_Notificacoes {
+        <<Story>>
+    }
