@@ -75,15 +75,18 @@ Para cada US são produzidos três artefatos:
 Enquanto Orientador, desejo visualizar um painel central, para acompanhar os projetos sob minha responsabilidade.
 
 **Critérios de Aceitação**
-- O sistema deve exibir no painel apenas projetos específicos ao orientador autenticado.
-- O painel deve apresentar informações básicas de status e progresso de cada projeto.
+- O sistema deve exibir no painel apenas projetos vinculados ao orientador autenticado.
+- O sistema deve exibir apenas projetos com status ativo ou em andamento.
+- O sistema deve permitir a visualização imediata de projetos recém-criados vinculados ao orientador autenticado, mesmo quando estiverem no status “Inativo” ou “Pendente de Vínculo”, desde que ainda não ativados.
+- O sistema deve apresentar informações básicas de status e progresso de cada projeto.
 - O orientador deve conseguir acessar os detalhes de um projeto a partir do painel.
 
 **Regras de Negócio** — O sistema não deve permitir que o painel:
-- Exiba projetos que não estejam sob responsabilidade do orientador autenticado;
-- Exiba projetos com status encerrado no painel principal;
-- Permita acesso a projetos sem vínculo com o orientador autenticado.
-
+- sejam exibidos projetos que não estejam sob responsabilidade do orientador autenticado;
+- sejam exibidos projetos com status encerrado no painel principal;
+- seja permitido acesso a projetos sem vínculo com o orientador autenticado;
+- projetos sem alunos vinculados sejam considerados ativos no sistema;
+- projetos sejam exibidos fora do escopo de responsabilidade do orientador.
 ### Tabela de Classes de Equivalência
 
 | Condição de Entrada | Classes Válidas | Classes Inválidas | Classes Inválidas |
