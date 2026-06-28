@@ -1,20 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'services/storage_service.dart';
-import 'app/app.dart';
+import 'package:provider/provider.dart';
+import 'services/auth_service.dart';
+import 'screens/splash_screen.dart';
 
-/// Ponto de entrada da aplicação DoacaoMVP.
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+void main() {
+  runApp(
+    MultiProvider(
+      providers: [
+        Provider<AuthService>(create: (_) => AuthService()),
+      ],
+      child: const AcadProApp(),
+    ),
+  );
+}
 
-  // Configura a orientação para retrato
-  await SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
+class AcadProApp extends StatelessWidget {
+  const AcadProApp({super.key});
 
-  // Inicializa o serviço de armazenamento local (Hive)
-  await StorageService.instance.init();
-
-  runApp(const App());
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'AcadPro App',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        useMaterial3: true,
+      ),
+      home: const SplashScreen(),
+    );
+  }
 }
