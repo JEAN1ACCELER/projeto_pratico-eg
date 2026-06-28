@@ -1,47 +1,46 @@
-# Script: Vídeo de Demonstração do MVP - DoacaoMVP
+# Script: Vídeo de Demonstração do MVP - AcadPro App
 
-Este script foi elaborado para um vídeo de aproximadamente **3 minutos**, focando na apresentação técnica e funcional do MVP desenvolvido para a disciplina de Engenharia de Software I.
+Este script foi elaborado para um vídeo de aproximadamente **3 minutos**, focando na apresentação técnica e funcional do AcadPro App.
 
 ---
 
 ## 1. Introdução (0:00 - 0:30)
-**Visual:** Tela de Splash Screen animada.
+**Visual:** Splash Screen com logo do AcadPro App.
 **Locução:**
-> "Olá! Sou o desenvolvedor do DoacaoMVP, o Produto Mínimo Viável para a disciplina de Engenharia de Software I, sob orientação do Professor Dr. Andrey Rodrigues. O aplicativo foi construído com Flutter e Material Design 3, focando em uma arquitetura robusta e escalável."
+> "Olá! Sou o desenvolvedor do AcadPro App, o MVP de gerenciamento de projetos acadêmicos para a disciplina de Engenharia de Software I da UFAM. O aplicativo foi construído com Flutter e segue o padrão arquitetural MVC."
 
 ---
 
-## 2. Fluxo de Cadastro e História H6 (0:30 - 1:15)
-**Visual:** Navegação da Splash para a Tela de Login e depois para a Tela de Cadastro.
-**Ação:** Preencher os campos Nome, E-mail, CEP, CNS e Senha. Mostrar as validações em tempo real.
+## 2. Fluxo de Cadastro e Validação H6 (0:30 - 1:15)
+**Visual:** Tela de Signup. Preenchimento de Nome, E-mail, CPF e CNS.
+**Ação:** Mostrar o diálogo de Termos de Uso e Política de Privacidade.
 **Locução:**
-> "Iniciamos com o fluxo de cadastro, que atende à História de Usuário H6. Aqui, validamos em tempo real o formato do e-mail, o CEP com máscara automática e o CNS com 15 dígitos. Ao finalizar o cadastro, os dados são persistidos localmente com Hive e o sistema simula o envio de um e-mail com um guia de orientações para o novo doador, garantindo que ele inicie o processo de forma informada."
+> "No cadastro, atendemos ao requisito H6 com validações rigorosas de CPF e CNS de 15 dígitos. O usuário também deve aceitar os Termos de Uso e a Política de Privacidade antes de prosseguir. A segurança é garantida com o hash SHA-256 das senhas antes do armazenamento."
 
 ---
 
-## 3. Dashboard e Gerenciamento de Estado (1:15 - 1:45)
-**Visual:** Tela de Dashboard (Home) sendo carregada. Mostrar o gráfico de pizza e os cards de métricas. Realizar o Pull-to-Refresh.
+## 3. Dashboard e Persistência SQLite (1:15 - 1:45)
+**Visual:** Tela de Dashboard e Projects.
 **Locução:**
-> "No Dashboard, utilizamos o Provider para gerenciamento de estado reativo. As métricas de doações totais, concluídas e pendentes são exibidas em cards dinâmicos, acompanhadas por um gráfico estatístico da biblioteca fl_chart. Implementamos também o Pull-to-Refresh para garantir que os dados estejam sempre atualizados."
+> "Utilizamos o SQLite como banco de dados local para persistência robusta. No Dashboard, o usuário tem uma visão clara dos seus projetos e tarefas. O gerenciamento de estado é feito através do Provider Pattern, garantindo uma interface reativa e fluida."
 
 ---
 
-## 4. Agendamento e Listagem (1:45 - 2:30)
-**Visual:** Clicar no botão 'Nova Doação'. Preencher o formulário, selecionar data no DatePicker. Salvar e ver a transição para a Listagem.
+## 4. Gestão de Projetos e Tarefas (1:45 - 2:30)
+**Visual:** Criar um novo projeto e adicionar uma tarefa a ele.
 **Locução:**
-> "O agendamento de doações é simples e intuitivo. Utilizamos o Repository Pattern para abstrair a fonte de dados. Na listagem, o usuário pode visualizar todo o seu histórico e filtrar as doações por status através de chips interativos. Cada item da lista utiliza Hero Animations para uma transição suave até a tela de detalhes."
+> "A gestão de projetos e tarefas é o coração do AcadPro. O usuário pode criar projetos acadêmicos e vincular tarefas específicas com datas de entrega, tudo armazenado em tabelas relacionais no banco de dados local."
 
 ---
 
-## 5. Detalhes, Perfil e Arquitetura (2:30 - 3:00)
-**Visual:** Abrir uma doação específica, mostrar SliverAppBar. Ir para a tela de Perfil. Mostrar o código-fonte rapidamente (pastas lib/).
+## 5. Perfil, Configurações e Encerramento (2:30 - 3:00)
+**Visual:** Navegação pelas telas de Profile e Settings (Modo Escuro, Idioma).
 **Locução:**
-> "Na tela de detalhes, aproveitamos componentes avançados como SliverAppBar. No perfil, o usuário gerencia seus dados e configurações. Por trás da interface, aplicamos 5 refatorações do catálogo de Engenharia de Software Moderna, como Extract Widget e Guard Clauses, garantindo um código limpo e de fácil manutenção. Este é o DoacaoMVP: tecnologia a serviço da vida."
+> "Nas telas de Perfil e Configurações, o usuário pode personalizar sua experiência, incluindo ajustes de notificações e modo visual. Com uma arquitetura limpa e testes unitários completos, o AcadPro App entrega uma solução sólida para o gerenciamento acadêmico."
 
 ---
 
 ## Dicas para Gravação:
-1. **Resolução:** Grave em 1080p (proporção 9:16 para mobile).
-2. **Áudio:** Use um microfone externo para evitar ruídos.
-3. **Edição:** Adicione legendas curtas destacando os termos técnicos (ex: "Material 3", "Hive DB", "GoRouter").
-4. **Demonstração:** Mostre o console do desenvolvedor quando o e-mail simulado for "enviado" durante o cadastro.
+1. **Ambiente:** Use o emulador do Android ou iOS para uma captura limpa.
+2. **Destaque Técnico:** Mencione o uso das bibliotecas `sqflite` e `provider`.
+3. **Qualidade:** Garanta que as validações de campo fiquem bem visíveis no vídeo.
