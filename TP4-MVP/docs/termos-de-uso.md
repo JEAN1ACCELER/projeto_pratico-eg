@@ -1,7 +1,7 @@
-# Termos de Uso e Política de Privacidade - AcadPro App
+# Termos de Uso e Política de Privacidade - E-Project App
 
 ## 1. Introdução
-O **AcadPro App** é uma ferramenta de gerenciamento de projetos acadêmicos desenvolvida como Trabalho Prático para a disciplina de Engenharia de Software I. Ao utilizar este aplicativo, você concorda com os termos aqui descritos.
+O **E-Project App** é uma ferramenta de gerenciamento de projetos acadêmicos desenvolvida como Trabalho Prático para a disciplina de Engenharia de Software I. Ao utilizar este aplicativo, você concorda com os termos aqui descritos.
 
 ## 2. Coleta de Dados Pessoais
 Para garantir a integridade do perfil acadêmico, o aplicativo coleta os seguintes dados durante o cadastro:

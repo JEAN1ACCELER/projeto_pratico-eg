@@ -15,7 +15,7 @@ class DatabaseService {
   }
 
   Future<Database> _initDatabase() async {
-    String path = join(await getDatabasesPath(), 'acadpro.db');
+    String path = join(await getDatabasesPath(), 'e-project.db');
     return await openDatabase(
       path,
       version: 1,

@@ -2,7 +2,7 @@
 
 ## [1.0.0] - 2026-06-28
 ### Adicionado
-- Implementação inicial do AcadPro App (e-Project).
+- Implementação inicial do E-Project App (e-Project).
 - Estrutura MVC (Model-View-Controller).
 - Persistência local com SQLite (sqflite).
 - Autenticação segura com hash SHA-256.

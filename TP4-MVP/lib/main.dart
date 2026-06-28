@@ -9,18 +9,18 @@ void main() {
       providers: [
         Provider<AuthService>(create: (_) => AuthService()),
       ],
-      child: const AcadProApp(),
+      child: const E-ProjectApp(),
     ),
   );
 }
 
-class AcadProApp extends StatelessWidget {
-  const AcadProApp({super.key});
+class E-ProjectApp extends StatelessWidget {
+  const E-ProjectApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'AcadPro App',
+      title: 'E-Project App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,

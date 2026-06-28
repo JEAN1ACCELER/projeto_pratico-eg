@@ -1,9 +1,9 @@
-# Documentação Técnica - AcadPro App (Flutter MVP)
+# Documentação Técnica - E-Project App (Flutter MVP)
 
-Este documento detalha as especificações técnicas, arquitetura e padrões de projeto aplicados no desenvolvimento do MVP do AcadPro App.
+Este documento detalha as especificações técnicas, arquitetura e padrões de projeto aplicados no desenvolvimento do MVP do E-Project App.
 
 ## 1. Visão Geral
-O AcadPro App é um sistema de gerenciamento de projetos acadêmicos desenvolvido em Flutter, permitindo que estudantes organizem seus projetos, tarefas e perfis de forma segura e eficiente.
+O E-Project App é um sistema de gerenciamento de projetos acadêmicos desenvolvido em Flutter, permitindo que estudantes organizem seus projetos, tarefas e perfis de forma segura e eficiente.
 
 ## 2. Arquitetura do Sistema
 O projeto segue o padrão **MVC (Model-View-Controller)**, garantindo a separação de responsabilidades e facilitando a manutenção.

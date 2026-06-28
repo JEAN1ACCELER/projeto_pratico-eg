@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Icon(Icons.school, size: 100, color: Colors.blue),
             SizedBox(height: 20),
             Text(
-              'AcadPro App',
+              'E-Project App',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),

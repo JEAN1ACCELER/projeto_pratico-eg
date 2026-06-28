@@ -1,13 +1,13 @@
-# Script: Vídeo de Demonstração do MVP - AcadPro App
+# Script: Vídeo de Demonstração do MVP - E-Project App
 
-Este script foi elaborado para um vídeo de aproximadamente **3 minutos**, focando na apresentação técnica e funcional do AcadPro App.
+Este script foi elaborado para um vídeo de aproximadamente **3 minutos**, focando na apresentação técnica e funcional do E-Project App.
 
 ---
 
 ## 1. Introdução (0:00 - 0:30)
-**Visual:** Splash Screen com logo do AcadPro App.
+**Visual:** Splash Screen com logo do E-Project App.
 **Locução:**
-> "Olá! Sou o desenvolvedor do AcadPro App, o MVP de gerenciamento de projetos acadêmicos para a disciplina de Engenharia de Software I da UFAM. O aplicativo foi construído com Flutter e segue o padrão arquitetural MVC."
+> "Olá! Sou o desenvolvedor do E-Project App, o MVP de gerenciamento de projetos acadêmicos para a disciplina de Engenharia de Software I da UFAM. O aplicativo foi construído com Flutter e segue o padrão arquitetural MVC."
 
 ---
 
@@ -29,14 +29,14 @@ Este script foi elaborado para um vídeo de aproximadamente **3 minutos**, focan
 ## 4. Gestão de Projetos e Tarefas (1:45 - 2:30)
 **Visual:** Criar um novo projeto e adicionar uma tarefa a ele.
 **Locução:**
-> "A gestão de projetos e tarefas é o coração do AcadPro. O usuário pode criar projetos acadêmicos e vincular tarefas específicas com datas de entrega, tudo armazenado em tabelas relacionais no banco de dados local."
+> "A gestão de projetos e tarefas é o coração do E-Project. O usuário pode criar projetos acadêmicos e vincular tarefas específicas com datas de entrega, tudo armazenado em tabelas relacionais no banco de dados local."
 
 ---
 
 ## 5. Perfil, Configurações e Encerramento (2:30 - 3:00)
 **Visual:** Navegação pelas telas de Profile e Settings (Modo Escuro, Idioma).
 **Locução:**
-> "Nas telas de Perfil e Configurações, o usuário pode personalizar sua experiência, incluindo ajustes de notificações e modo visual. Com uma arquitetura limpa e testes unitários completos, o AcadPro App entrega uma solução sólida para o gerenciamento acadêmico."
+> "Nas telas de Perfil e Configurações, o usuário pode personalizar sua experiência, incluindo ajustes de notificações e modo visual. Com uma arquitetura limpa e testes unitários completos, o E-Project App entrega uma solução sólida para o gerenciamento acadêmico."
 
 ---
 
