@@ -1,6 +1,6 @@
-# AcadPro App - Gerenciador de Projetos Acadêmicos (MVP)
+# E-Project - Gerenciador de Projetos Acadêmicos (MVP)
 
-O **AcadPro App** é um MVP desenvolvido em Flutter para a disciplina de Engenharia de Software I. Ele oferece uma solução completa para estudantes gerenciarem seus projetos e tarefas acadêmicas com segurança e organização.
+O **E-Project** é um MVP desenvolvido em Flutter para a disciplina de Engenharia de Software I. Ele oferece uma solução completa para estudantes gerenciarem seus projetos e tarefas acadêmicas com segurança e organização.
 
 ## 🚀 Como Executar Localmente
 
