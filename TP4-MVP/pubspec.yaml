@@ -1,0 +1,66 @@
+name: doacao_mvp
+description: MVP do Trabalho Prático IV - Engenharia de Software I - UFAM
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Gerenciamento de Estado
+  provider: ^6.1.1
+  flutter_riverpod: ^2.4.9
+
+  # Navegação
+  go_router: ^13.2.0
+
+  # Persistência Local
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  shared_preferences: ^2.2.2
+  sqflite: ^2.3.2
+  path_provider: ^2.1.2
+
+  # HTTP Client
+  dio: ^5.4.1
+
+  # UI e Componentes
+  fl_chart: ^0.67.0
+  responsive_builder: ^0.7.0
+
+  # Internacionalização
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.19.0
+
+  # Ícones e Fontes
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.8
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/fonts/
+
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
