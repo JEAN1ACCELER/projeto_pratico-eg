@@ -16,7 +16,7 @@
 **Sistema de Gestão de Projetos Acadêmicos UFAM**
 
 ## 📄 Sobre o Projeto
-O **E-Project** é uma plataforma web multiplataforma (PWA) desenvolvida para centralizar a gestão de projetos acadêmicos da Universidade Federal do Amazonas. O sistema foi projetado para professores orientadores e alunos orientandos que precisam acompanhar projetos como PIBIC, PIBITI, PIBEX, PASSE e Pós-Graduação em um único ambiente digital, eliminando o retrabalho gerado pelo uso de ferramentas genéricas.
+O **E-Project** é uma plataforma web multiplataforma (PWA) desenvolvida para centralizar a gestão de projetos acadêmicos da Universidade Federal do Amazonas. O sistema foi projetado para professores orientadores e alunos orientandos que precisam acompanhar projetos como PIBIC, PIBITI, PIBEX, PACE e Pós-Graduação em um único ambiente digital, eliminando o retrabalho gerado pelo uso de ferramentas genéricas.
 
 > **Problema Central:** Professores orientadores da UFAM não dispõem de uma ferramenta específica para acompanhar a evolução dos seus projetos acadêmicos após a submissão. Os sistemas oficiais (E-campus e SEI) servem apenas para cadastro e protocolo, obrigando os professores a adaptar ferramentas genéricas (Trello, Notion, Excel) e acessar múltiplos sites de pró-reitorias diariamente para encontrar editais.
 
