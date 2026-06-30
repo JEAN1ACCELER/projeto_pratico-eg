@@ -1,55 +1,71 @@
-# E-Project - Gerenciador de Projetos Acadêmicos (MVP)
+# TP4-MVP — Academic Project Management App
 
-O **E-Project** é um MVP desenvolvido em Flutter para a disciplina de Engenharia de Software I. Ele oferece uma solução completa para estudantes gerenciarem seus projetos e tarefas acadêmicas com segurança e organização.
+Este é o repositório do projeto TP4-MVP, um aplicativo de gerenciamento de projetos acadêmicos desenvolvido para auxiliar estudantes e professores na organização e acompanhamento de suas atividades.
 
-## 🚀 Como Executar Localmente
+## Tecnologias Utilizadas
 
-Para rodar este projeto em sua máquina, siga os passos abaixo:
+*   **Framework:** Flutter
+*   **Linguagem:** Dart
+*   **Banco de Dados Local:** SQLite (via `sqflite`)
+*   **Gerenciamento de Estado:** Provider
 
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/JEAN1ACCELER/projeto_pratico-eg.git
-   ```
+## Estrutura de Pastas
 
-2. **Navegue até o diretório do projeto:**
-   ```bash
-   cd projeto_pratico-eg/TP4-MVP
-   ```
+O projeto segue a seguinte estrutura de pastas para garantir organização e manutenibilidade:
 
-3. **Instale as dependências:**
-   ```bash
-   flutter pub get
-   ```
+```
+TP4-MVP/
+├── docs/                 # Documentação do projeto (rastreabilidade, refatorações, termos de uso)
+├── prints/               # Capturas de tela do aplicativo
+│   ├── tela-login/
+│   ├── tela-cadastro/
+│   └── funcionalidades/
+├── video/                # Vídeos de demonstração do MVP
+└── src/                  # Código-fonte da aplicação Flutter
+    ├── components/       # Widgets reutilizáveis (botões, cards, etc.)
+    ├── pages/            # Telas principais da aplicação (Login, Dashboard, Projects, Tasks)
+    ├── services/         # Serviços de backend (autenticação, banco de dados)
+    ├── assets/           # Imagens, ícones e outros recursos estáticos
+    ├── App.dart          # Configuração principal do aplicativo (rotas, tema)
+    └── main.dart         # Ponto de entrada da aplicação
+```
 
-4. **Execute o aplicativo:**
-   ```bash
-   flutter run
-   ```
+## Como Rodar Localmente
 
-## ✨ Funcionalidades Principais
+Para configurar e executar o projeto em sua máquina local, siga os passos abaixo:
 
-| Funcionalidade | Descrição |
-| :--- | :--- |
-| **Autenticação** | Login e Cadastro seguros com criptografia SHA-256. |
-| **Gestão de Projetos** | CRUD completo de projetos acadêmicos. |
-| **Gestão de Tarefas** | Controle de tarefas vinculadas a projetos com datas. |
-| **Banco Local** | Persistência robusta utilizando SQLite (sqflite). |
-| **8 Telas** | Interface completa com Material Design 3. |
-| **Validação H6** | Cadastro rigoroso com validação de CPF e CNS. |
+1.  **Instalar Flutter:** Certifique-se de ter o Flutter SDK instalado e configurado em seu ambiente. Você pode seguir as instruções oficiais em [flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install).
 
-## 🏗️ Arquitetura e Padrões
+2.  **Navegar até o Diretório do Projeto:**
+    ```bash
+    cd /home/ubuntu/projeto_pratico-eg/TP4-MVP
+    ```
 
-- **Padrão MVC**: Separação clara entre Model, View e Controller.
-- **Gerenciamento de Estado**: Provider Pattern com ChangeNotifier.
-- **Persistência**: SQLite com 4 tabelas relacionais.
-- **Testes**: Testes unitários para serviços de autenticação e banco de dados.
+3.  **Obter Dependências:** Baixe todas as dependências do projeto:
+    ```bash
+    flutter pub get
+    ```
 
-## 📚 Documentação Adicional
+4.  **Executar o Aplicativo:** Inicie o aplicativo em um emulador, dispositivo físico ou navegador (para web):
+    ```bash
+    flutter run
+    ```
+    Para rodar no navegador, você pode usar:
+    ```bash
+    flutter run -d chrome
+    ```
 
-- [Documentação Técnica](TECHNICAL_DOCUMENTATION.md)
-- [Rastreabilidade e TODO](todo.md)
-- [Termos de Uso](docs/termos-de-uso.md)
-- [Script de Demonstração](docs/video/script-demonstracao.md)
+## Documentação Adicional
 
----
-Desenvolvido como Trabalho Prático IV de Engenharia de Software I - UFAM.
+*   [Documentação Detalhada](docs/TECHNICAL_DOCUMENTATION.md)
+*   [Rastreabilidade de Requisitos](docs/rastreabilidade.md)
+*   [Refatorações Realizadas](docs/refatoracoes.md)
+*   [Termos de Uso](docs/termos-de-uso.md)
+
+## Capturas de Tela
+
+Visualize as capturas de tela do aplicativo na pasta [prints/](prints/).
+
+## Vídeo de Demonstração
+
+Assista ao vídeo de demonstração do MVP na pasta [video/](video/demonstracao-mvp.mp4).

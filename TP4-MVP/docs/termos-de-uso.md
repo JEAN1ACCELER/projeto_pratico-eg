@@ -1,29 +1,30 @@
-# Termos de Uso e Política de Privacidade - E-Project App
+# Termos de Uso do Aplicativo TP4-MVP
 
-## 1. Introdução
-O **E-Project App** é uma ferramenta de gerenciamento de projetos acadêmicos desenvolvida como Trabalho Prático para a disciplina de Engenharia de Software I. Ao utilizar este aplicativo, você concorda com os termos aqui descritos.
+Bem-vindo ao TP4-MVP, um aplicativo de gerenciamento de projetos acadêmicos. Ao acessar ou usar nosso aplicativo, você concorda em cumprir e estar vinculado aos seguintes termos e condições de uso. Por favor, leia-os atentamente.
 
-## 2. Coleta de Dados Pessoais
-Para garantir a integridade do perfil acadêmico, o aplicativo coleta os seguintes dados durante o cadastro:
-- **Nome Completo**: Para identificação do estudante nos projetos.
-- **E-mail**: Utilizado como login e para comunicações do sistema.
-- **CPF e CNS (Cartão Nacional de Saúde)**: Coletados exclusivamente para fins de validação de identidade e conformidade com os requisitos do projeto e-Project.
+## 1. Aceitação dos Termos
 
-## 3. Segurança e Armazenamento
-- **Banco de Dados Local**: Todos os seus dados são armazenados localmente no seu dispositivo utilizando a tecnologia **SQLite (sqflite)**. Não há envio automático para servidores externos nesta versão MVP.
-- **Criptografia de Senhas**: Sua senha nunca é armazenada em texto claro. Utilizamos o algoritmo de hash **SHA-256** para garantir que sua credencial permaneça segura mesmo que o banco de dados local seja acessado.
+Ao utilizar o aplicativo TP4-MVP, você reconhece que leu, entendeu e concorda em estar vinculado a estes Termos de Uso, bem como à nossa Política de Privacidade. Se você não concordar com qualquer parte destes termos, não deverá usar o aplicativo.
 
-## 4. Responsabilidades do Usuário
-O usuário é responsável por:
-- Fornecer informações verídicas e atualizadas.
-- Manter a segurança de seu dispositivo móvel.
-- Utilizar a ferramenta para fins estritamente acadêmicos.
+Você não deve:
+*   Usar o aplicativo de qualquer forma que possa danificar, desabilitar, sobrecarregar ou prejudicar o servidor ou as redes conectadas ao servidor, ou interferir no uso e do desfrute do aplicativo por terceiros.
+*   Tentar obter acesso não autorizado a qualquer parte do aplicativo, outras contas, sistemas de computador ou redes conectadas a qualquer servidor TP4-MVP através de hacking, mineração de senhas ou qualquer outro meio.
+*   Publicar ou transmitir através do aplicativo qualquer material que seja difamatório, ofensivo ou de natureza obscena.
 
-## 5. Propriedade Intelectual
-O código-fonte e os artefatos deste projeto são de propriedade acadêmica dos desenvolvedores e da UFAM, protegidos pelas diretrizes de licenciamento especificadas no repositório.
+## 3. Privacidade de Dados
 
-## 6. Alterações nos Termos
-Reservamo-nos o direito de atualizar estes termos para refletir melhorias no sistema ou mudanças em requisitos acadêmicos.
+Sua privacidade é muito importante para nós. A coleta e o uso de suas informações pessoais são regidos por nossa Política de Privacidade, que está incorporada a estes Termos de Uso por referência. Ao usar o aplicativo, você concorda com a coleta e o uso de suas informações conforme descrito na Política de Privacidade.
 
----
-*Última atualização: 28 de Junho de 2026*
+## 4. Limitações de Responsabilidade
+
+O aplicativo TP4-MVP é fornecido "como está" e "conforme disponível", sem garantias de qualquer tipo, expressas ou implícitas. Não garantimos que o aplicativo será ininterrupto, livre de erros ou seguro. Em nenhuma circunstância o TP4-MVP ou seus desenvolvedores serão responsáveis por quaisquer danos diretos, indiretos, incidentais, especiais, consequenciais ou exemplares, incluindo, mas não se limitando a, danos por perda de lucros, boa vontade, uso, dados ou outras perdas intangíveis, resultantes do uso ou da incapacidade de usar o aplicativo.
+
+## 5. Modificações dos Termos
+
+Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. Quaisquer alterações entrarão em vigor imediatamente após a publicação dos termos revisados no aplicativo. Seu uso continuado do aplicativo após a publicação de quaisquer alterações constitui sua aceitação dos termos revisados.
+
+## 6. Contato
+
+Se você tiver alguma dúvida sobre estes Termos de Uso, entre em contato conosco através do e-mail: suporte@tp4mvp.com.br
+
+**Data da última atualização:** 29 de Junho de 2026
