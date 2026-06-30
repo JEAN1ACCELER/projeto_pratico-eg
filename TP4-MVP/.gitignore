@@ -1,56 +1,73 @@
-# Flutter/Dart
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-.packages
+# Flutter
+flutter-app/build/
+flutter-app/.dart_tool/
+flutter-app/.flutter-plugins
+flutter-app/.flutter-plugins-dependencies
+flutter-app/.packages
+flutter-app/pubspec.lock
+flutter-app/.idea/
+flutter-app/.vscode/
+flutter-app/*.iml
+flutter-app/*.lock
+
+# React/Node.js
+react-app/node_modules/
+react-app/.env.local
+react-app/.env.*.local
+react-app/dist/
+react-app/build/
+react-app/.next/
+react-app/out/
+react-app/.DS_Store
+react-app/*.log
+react-app/npm-debug.log*
+react-app/yarn-debug.log*
+react-app/yarn-error.log*
+react-app/.idea/
+react-app/.vscode/
+react-app/*.swp
+react-app/*.swo
+react-app/*~
+react-app/.eslintcache
+
+# General
+.DS_Store
+.env
+.env.local
+*.log
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.iml
+
+# OS
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Dependencies
+node_modules/
 .pub-cache/
 .pub/
+
+# Build outputs
+dist/
 build/
-*.g.dart
-*.freezed.dart
+.next/
+out/
 
-# Android
-**/android/**/gradle-wrapper.jar
-**/android/.gradle
-**/android/captures/
-**/android/gradlew
-**/android/gradlew.bat
-**/android/local.properties
-**/android/**/GeneratedPluginRegistrant.java
-
-# iOS
-**/ios/**/*.mode1v3
-**/ios/**/*.mode2v3
-**/ios/**/*.moved-aside
-**/ios/**/*.pbxuser
-**/ios/**/*.perspectivev3
-**/ios/**/*sync/
-**/ios/**/.sconsign.dblite
-**/ios/**/.tags*
-**/ios/**/.vagrant/
-**/ios/**/DerivedData/
-**/ios/**/Icon?
-**/ios/**/Pods/
-**/ios/**/.symlinks/
-**/ios/**/profile
-**/ios/**/xcuserdata
-**/ios/.generated/
-**/ios/Flutter/.last_build_id
-**/ios/Flutter/App.framework
-**/ios/Flutter/Flutter.framework
-**/ios/Flutter/Flutter.podspec
-**/ios/Flutter/Generated.xcconfig
-**/ios/Flutter/app.flx
-**/ios/Flutter/app.zip
-**/ios/Flutter/flutter_assets/
-**/ios/Flutter/flutter_export_environment.sh
-**/ios/ServiceDefinitions.json
-**/ios/Runner/GeneratedPluginRegistrant.*
-
-# Hive
-*.hive
-*.lock
+# Testing
+coverage/
+.nyc_output/
 
 # Misc
-*.DS_Store
-.env
+.DS_Store
+*.pem
