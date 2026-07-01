@@ -19,87 +19,87 @@ Tela de entrada do aplicativo, com campos de E-mail Institucional e Senha, botã
 
 ---
 
-## 2. Tela de Cadastro de Usuário  8
+## 2. Tela de Cadastro de Usuário
 
 > 📸 *[Insira a imagem da Tela de Cadastro aqui]*
 
 **Descrição:**
-Formulário de criação de conta com Nome Completo, E-mail Institucional e Senha, além da seleção de perfil (Estudante ou Orientador), que define os acessos e telas exibidas posteriormente ao usuário 9.
+Formulário de criação de conta com Nome Completo, E-mail Institucional e Senha, além da seleção de perfil (Estudante ou Orientador), que define os acessos e telas exibidas posteriormente ao usuário.
 
-**Histórias de usuário atendidas:**  9
-* **US-01:** (suporte) Base para o login institucional — cria a conta que será usada para autenticação 10.
-
----
-
-## 3. Dashboard do Orientador  11
-
-> 📸 *[Insira a imagem do Dashboard aqui]*  12
-
-**Descrição:**
-Tela inicial pós-login do orientador: contadores por modalidade (PIBIC, PACE, Mestrado), alerta de "Próximo Prazo" com ação rápida "Gerar Documento", lista de "Meus Projetos Ativos" com barra de progresso, e seção "Editais em Destaque" 12. Navegação inferior fixa (Dashboard, Projetos, Editais, Perfil) 12.
-
-**Histórias de usuário atendidas:**  12
-* **US-02:** Enquanto professor orientador, desejo visualizar um dashboard com todos os meus projetos ativos, para ter uma visão consolidada do andamento de cada um sem precisar acessar múltiplos sistemas 13.
-* **US-05:** Enquanto professor orientador, desejo visualizar um feed centralizado com os editais abertos das pró-reitorias da UFAM, para não precisar acessar múltiplos sites diariamente 13.
-* **US-07:** Enquanto usuário do E-Project, desejo gerar automaticamente documentos oficiais (relatório parcial, declaração de bolsista), para economizar tempo e evitar erros de preenchimento manual 13.
+**Histórias de usuário atendidas:**
+* **US-01:** (suporte) Base para o login institucional — cria a conta que será usada para autenticação.
 
 ---
 
-## 4. Detalhes do Projeto — Sistema de Monitoramento IOT  14
+## 3. Dashboard do Orientador
 
-> 📸 *[Insira a imagem dos Detalhes do Projeto IOT aqui]*  15
+> 📸 *[Insira a imagem do Dashboard aqui]*
 
 **Descrição:**
-Detalhe de um projeto PIBIC em andamento, com atalhos para gerar documentos (Relatório Parcial e Declaração) e a seção "Gestão de Tarefas", listando tarefas com status (ex.: "Revisão Bibliográfica" — APPROVED) e ações como "Enviar para Revisão" 15.
+Tela inicial pós-login do orientador: contadores por modalidade (PIBIC, PACE, Mestrado), alerta de "Próximo Prazo" com ação rápida "Gerar Documento", lista de "Meus Projetos Ativos" com barra de progresso, e seção "Editais em Destaque". Navegação inferior fixa (Dashboard, Projetos, Editais, Perfil).
 
-**Histórias de usuário atendidas:**  15
-* **US-04:** Enquanto professor orientador, desejo criar tarefas e atribuí-las aos meus orientandos com prazo definido, para organizar as demandas de cada projeto de forma clara e rastreável 16.
-* **US-07:** Geração automática de documentos oficiais (Relatório Parcial, Declaração) a partir do projeto 16.
+**Histórias de usuário atendidas:**
+* **US-02:** Enquanto professor orientador, desejo visualizar um dashboard com todos os meus projetos ativos, para ter uma visão consolidada do andamento de cada um sem precisar acessar múltiplos sistemas.
+* **US-05:** Enquanto professor orientador, desejo visualizar um feed centralizado com os editais abertos das pró-reitorias da UFAM, para não precisar acessar múltiplos sites diariamente.
+* **US-07:** Enquanto usuário do E-Project, desejo gerar automaticamente documentos oficiais (relatório parcial, declaração de bolsista), para economizar tempo e evitar erros de preenchimento manual.
 
 ---
 
-## 5. Detalhes do Projeto — Inclusão Digital Ribeirinha  17
+## 4. Detalhes do Projeto — Sistema de Monitoramento IOT
 
-> 📸 *[Insira a imagem dos Detalhes do Projeto Inclusão Digital aqui]*  18
+> 📸 *[Insira a imagem dos Detalhes do Projeto IOT aqui]*
 
 **Descrição:**
-Detalhe de um projeto PACE com status "Atrasado", exibindo uma tarefa em revisão ("Elaboração da Cartilha" — IN_REVIEW) com botão "Aprovar", demonstrando o fluxo de revisão e feedback do orientador sobre a entrega do aluno 18.
+Detalhe de um projeto PIBIC em andamento, com atalhos para gerar documentos (Relatório Parcial e Declaração) e a seção "Gestão de Tarefas", listando tarefas com status (ex.: "Revisão Bibliográfica" — APPROVED) e ações como "Enviar para Revisão".
 
-**Histórias de usuário atendidas:**  18
-* **US-06:** Enquanto professor orientador, desejo revisar as entregas dos meus orientandos e fornecer feedback de aprovação ou solicitação de correção, para que o aluno saiba exatamente o que precisa ajustar 19.
+**Histórias de usuário atendidas:**
+* **US-04:** Enquanto professor orientador, desejo criar tarefas e atribuí-las aos meus orientandos com prazo definido, para organizar as demandas de cada projeto de forma clara e rastreável.
+* **US-07:** Geração automática de documentos oficiais (Relatório Parcial, Declaração) a partir do projeto.
 
 ---
 
-## 6. Cadastro de Novo Projeto  20
+## 5. Detalhes do Projeto — Inclusão Digital Ribeirinha
 
-> 📸 *[Insira a imagem de Cadastro de Novo Projeto aqui]*  21
+> 📸 *[Insira a imagem dos Detalhes do Projeto Inclusão Digital aqui]*
 
 **Descrição:**
-Modal "Novo Projeto" acionado pelo botão flutuante (+), com campos de Título, Descrição, Membros da Equipe e seleção do Tipo de Projeto (PIBIC, PACE, TCC), finalizado pelo botão "Adicionar Projeto" 21.
+Detalhe de um projeto PACE com status "Atrasado", exibindo uma tarefa em revisão ("Elaboração da Cartilha" — IN_REVIEW) com botão "Aprovar", demonstrando o fluxo de revisão e feedback do orientador sobre a entrega do aluno.
 
-**Histórias de usuário atendidas:**  21.
-* **US-03:** Enquanto professor orientador, desejo cadastrar um novo projeto escolhendo sua modalidade (PIBIC, PACE, PIBEX etc.), para iniciar o acompanhamento sem precisar configurar campos do zero 22.
+**Histórias de usuário atendidas:**
+* **US-06:** Enquanto professor orientador, desejo revisar as entregas dos meus orientandos e fornecer feedback de aprovação ou solicitação de correção, para que o aluno saiba exatamente o que precisa ajustar.
 
 ---
 
-## 7. Lista de Projetos Ativos  23
+## 6. Cadastro de Novo Projeto
 
-> 📸 *[Insira a imagem da Lista de Projetos aqui]*  24
+> 📸 *[Insira a imagem de Cadastro de Novo Projeto aqui]*
 
 **Descrição:**
-Listagem completa dos projetos do orientador (PIBIC, PACE, Mestrado), cada card exibindo modalidade, status (Em Andamento, Atrasado, Em Revisão), equipe responsável e barra de progresso — acessível pela aba "Projetos" da navegação inferior 24.
+Modal "Novo Projeto" acionado pelo botão flutuante (+), com campos de Título, Descrição, Membros da Equipe e seleção do Tipo de Projeto (PIBIC, PACE, TCC), finalizado pelo botão "Adicionar Projeto".
 
-**Histórias de usuário atendidas:**  24
-* **US-02:** Visão consolidada dos projetos ativos do orientador, complementando o dashboard com uma listagem detalhada 25].
+**Histórias de usuário atendidas:**
+* **US-03:** Enquanto professor orientador, desejo cadastrar um novo projeto escolhendo sua modalidade (PIBIC, PACE, PIBEX etc.), para iniciar o acompanhamento sem precisar configurar campos do zero.
 
 ---
 
-## 8. Menu de Temas e Acessibilidade  26
+## 7. Lista de Projetos Ativos
 
-> 📸 *[Insira a imagem do Menu de Temas aqui]*  27
+> 📸 *[Insira a imagem da Lista de Projetos aqui]*
 
 **Descrição:**
-Menu acionado pelo ícone de paleta no cabeçalho, permitindo alternar entre os temas Sistema, Claro, Escuro e Alto Contraste, atendendo aos requisitos de acessibilidade do backlog 27.
+Listagem completa dos projetos do orientador (PIBIC, PACE, Mestrado), cada card exibindo modalidade, status (Em Andamento, Atrasado, Em Revisão), equipe responsável e barra de progresso — acessível pela aba "Projetos" da navegação inferior.
 
-**Histórias de usuário atendidas:**  27
-* **US-15:** Enquanto usuário de acessibilidade, desejo ajustar o tamanho da fonte e ativar o modo de alto contraste, para conseguir usar o sistema sem dificuldades visuais 28.
+**Histórias de usuário atendidas:**
+* **US-02:** Visão consolidada dos projetos ativos do orientador, complementando o dashboard com uma listagem detalhada.
+
+---
+
+## 8. Menu de Temas e Acessibilidade
+
+> 📸 *[Insira a imagem do Menu de Temas aqui]*
+
+**Descrição:**
+Menu acionado pelo ícone de paleta no cabeçalho, permitindo alternar entre os temas Sistema, Claro, Escuro e Alto Contraste, atendendo aos requisitos de acessibilidade do backlog.
+
+**Histórias de usuário atendidas:**
+* **US-15:** Enquanto usuário de acessibilidade, desejo ajustar o tamanho da fonte e ativar o modo de alto contraste, para conseguir usar o sistema sem dificuldades visuais.
