@@ -21,7 +21,8 @@ Tela de entrada do aplicativo, com campos de E-mail Institucional e Senha, botã
 
 ## 2. Tela de Cadastro de Usuário
 
-> 📸 *[Insira a imagem da Tela de Cadastro aqui]*
+> <img width="788" height="1600" alt="WhatsApp Image 2026-07-01 at 02 45 19" src="https://github.com/user-attachments/assets/5048a304-681c-420a-ad67-2993c8e75178" />
+
 
 **Descrição:**
 Formulário de criação de conta com Nome Completo, E-mail Institucional e Senha, além da seleção de perfil (Estudante ou Orientador), que define os acessos e telas exibidas posteriormente ao usuário.
@@ -33,7 +34,8 @@ Formulário de criação de conta com Nome Completo, E-mail Institucional e Senh
 
 ## 3. Dashboard do Orientador
 
-> 📸 *[Insira a imagem do Dashboard aqui]*
+> <img width="788" height="1600" alt="WhatsApp Image 2026-07-01 at 02 45 20" src="https://github.com/user-attachments/assets/fc60d1c2-8648-4ebe-94da-5cdef9a7048c" />
+
 
 **Descrição:**
 Tela inicial pós-login do orientador: contadores por modalidade (PIBIC, PACE, Mestrado), alerta de "Próximo Prazo" com ação rápida "Gerar Documento", lista de "Meus Projetos Ativos" com barra de progresso, e seção "Editais em Destaque". Navegação inferior fixa (Dashboard, Projetos, Editais, Perfil).
@@ -47,7 +49,8 @@ Tela inicial pós-login do orientador: contadores por modalidade (PIBIC, PACE, M
 
 ## 4. Detalhes do Projeto — Sistema de Monitoramento IOT
 
-> 📸 *[Insira a imagem dos Detalhes do Projeto IOT aqui]*
+> <img width="788" height="1600" alt="WhatsApp Image 2026-07-01 at 02 45 20 (1)" src="https://github.com/user-attachments/assets/2d108e8a-4971-4ab6-8b93-fc6a9dab4ecf" />
+
 
 **Descrição:**
 Detalhe de um projeto PIBIC em andamento, com atalhos para gerar documentos (Relatório Parcial e Declaração) e a seção "Gestão de Tarefas", listando tarefas com status (ex.: "Revisão Bibliográfica" — APPROVED) e ações como "Enviar para Revisão".
@@ -60,7 +63,8 @@ Detalhe de um projeto PIBIC em andamento, com atalhos para gerar documentos (Rel
 
 ## 5. Detalhes do Projeto — Inclusão Digital Ribeirinha
 
-> 📸 *[Insira a imagem dos Detalhes do Projeto Inclusão Digital aqui]*
+> <img width="788" height="1600" alt="WhatsApp Image 2026-07-01 at 02 45 21" src="https://github.com/user-attachments/assets/8d368afb-d4eb-4c84-a95a-c0644122a0fe" />
+
 
 **Descrição:**
 Detalhe de um projeto PACE com status "Atrasado", exibindo uma tarefa em revisão ("Elaboração da Cartilha" — IN_REVIEW) com botão "Aprovar", demonstrando o fluxo de revisão e feedback do orientador sobre a entrega do aluno.
@@ -72,7 +76,8 @@ Detalhe de um projeto PACE com status "Atrasado", exibindo uma tarefa em revisã
 
 ## 6. Cadastro de Novo Projeto
 
-> 📸 *[Insira a imagem de Cadastro de Novo Projeto aqui]*
+> <img width="788" height="1600" alt="WhatsApp Image 2026-07-01 at 02 45 21 (1)" src="https://github.com/user-attachments/assets/3b5b2aa8-b8fa-49cc-8597-c2eb75b0d5ed" />
+
 
 **Descrição:**
 Modal "Novo Projeto" acionado pelo botão flutuante (+), com campos de Título, Descrição, Membros da Equipe e seleção do Tipo de Projeto (PIBIC, PACE, TCC), finalizado pelo botão "Adicionar Projeto".
@@ -84,7 +89,7 @@ Modal "Novo Projeto" acionado pelo botão flutuante (+), com campos de Título, 
 
 ## 7. Lista de Projetos Ativos
 
-> 📸 *[Insira a imagem da Lista de Projetos aqui]*
+> <img width="788" height="1600" alt="WhatsApp Image 2026-07-01 at 02 45 21 (2)" src="https://github.com/user-attachments/assets/41d67c49-ce14-4d60-802f-a38ed06cf0fa" />
 
 **Descrição:**
 Listagem completa dos projetos do orientador (PIBIC, PACE, Mestrado), cada card exibindo modalidade, status (Em Andamento, Atrasado, Em Revisão), equipe responsável e barra de progresso — acessível pela aba "Projetos" da navegação inferior.
@@ -96,7 +101,7 @@ Listagem completa dos projetos do orientador (PIBIC, PACE, Mestrado), cada card 
 
 ## 8. Menu de Temas e Acessibilidade
 
-> 📸 *[Insira a imagem do Menu de Temas aqui]*
+> <img width="788" height="1600" alt="WhatsApp Image 2026-07-01 at 02 45 23" src="https://github.com/user-attachments/assets/ba97e7d4-82d4-4b29-9607-8114b949fad7" />
 
 **Descrição:**
 Menu acionado pelo ícone de paleta no cabeçalho, permitindo alternar entre os temas Sistema, Claro, Escuro e Alto Contraste, atendendo aos requisitos de acessibilidade do backlog.
