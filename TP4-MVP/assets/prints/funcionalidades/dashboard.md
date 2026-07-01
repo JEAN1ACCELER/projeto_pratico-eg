@@ -9,7 +9,7 @@ Este documento reúne os prints das principais telas do MVP do E-Project, associ
 
 ## 1. Tela de Login
 
-> 📸 *[Insira a imagem da Tela de Login aqui]*
+> 📸 * <img width="1080" height="2192" alt="WhatsApp Image 2026-07-01 at 02 45 18" src="https://github.com/user-attachments/assets/85e1d1c0-858e-4297-b1e7-d4626da2a90d" /> *
 
 **Descrição:**
 Tela de entrada do aplicativo, com campos de E-mail Institucional e Senha, botão "Entrar" e link para quem ainda não possui conta ("Registrar"). Aplica a identidade visual do E-Project (logo e paleta verde institucional).
