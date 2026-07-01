@@ -44,3 +44,6 @@ Este script foi elaborado para um vídeo de aproximadamente **3 minutos**, focan
 1. **Ambiente:** Use o emulador do Android ou iOS para uma captura limpa.
 2. **Destaque Técnico:** Mencione o uso das bibliotecas `sqflite` e `provider`.
 3. **Qualidade:** Garanta que as validações de campo fiquem bem visíveis no vídeo.
+
+
+vídeo de demonstração do E-project: https://youtube.com/shorts/0fBNRETPzXc?feature=share
