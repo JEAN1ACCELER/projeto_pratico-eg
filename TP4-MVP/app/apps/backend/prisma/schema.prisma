@@ -1,0 +1,218 @@
+// Prisma schema do E-Project.
+// Espelha o Diagrama de Classes UML (TP2 - 6-c4-codigo.md).
+// 7 entidades de domínio: Usuario, Projeto, Tarefa, Entrega, Reuniao, Edital, Notificacao.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// --------------------------------------------------------------------------
+// Enums de domínio
+// --------------------------------------------------------------------------
+
+enum Papel {
+  PROFESSOR
+  ALUNO
+  ADMINISTRADOR
+}
+
+enum Modalidade {
+  PIBIC
+  PIBITI
+  PIBEX
+  PACE
+  POS_GRADUACAO
+}
+
+enum StatusProjeto {
+  EM_ANDAMENTO
+  PENDENTE
+  CONCLUIDO
+  CANCELADO
+}
+
+enum StatusTarefa {
+  A_FAZER
+  EM_ANDAMENTO
+  CONCLUIDO
+}
+
+enum StatusAvaliacao {
+  PENDENTE
+  APROVADA
+  NECESSITA_AJUSTE
+}
+
+enum TipoNotificacao {
+  NOVA_TAREFA
+  PRAZO_PROXIMO
+  STATUS_PROJETO
+  NOVO_EDITAL
+  PRESENCA_IRREGULAR
+  FEEDBACK_ENTREGA
+}
+
+// --------------------------------------------------------------------------
+// Usuario (US-01, US-09, US-13)
+// --------------------------------------------------------------------------
+
+model Usuario {
+  id              String        @id @default(uuid())
+  nomeCompleto    String
+  emailInstitucional String    @unique
+  hashSenha       String
+  papel           Papel        @default(ALUNO)
+  matricula       String?      @unique
+  departamento    String?
+  dataCadastro    DateTime     @default(now())
+  ativo           Boolean      @default(true)
+  aceiteTermos    Boolean      @default(false)
+  aceitePrivacidade Boolean    @default(false)
+
+  projetosOrientados Projeto[] @relation("ProjetoOrientador")
+  projetosParticipa  Projeto[] @relation("ProjetoOrientando")
+  notificacoes    Notificacao[]
+  presencas       Presenca[]
+
+  @@map("usuarios")
+}
+
+// --------------------------------------------------------------------------
+// Projeto (US-02, US-03, US-08) - núcleo do domínio
+// --------------------------------------------------------------------------
+
+model Projeto {
+  id            String        @id @default(uuid())
+  titulo        String
+  modalidade    Modalidade
+  status        StatusProjeto @default(EM_ANDAMENTO)
+  dataInicio    DateTime
+  dataTermino   DateTime
+  resumo        String?
+  orientadorId  String
+  orientandoId  String
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  orientador    Usuario       @relation("ProjetoOrientador", fields: [orientadorId], references: [id])
+  orientando    Usuario       @relation("ProjetoOrientando", fields: [orientandoId], references: [id])
+  tarefas       Tarefa[]
+  reunioes      Reuniao[]
+
+  @@map("projetos")
+}
+
+// --------------------------------------------------------------------------
+// Tarefa (US-04, US-06, US-10, US-14) - fluxo Kanban
+// --------------------------------------------------------------------------
+
+model Tarefa {
+  id            String        @id @default(uuid())
+  titulo        String
+  descricao     String?
+  prazo         DateTime?
+  status        StatusTarefa  @default(A_FAZER)
+  dataConclusao DateTime?
+  projetoId     String
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  projeto       Projeto       @relation(fields: [projetoId], references: [id], onDelete: Cascade)
+  entrega       Entrega?
+
+  @@map("tarefas")
+}
+
+// --------------------------------------------------------------------------
+// Entrega (US-04, US-07) - 1:1 com Tarefa
+// --------------------------------------------------------------------------
+
+model Entrega {
+  id               String          @id @default(uuid())
+  tarefaId         String          @unique
+  arquivoUrl       String?
+  comentarioAluno  String?
+  feedbackOrientador String?
+  statusAvaliacao  StatusAvaliacao @default(PENDENTE)
+  dataEnvio        DateTime        @default(now())
+  dataAvaliacao    DateTime?
+
+  tarefa           Tarefa          @relation(fields: [tarefaId], references: [id], onDelete: Cascade)
+
+  @@map("entregas")
+}
+
+// --------------------------------------------------------------------------
+// Reuniao + Presenca (US-06, US-09, US-13)
+// --------------------------------------------------------------------------
+
+model Reuniao {
+  id          String   @id @default(uuid())
+  projetoId   String
+  dataHora    DateTime
+  local       String?
+  resumo      String?
+  ataUrl      String?
+  pinCheckIn  String?
+  createdAt   DateTime @default(now())
+
+  projeto     Projeto  @relation(fields: [projetoId], references: [id], onDelete: Cascade)
+  presencas   Presenca[]
+
+  @@map("reunioes")
+}
+
+model Presenca {
+  id         String   @id @default(uuid())
+  reuniaoId  String
+  usuarioId  String
+  createdAt  DateTime @default(now())
+
+  reuniao    Reuniao  @relation(fields: [reuniaoId], references: [id], onDelete: Cascade)
+  usuario    Usuario  @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+
+  @@unique([reuniaoId, usuarioId])
+  @@map("presencas")
+}
+
+// --------------------------------------------------------------------------
+// Edital (US-05, US-19) - feed institucional
+// --------------------------------------------------------------------------
+
+model Edital {
+  id              String    @id @default(uuid())
+  titulo          String
+  descricao       String?
+  modalidade      Modalidade?
+  fonte           String?
+  linkOriginal    String?
+  dataPublicacao  DateTime  @default(now())
+  dataEncerramento DateTime?
+  ativo           Boolean   @default(true)
+  createdAt       DateTime  @default(now())
+
+  @@map("editais")
+}
+
+// --------------------------------------------------------------------------
+// Notificacao (US-05, US-12) - alertas in-app
+// --------------------------------------------------------------------------
+
+model Notificacao {
+  id          String           @id @default(uuid())
+  usuarioId   String
+  tipo        TipoNotificacao
+  conteudo    String
+  lida        Boolean          @default(false)
+  dataEnvio   DateTime         @default(now())
+
+  usuario     Usuario          @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+
+  @@index([usuarioId])
+  @@map("notificacoes")
+}

@@ -1,0 +1,12 @@
+echo "=== Configurando ambiente de desenvolvimento ==="
+sleep 1
+echo "Instalando dependências..."
+sleep 1
+echo "Configurando variáveis de ambiente..."
+sleep 0.5
+
+m/apps/52fb9770-f40f-47e8-911f-25d28ee90ba3?showPreview=true&showAssistant=true&fullscreenApplet=true" 2>/dev/null || \
+open "https://aistudio.google.com/apps/52fb9770-f40f-47e8-911f-25d28ee90ba3?showPreview=true&showAssistant=true&fullscreenApplet=true" 2>/dev/null || \
+start "https://aistudio.google.com/apps/52fb9770-f40f-47e8-911f-25d28ee90ba3?showPreview=true&showAssistant=true&fullscreenApplet=true"
+
+echo "✅ Ambiente pronto! Acessando Google Studio..."

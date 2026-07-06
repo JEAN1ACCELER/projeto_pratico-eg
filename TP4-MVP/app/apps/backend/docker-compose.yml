@@ -1,0 +1,20 @@
+# PostgreSQL local para desenvolvimento do E-Project.
+# Subir com: docker compose up -d
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: eproject_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: eproject
+      POSTGRES_PASSWORD: eproject
+      POSTGRES_DB: eproject
+    ports:
+      - "5432:5432"
+    volumes:
+      - eproject_pgdata:/var/lib/postgresql/data
+
+volumes:
+  eproject_pgdata:
